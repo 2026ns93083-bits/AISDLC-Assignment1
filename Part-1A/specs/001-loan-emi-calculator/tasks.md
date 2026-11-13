@@ -28,11 +28,11 @@
 
 **Purpose**: Shared validation and calculation boundaries that all user stories rely on
 
-- [ ] T004 Create the validation, calculation, and CLI module skeletons in src/validate.js, src/emi.js, and src/cli.js with the specified boundaries from FR-001 to FR-014
-- [ ] T005 [P] Define the shared input contract and normalized validation API in src/validate.js for principal, rate, and tenure constraints from FR-001 to FR-004 and data-model.md
-- [ ] T006 [P] Define the pure calculation API in src/emi.js for monthly rate, annuity math, and schedule output using exact BigInt math and integer-cent rounding from FR-006 to FR-012 and research.md
-- [ ] T007 Implement the CLI boundary in src/cli.js for process argv parsing, JSON serialization, and exit code handling from FR-004, FR-005, and FR-013
-- [ ] T008 Create the baseline test harness in tests/validate.test.js, tests/emi.test.js, and tests/cli.test.js with Node.js built-in test runner assertions using AC-001 through AC-008 names
+- [X] T004 Create the validation, calculation, and CLI module skeletons in src/validate.js, src/emi.js, and src/cli.js with the specified boundaries from FR-001 to FR-014
+- [X] T005 [P] Define the shared input contract and normalized validation API in src/validate.js for principal, rate, and tenure constraints from FR-001 to FR-004 and data-model.md
+- [X] T006 [P] Define the pure calculation API in src/emi.js for monthly rate, annuity math, and schedule output using exact BigInt math and integer-cent rounding from FR-006 to FR-012 and research.md
+- [X] T007 Implement the CLI boundary in src/cli.js for process argv parsing, JSON serialization, and exit code handling from FR-004, FR-005, and FR-013
+- [X] T008 Create the baseline test harness in tests/validate.test.js, tests/emi.test.js, and tests/cli.test.js with Node.js built-in test runner assertions using AC-001 through AC-008 names
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.
 
@@ -46,11 +46,11 @@
 
 ### Tests for User Story 1 (must be written first)
 
-- [ ] T009 [P] [US1] Add AC-003 positive-rate schedule acceptance test in tests/emi.test.js covering FR-005, FR-006, FR-007, FR-008, and FR-011 for principal 120000, rate 12, and tenure 12, asserting EMI 10661.85 and final balance 0.00
-- [ ] T010 [P] [US1] Add AC-005 schedule-sum and final-balance acceptance test in tests/emi.test.js covering FR-010, FR-011, and FR-012 for (1,0,1), (100000000,50,480), (120000,12,12), (1000,0,3), and (50000,7.5,36)
-- [ ] T011 [P] [US1] Add AC-006 half-up rounding acceptance test in tests/emi.test.js covering FR-009 for 0.005 -> 0.01, 0.0049 -> 0.00, 0.0051 -> 0.01, and 2.675 -> 2.68
-- [ ] T012 [P] [US1] Add AC-007 480-month performance acceptance test in tests/emi.test.js covering NFR-002 and FR-007 for the maximum schedule length
-- [ ] T013 [P] [US1] Add AC-008 successful JSON-only stdout acceptance test in tests/cli.test.js covering FR-005 and FR-013 for valid execution output
+- [X] T009 [P] [US1] Add AC-003 positive-rate schedule acceptance test in tests/emi.test.js covering FR-005, FR-006, FR-007, FR-008, and FR-011 for principal 120000, rate 12, and tenure 12, asserting EMI 10661.85 and final balance 0.00
+- [X] T010 [P] [US1] Add AC-005 schedule-sum and final-balance acceptance test in tests/emi.test.js covering FR-010, FR-011, and FR-012 for (1,0,1), (100000000,50,480), (120000,12,12), (1000,0,3), and (50000,7.5,36)
+- [X] T011 [P] [US1] Add AC-006 half-up rounding acceptance test in tests/emi.test.js covering FR-009 for 0.005 -> 0.01, 0.0049 -> 0.00, 0.0051 -> 0.01, and 2.675 -> 2.68
+- [X] T012 [P] [US1] Add AC-007 480-month performance acceptance test in tests/emi.test.js covering NFR-002 and FR-007 for the maximum schedule length
+- [X] T013 [P] [US1] Add AC-008 successful JSON-only stdout acceptance test in tests/cli.test.js covering FR-005 and FR-013 for valid execution output
 
 ### Implementation for User Story 1
 
@@ -72,9 +72,9 @@
 
 ### Tests for User Story 2 (must be written first)
 
-- [ ] T019 [P] [US2] Add AC-002 zero-interest acceptance test in tests/emi.test.js covering FR-006, FR-010, FR-011, and FR-012 for principal 1000 at 0% over 3 months
-- [ ] T020 [P] [US2] Add AC-005 final-balance acceptance test in tests/emi.test.js covering zero-rate and residual-payment settlement logic from FR-010 and FR-012
-- [ ] T021 [P] [US2] Add AC-008 error/success JSON contract test in tests/cli.test.js covering valid zero-rate success output from FR-005 and FR-013
+- [X] T019 [P] [US2] Add AC-002 zero-interest acceptance test in tests/emi.test.js covering FR-006, FR-010, FR-011, and FR-012 for principal 1000 at 0% over 3 months
+- [X] T020 [P] [US2] Add AC-005 final-balance acceptance test in tests/emi.test.js covering zero-rate and residual-payment settlement logic from FR-010 and FR-012
+- [X] T021 [P] [US2] Add AC-008 error/success JSON contract test in tests/cli.test.js covering valid zero-rate success output from FR-005 and FR-013
 
 ### Implementation for User Story 2
 
@@ -95,9 +95,9 @@
 
 ### Tests for User Story 3 (must be written first)
 
-- [ ] T026 [P] [US3] Add AC-001 boundary acceptance test in tests/validate.test.js covering inclusive min/max values and valid 1- through 480-month tenure from FR-002 and edge cases
-- [ ] T027 [P] [US3] Add AC-004 invalid-input acceptance test in tests/validate.test.js covering missing/extra args and asserting the mapped code for each malformed, out-of-range, excessive-principal-precision, and fractional-tenure class from FR-003 and FR-004
-- [ ] T028 [P] [US3] Add AC-008 invalid stdout contract test in tests/cli.test.js covering structured error output with no extra stdout text from FR-004 and FR-013
+- [X] T026 [P] [US3] Add AC-001 boundary acceptance test in tests/validate.test.js covering inclusive min/max values and valid 1- through 480-month tenure from FR-002 and edge cases
+- [X] T027 [P] [US3] Add AC-004 invalid-input acceptance test in tests/validate.test.js covering missing/extra args and asserting the mapped code for each malformed, out-of-range, excessive-principal-precision, and fractional-tenure class from FR-003 and FR-004
+- [X] T028 [P] [US3] Add AC-008 invalid stdout contract test in tests/cli.test.js covering structured error output with no extra stdout text from FR-004 and FR-013
 
 ### Implementation for User Story 3
 
