@@ -1,0 +1,1476 @@
+{
+  "responderUsername": "GitHub Copilot",
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_188ea1a9-0ff1-4739-b8b3-7d0c37ff13dd",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 16
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 17
+            },
+            "name": "speckit.analyze",
+            "kind": "prompt"
+          }
+        ],
+        "text": "/speckit.analyze"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "autoModeResolution",
+          "resolved": {
+            "id": "mai-code-1.1-flash",
+            "name": "mai-code-1.1-flash",
+            "reason": "Auto selected MAI-Code-1.1-Flash because it was the best choice out of the models available in your plan."
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "**Analyzing user request**\n\nI need to respond to the user’s request regarding the “speckit.analyze” in the context of the spec project. I'll analyze tasks against the spec plan, inspect the workspace, and run the “speckit-analyze” skill as directed. It’s important to check artifacts and ensure the tasks file is intact. I won’t be implementing code, so I'll focus on a non-destructive consistency analysis of the provided files after generating tasks. Let’s call the skill first and proceed from there.",
+          "id": "71b2ec12-0fa4-405b-bd45-49806d4a7f6e",
+          "reasoningDurationMs": 1235,
+          "generatedTitle": "Analyzing user request"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read skill [speckit-analyze](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/.github/skills/speckit-analyze/SKILL.md?vscodeLinkType%3Dskill)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read skill [speckit-analyze](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/.github/skills/speckit-analyze/SKILL.md?vscodeLinkType%3Dskill)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\"skill\":\"speckit-analyze\"}",
+            "inputLanguage": "json",
+            "output": [],
+            "isError": false
+          },
+          "toolCallId": "synth-skill-5e4c062e-2349-479f-9ac4-a26eafe8b6bf",
+          "toolId": "skill",
+          "summary": {
+            "kind": "unknown"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "presentation": "hiddenAfterComplete",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Find files matching `.specify/extensions.yml`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 4,
+            "selectedButton": "allow-session",
+            "selectedButtonKind": "approve"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "search"
+          },
+          "toolCallId": "call_RJBRjcqPzGKtJQTZ0kWiBGfo",
+          "toolId": "glob",
+          "summary": {
+            "kind": "search",
+            "queries": [
+              ".specify/extensions.yml"
+            ],
+            "searchKind": "files"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Check prerequisite spec/task docs and output JSON",
+          "isConfirmed": {
+            "type": 4,
+            "selectedButton": "allow-session",
+            "selectedButtonKind": "approve"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "commandLine": {
+              "original": "cd \"D:\\kpmyrepo\\AISDLC-Assignment1\"; .\\.specify\\scripts\\powershell\\check-prerequisites.ps1 -Json -RequireSpec -RequireTasks -IncludeTasks"
+            },
+            "editable": false,
+            "intention": "Check prerequisite spec/task docs and output JSON",
+            "language": "shellscript",
+            "autoApproveRuleResolvable": true,
+            "terminalToolSessionId": "{\"terminal\":\"agenthost-terminal://shell/84a36359-8a18-4fca-8476-a4684defe2a7/call_ucjDespADJmOikrDvt0V3qqw?%7B%22storage%22%3A%22ahp-session%3A%2F84a36359-8a18-4fca-8476-a4684defe2a7%22%2C%22session%22%3A%22ahp-session%3A%2F84a36359-8a18-4fca-8476-a4684defe2a7%22%2C%22chat%22%3A%22ahp-chat%3A%2Feb5a8b6d-0ff7-4b92-8e89-eb84a80a5a4a%22%2C%22toolCallId%22%3A%22call_ucjDespADJmOikrDvt0V3qqw%22%7D\",\"session\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\"}",
+            "terminalCommandUri": {
+              "$mid": 1,
+              "path": "/84a36359-8a18-4fca-8476-a4684defe2a7/call_ucjDespADJmOikrDvt0V3qqw",
+              "scheme": "agenthost-terminal",
+              "authority": "shell",
+              "query": "{\"storage\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\",\"session\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\",\"chat\":\"ahp-chat:/eb5a8b6d-0ff7-4b92-8e89-eb84a80a5a4a\",\"toolCallId\":\"call_ucjDespADJmOikrDvt0V3qqw\"}"
+            },
+            "isPty": false,
+            "terminalCommandOutput": {
+              "text": ".\\.specify\\scripts\\powershell\\check-prerequisites.ps1: \r\nLine |\r\n   2 |  … signment1\"; .\\.specify\\scripts\\powershell\\check-prerequisites.ps1 -Js …\r\n     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | The term '.\\.specify\\scripts\\powershell\\check-prerequisites.ps1' is not recognized as a name of a cmdlet, function, script file, or executable program.\r\nCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.\r\n"
+            },
+            "terminalCommandState": {
+              "exitCode": 1
+            }
+          },
+          "toolCallId": "call_ucjDespADJmOikrDvt0V3qqw",
+          "toolId": "powershell",
+          "summary": {
+            "kind": "failed"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "**Investigating repo structure**\n\nI need to explore the actual repository structure; the scripts path might be different, or maybe hidden files are not showing. I should start by listing the root directory to check for hidden files. It seems the repo root is D:\\kpmyrepo\\AISDLC-Assignment1, but maybe the actual root lies in D:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A. I need to inspect the directories and verify if .specify exists within Part-1A, possibly hidden. I'll use `Get-ChildItem -Force` in PowerShell to find it.",
+          "id": "52ca6a71-aa8a-460c-a612-f3e3db8c33c4",
+          "reasoningDurationMs": 1415,
+          "generatedTitle": "Investigating repo structure"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Inspect repo and feature directories for hidden .specify files",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "commandLine": {
+              "original": "Get-ChildItem -Force -Path \"D:\\kpmyrepo\\AISDLC-Assignment1\"; Write-Host \"---\"; Get-ChildItem -Force -Path \"D:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\""
+            },
+            "editable": false,
+            "intention": "Inspect repo and feature directories for hidden .specify files",
+            "language": "shellscript",
+            "terminalToolSessionId": "{\"terminal\":\"agenthost-terminal://shell/84a36359-8a18-4fca-8476-a4684defe2a7/call_mBVFu3LnjQ6LLLJvDJKEqGrV?%7B%22storage%22%3A%22ahp-session%3A%2F84a36359-8a18-4fca-8476-a4684defe2a7%22%2C%22session%22%3A%22ahp-session%3A%2F84a36359-8a18-4fca-8476-a4684defe2a7%22%2C%22chat%22%3A%22ahp-chat%3A%2Feb5a8b6d-0ff7-4b92-8e89-eb84a80a5a4a%22%2C%22toolCallId%22%3A%22call_mBVFu3LnjQ6LLLJvDJKEqGrV%22%7D\",\"session\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\"}",
+            "terminalCommandUri": {
+              "$mid": 1,
+              "path": "/84a36359-8a18-4fca-8476-a4684defe2a7/call_mBVFu3LnjQ6LLLJvDJKEqGrV",
+              "scheme": "agenthost-terminal",
+              "authority": "shell",
+              "query": "{\"storage\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\",\"session\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\",\"chat\":\"ahp-chat:/eb5a8b6d-0ff7-4b92-8e89-eb84a80a5a4a\",\"toolCallId\":\"call_mBVFu3LnjQ6LLLJvDJKEqGrV\"}"
+            },
+            "isPty": false,
+            "terminalCommandOutput": {
+              "text": "\r\n    Directory: D:\\kpmyrepo\\AISDLC-Assignment1\r\n\r\nMode                 LastWriteTime         Length Name\r\n----                 -------------         ------ ----\r\nd--h-          13-11-2026    23:54                .git\r\nd----          14-11-2026    00:30                Part-1A\r\nd----          13-11-2026    23:44                Part-1B\r\n-a---          13-11-2026    23:51             26 .gitignore\r\n-a---          13-11-2026    23:52             36 README.md\r\n---\r\n\r\n    Directory: D:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\r\n\r\nMode                 LastWriteTime         Length Name\r\n----                 -------------         ------ ----\r\nd----          13-11-2026    23:58                .github\r\nd----          14-11-2026    00:30                .specify\r\nd----          14-11-2026    00:25                evidence\r\nd----          14-11-2026    00:30                specs\r\n\r\n"
+            },
+            "terminalCommandState": {
+              "exitCode": 0
+            }
+          },
+          "toolCallId": "call_mBVFu3LnjQ6LLLJvDJKEqGrV",
+          "toolId": "powershell",
+          "summary": {
+            "kind": "command"
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "**Checking script and extensions**\n\nI need to run a script from Part-1A instead of the repo root. First, I should check if the .specify file exists. I want to read the extensions file as instructed. It’ll be important to inspect .specify and check if .specify/extensions.yml is there too. Then, I’ll run the script from Part-1A. I also need to parse the JSON. Maybe I’ll need the script path in Part-1A/.specify/scripts/powershell/check-prerequisites.ps1. Keeping things minimal is key!",
+          "id": "a0cf64ff-87ad-4dd5-8920-6f83ba9c179b",
+          "reasoningDurationMs": 906,
+          "generatedTitle": "Checking script and extensions"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/extensions.yml)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": "\"Read\" failed",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultError": "Path does not exist",
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\.specify\\\\extensions.yml\"\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "Path does not exist",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": true
+          },
+          "toolCallId": "call_bVoXLnszxQdpG0lrQvUUmUKI",
+          "toolId": "view",
+          "summary": {
+            "kind": "failed"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Validate required spec/task artifacts and get feature dir",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "commandLine": {
+              "original": ".\\.specify\\scripts\\powershell\\check-prerequisites.ps1 -Json -RequireSpec -RequireTasks -IncludeTasks"
+            },
+            "editable": false,
+            "intention": "Validate required spec/task artifacts and get feature dir",
+            "language": "shellscript",
+            "terminalToolSessionId": "{\"terminal\":\"agenthost-terminal://shell/84a36359-8a18-4fca-8476-a4684defe2a7/call_ypRddSlQx9EpPYCJ4pAmjbDQ?%7B%22storage%22%3A%22ahp-session%3A%2F84a36359-8a18-4fca-8476-a4684defe2a7%22%2C%22session%22%3A%22ahp-session%3A%2F84a36359-8a18-4fca-8476-a4684defe2a7%22%2C%22chat%22%3A%22ahp-chat%3A%2Feb5a8b6d-0ff7-4b92-8e89-eb84a80a5a4a%22%2C%22toolCallId%22%3A%22call_ypRddSlQx9EpPYCJ4pAmjbDQ%22%7D\",\"session\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\"}",
+            "terminalCommandUri": {
+              "$mid": 1,
+              "path": "/84a36359-8a18-4fca-8476-a4684defe2a7/call_ypRddSlQx9EpPYCJ4pAmjbDQ",
+              "scheme": "agenthost-terminal",
+              "authority": "shell",
+              "query": "{\"storage\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\",\"session\":\"ahp-session:/84a36359-8a18-4fca-8476-a4684defe2a7\",\"chat\":\"ahp-chat:/eb5a8b6d-0ff7-4b92-8e89-eb84a80a5a4a\",\"toolCallId\":\"call_ypRddSlQx9EpPYCJ4pAmjbDQ\"}"
+            },
+            "isPty": false,
+            "terminalCommandOutput": {
+              "text": "{\"FEATURE_DIR\":\"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\",\"AVAILABLE_DOCS\":[\"research.md\",\"data-model.md\",\"contracts/\",\"quickstart.md\",\"tasks.md\"]}\r\n"
+            },
+            "terminalCommandState": {
+              "exitCode": 0
+            }
+          },
+          "toolCallId": "call_ypRddSlQx9EpPYCJ4pAmjbDQ",
+          "toolId": "powershell",
+          "summary": {
+            "kind": "command"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), lines 1 to 260",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\spec.md\",\n  \"view_range\": [\n    1,\n    260\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n@@ -1,260 +1,260 @@\n # Feature Specification: Loan EMI & Amortization Calculator\n \n **Feature Branch**: `001-loan-emi-calculator`\n \n **Created**: 2026-11-14\n \n **Status**: Draft\n \n **Input**: User description: \"Build a command-line Loan EMI & Amortization Calculator. Inputs: principal, annual interest rate (percent), tenure in months. Outputs (JSON on stdout): emi, total_interest, total_payment, and a month-by-month schedule with month, emi, interest, principal, balance. Zero interest rate is supported. The last instalment is adjusted so the final balance is exactly 0.00. Valid ranges: principal 1 to 100,000,000; rate 0 to 50; tenure 1 to 480 whole months. Invalid input returns {\\\"error\\\":{\\\"code\\\":\\\"...\\\",\\\"message\\\":\\\"...\\\"}} and exit code 1. Define functional and non-functional requirements and measurable, binary acceptance criteria. Identify assumptions and unresolved questions. Exclude: UI, database, currency conversion, prepayment, variable rates.\"\n \n ## User Scenarios & Testing *(mandatory)*\n \n ### User Story 1 - Calculate a fixed-rate loan (Priority: P1)\n \n A borrower supplies a principal, annual interest rate, and whole-month tenure to obtain the regular monthly instalment and a complete repayment schedule.\n \n **Why this priority**: This is the core value of the calculator and the primary valid-input journey.\n \n **Independent Test**: Run the command with valid positive-rate inputs and verify the JSON summary and every month of the schedule.\n \n **Acceptance Scenarios**:\n \n 1. **Given** principal 120000, annual rate 12 percent, and tenure 12 months, **When** the borrower runs the calculator, **Then** stdout contains valid JSON with the EMI summary, totals, and exactly 12 schedule entries.\n 2. **Given** any valid positive-rate loan, **When** the borrower inspects each schedule entry, **Then** the entry's interest is based on the opening balance, its principal is the amount of the instalment applied to principal, and each balance follows from the preceding balance.\n \n ### User Story 2 - Calculate a zero-interest loan and settle the final balance (Priority: P1)\n \n A borrower can calculate an interest-free loan and see a final adjusted instalment that pays the balance down exactly to zero.\n \n **Why this priority**: Zero interest is an explicitly required case, and exact settlement prevents a residual balance caused by rounding.\n \n **Independent Test**: Calculate principal 1000 at zero percent for 3 months; verify zero interest, a regular EMI of 333.33, and a final schedule instalment of 333.34 with balance 0.00.\n \n **Acceptance Scenarios**:\n \n 1. **Given** principal 1000, annual rate 0 percent, and tenure 3 months, **When** the borrower runs the calculator, **Then** total interest is 0.00, total payment is 1000.00, and the final balance is 0.00.\n 2. **Given** any valid loan whose rounded regular instalments leave a cents-level residual, **When** the final schedule entry is produced, **Then** only the final instalment is adjusted by the remaining amount due and its balance is exactly 0.00.\n \n ### User Story 3 - Receive actionable input errors (Priority: P1)\n \n A borrower who provides malformed or out-of-range values receives a structured error instead of a misleading calculation.\n \n **Why this priority**: Financial results must not be produced from invalid values; the caller must be able to detect failure reliably.\n \n **Independent Test**: Invoke the command with each invalid field and verify its exit status and JSON error shape.\n \n **Acceptance Scenarios**:\n \n 1. **Given** a principal, rate, or tenure outside its allowed range or format, **When** the borrower runs the calculator, **Then** the process exits with status 1 and stdout contains one JSON object with an `error` object containing non-empty `code` and `message` fields.\n 2. **Given** valid values at all inclusive range boundaries, **When** the borrower runs the calculator, **Then** the input is accepted and a schedule of the requested length is returned.\n \n ### Edge Cases\n \n - Principal is exactly 1 or 100,000,000; annual rate is exactly 0 or 50; tenure is exactly 1 or 480 months. Each inclusive boundary is accepted.\n - A value just outside any range, a nonnumeric value, missing or extra positional arguments, or a fractional tenure is rejected with a structured error and exit status 1.\n - Zero interest is calculated without dividing by the interest rate.\n - The final instalment may differ from the regular EMI due to rounding and must settle the remaining balance without a negative balance.\n - A one-month tenure produces one schedule entry, and its final balance is exactly 0.00.\n - Calculations at half-cent ties use round-half-up; values immediately above and below ties round consistently.\n - Output remains valid JSON when errors occur; diagnostic or explanatory text does not appear on stdout.\n \n ## Requirements *(mandatory)*\n \n ### Functional Requirements\n \n - **FR-001**: The command MUST accept exactly three positional inputs, in this order: principal, annual interest rate expressed as a percentage, and tenure in whole months.\n - **FR-002**: The system MUST accept a principal from 1 through 100,000,000 inclusive, an annual rate from 0 through 50 inclusive, and an integer tenure from 1 through 480 inclusive.\n - **FR-003**: The system MUST reject missing or extra inputs, malformed or non-finite numeric values, and values outside the specified ranges before calculating a result.\n - **FR-004**: For invalid input, the command MUST write one JSON object to stdout with exactly the top-level `error` field and an error object with exactly the `code` and `message` fields; both error fields MUST be non-empty strings, and the process MUST exit with status 1.\n - **FR-005**: For valid input, the command MUST write one JSON object to stdout with exactly the fields `emi`, `total_interest`, `total_payment`, and `schedule`, and MUST exit with status 0.\n - **FR-006**: The system MUST calculate a level-payment loan using the annual nominal rate divided into 12 equal monthly periods; at a zero annual rate it MUST divide principal evenly across the tenure before monetary rounding.\n - **FR-007**: The schedule MUST contain exactly one entry per month, in ascending month order from 1 through the requested tenure. Each entry MUST contain exactly the numeric fields `month`, `emi`, `interest`, `principal`, and `balance`.\n - **FR-008**: For each schedule entry, the system MUST calculate interest from the opening balance and monthly rate, allocate the remaining instalment to principal, and reduce the balance by the principal paid.\n - **FR-009**: The system MUST round monetary amounts to two decimal places using round-half-up at the defined monetary calculation boundaries. It MUST calculate the regular EMI from unrounded values, round it to cents, and calculate each period's interest to cents before deriving that period's principal.\n - **FR-010**: The final schedule instalment MUST be adjusted to pay the remaining opening balance and that period's interest; the final principal MUST equal the remaining balance and the final balance MUST be exactly 0.00.\n - **FR-011**: The top-level `emi` MUST report the regular rounded instalment; each schedule entry's `emi` MUST report the actual payment for that month, including any final-instalment adjustment.\n - **FR-012**: `total_interest` MUST equal the sum of the schedule's monthly interest values, and `total_payment` MUST equal the sum of the actual schedule instalments, including the adjusted final instalment.\n - **FR-013**: Successful and error responses MUST be machine-readable JSON on stdout with no other stdout content. All monetary values MUST be JSON numbers representing amounts rounded to cents.\n - **FR-014**: The system MUST NOT provide a graphical user interface, database persistence, currency conversion, prepayment support, or variable-rate calculations.\n \n ### Non-Functional Requirements\n \n - **NFR-001**: For identical valid inputs, the command MUST return identical JSON values and schedule entries on every run.\n - **NFR-002**: A valid calculation, including a 480-month schedule, MUST complete within one second on a typical supported development machine.\n - **NFR-003**: The \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_ojSY4wV5j7CvPLFpekSiuNCv",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md), lines 1 to 260",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\plan.md\",\n  \"view_range\": [\n    1,\n    260\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md\n@@ -1,260 +1,260 @@\n # Implementation Plan: Loan EMI & Amortization Calculator\n \n **Branch**: `001-loan-emi-calculator` | **Date**: 2026-11-14 | **Spec**: [spec.md](./spec.md)\n \n ## Summary\n \n Build a deterministic Node.js 20 command-line calculator that accepts principal,\n annual nominal interest rate, and whole-month tenure, then emits a JSON EMI\n summary and complete amortization schedule. Use CommonJS and no runtime\n dependencies. Keep validation, pure calculation, and argument/output handling\n separate in `src/validate.js`, `src/emi.js`, and `src/cli.js`; verify behavior\n with `node:test` and lint with ESLint plus its security plugin.\n \n The calculation will parse the validated decimal rate as an exact rational and\n use native `BigInt` arithmetic for the annuity formula and monetary rounding.\n Represent schedule values as integer cents, round the regular EMI and each\n period's interest half-up at their specified boundaries, and adjust only the\n final payment to settle the opening balance plus that period's interest. This\n follows FR-009 through FR-012 without relying on binary floating-point\n correction or allowing rounding residue to accumulate in the balance ledger.\n \n ## Technical Context\n \n **Language/Version**: Node.js 20, CommonJS\n **Primary Dependencies**: None at runtime; development dependencies only:\n `eslint`, `@eslint/js`, `globals`, and `eslint-plugin-security`\n **Storage**: None\n **Testing**: Node.js `node:test` and `node:assert/strict`\n **Target Platform**: Node.js 20-supported platforms\n **Project Type**: Standalone command-line application\n **Performance Goals**: A complete 480-month calculation in under one second\n **Constraints**: Exactly three positional inputs; specified inclusive value\n ranges; JSON-only stdout; two-decimal monetary precision; half-up rounding;\n final balance exactly zero; no database, UI, conversion, prepayment, or\n variable-rate support\n **Scale/Scope**: One loan calculation per process invocation, at most 480\n schedule entries\n \n ## Constitution Check\n \n *Gate: evaluated before research and again after design.*\n \n | Principle / gate | Plan compliance |\n |---|---|\n | I. Node.js 20 and CommonJS | Pass: Node.js 20, CommonJS modules, no production dependencies. |\n | II. Financial Calculation Accuracy | Pass: define half-up rounding at monetary boundaries; retain cents as integer ledger values; test exact ties and values on either side. |\n | III. Validated Inputs and Explicit Errors | Pass: validate all raw arguments before calculation; expose only `code` and `message` within the error response; emit JSON and exit 1. |\n | IV. Pure Business Logic and CLI Separation | Pass: calculation and validation are side-effect-free modules; argument parsing, serialization, and process exit handling stay in `cli.js`. |\n | V. Measurable Quality and Simplicity | Pass: `node:test`, AC-ID-bearing test names, ESLint recommended/security rules, and `npm audit`; no added runtime abstraction or dependency. |\n | Additional constraints | Pass: no secrets or machine-specific paths; avoid intermediate monetary rounding other than the specified boundaries. |\n | Quality gates | Pass by design: run targeted/full feature tests, ESLint, and `npm audit` during implementation. |\n \n No constitution violations or exceptions are required.\n \n ## Design Decisions\n \n - **Three-module boundary**: `src/validate.js` validates the exact positional\n   arguments and returns a normalized input or a structured validation error;\n   `src/emi.js` accepts normalized values and returns a calculation result without\n   I/O; `src/cli.js` owns `process.argv`, JSON serialization, and exit status.\n - **Money representation**: hold schedule balances, rounded instalments,\n   period interest, period principal, and totals as integer cents using `BigInt`.\n   Convert cents to JSON number amounts only when assembling the result. The\n   specified maxima keep output cents within JavaScript's safe-integer range.\n - **Exact decimal arithmetic**: parse the validated annual-rate decimal string\n   into a rational numerator and denominator, reduce the ratio, and calculate\n   the annuity factor and monthly interest with `BigInt`. For a nonnegative\n   rational amount `n/d`, round to cents by quotient and remainder, incrementing\n   when twice the remainder is at least the denominator. This implements\n   half-up exactly; it avoids binary floating-point error and does not bias\n   values below or above a tie. Avoid any unapproved input-precision limit;\n   performance tests should include the required 480-period case.\n - **Schedule and final payment**: round each period's interest to cents before\n   deriving principal. For non-final periods, apply the regular rounded EMI;\n   for the final period, pay the remaining opening balance plus rounded\n   interest. Sum actual schedule payments and period interest for totals, and\n   report the regular EMI separately at the top level.\n - **Validation and error contract**: require exactly three arguments; validate\n   finite decimal syntax, the principal's maximum of two fractional digits,\n   each inclusive range, and whole-month tenure. Return stable non-empty error\n   codes/messages and no partial calculation.\n - **Tooling**: use Node.js built-ins for runtime and tests. The only declared\n   development dependencies are ESLint, `@eslint/js`, `globals`, and\n   `eslint-plugin-security`; configure ESLint with recommended and security\n   rules, and provide npm scripts for tests and lint. No database or\n   environment-specific configuration is needed.\n - **Serialization boundary**: convert safe integer cents to JSON number amounts\n   only after calculation. Keep BigInt values internal because JSON does not\n   serialize BigInt directly.\n \n ## Project Structure\n \n ### Documentation (this feature)\n \n ```text\n specs/001-loan-emi-calculator/\n ├── plan.md\n ├── research.md\n ├── data-model.md\n ├── contracts/\n │   └── cli.md\n └── quickstart.md\n ```\n \n ### Source Code (repository root)\n \n ```text\n src/\n ├── emi.js\n ├── validate.js\n └── cli.js\n \n tests/\n ├── validate.test.js\n ├── emi.test.js\n └── cli.test.js\n \n package.json\n eslint.config.js\n ```\n \n **Structure Decision**: Use one CommonJS CLI project at the repository root.\n The three requested source modules define the calculation, validation, and\n process-facing boundaries. Node's built-in test runner exercises these modules\n without a runtime or test-framework dependency.\n \n ## Complexity Tracking\n \n No constitution violations; no complexity exceptions are requested.\n \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_pz9h9K5xSorm5YhzpwY8zwXL",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md), lines 1 to 260",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\tasks.md\",\n  \"view_range\": [\n    1,\n    260\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md\n@@ -1,260 +1,260 @@\n # Tasks: Loan EMI & Amortization Calculator\n \n **Input**: Design documents from `/specs/001-loan-emi-calculator/`\n \n **Prerequisites**: plan.md (required), spec.md (required for user stories), data-model.md, contracts/cli.md, research.md, quickstart.md\n \n **Tests**: Acceptance tests are required and must appear before implementation tasks in each user story phase.\n \n **Organization**: Tasks are grouped by user story to enable independent implementation and testing. Each task references the relevant AC and/or FR requirement IDs.\n \n ## Format: `[ID] [P?] [Story] Description`\n \n - **[P]**: Can run in parallel (different files, no dependencies)\n - **[Story]**: Which user story this task belongs to (US1, US2, US3)\n - Include exact file paths in descriptions\n \n ## Phase 1: Setup (Shared Infrastructure)\n \n **Purpose**: Project initialization and shared toolchain\n \n - [ ] T001 Create the Node.js 20 CommonJS project structure in package.json, src/, and tests/ per plan.md and project structure decisions\n - [ ] T002 [P] Initialize package.json scripts for `npm test`, `npm run lint`, and `npm audit` with Node.js 20/CommonJS configuration in package.json\n - [ ] T003 [P] Configure ESLint with recommended and security rules in eslint.config.js and install the required development dependencies\n \n ---\n \n ## Phase 2: Foundational (Blocking Prerequisites)\n \n **Purpose**: Shared validation and calculation boundaries that all user stories rely on\n \n - [ ] T004 Create the validation, calculation, and CLI module skeletons in src/validate.js, src/emi.js, and src/cli.js with the specified boundaries from FR-001 to FR-014\n - [ ] T005 [P] Define the shared input contract and normalized validation API in src/validate.js for principal, rate, and tenure constraints from FR-001 to FR-004 and data-model.md\n - [ ] T006 [P] Define the pure calculation API in src/emi.js for monthly rate, annuity math, and schedule output using exact BigInt math and integer-cent rounding from FR-006 to FR-012 and research.md\n - [ ] T007 Implement the CLI boundary in src/cli.js for process argv parsing, JSON serialization, and exit code handling from FR-004, FR-005, and FR-013\n - [ ] T008 Create the baseline test harness in tests/validate.test.js, tests/emi.test.js, and tests/cli.test.js with Node.js built-in test runner assertions using AC-001 through AC-008 names\n \n **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.\n \n ---\n \n ## Phase 3: User Story 1 - Calculate a fixed-rate loan (Priority: P1) 🎯 MVP\n \n **Goal**: Produce a valid fixed-rate EMI and complete amortization schedule for positive-rate loans.\n \n **Independent Test**: Run `node src/cli.js <principal> <rate> <months>` with valid positive-rate inputs and verify the summary, exact schedule length, and zero final balance.\n \n ### Tests for User Story 1 (must be written first)\n \n - [ ] T009 [P] [US1] Add AC-003 positive-rate schedule acceptance test in tests/emi.test.js covering FR-005, FR-006, FR-007, FR-008, and FR-011 for a 12-month loan in `src/emi.js`\n - [ ] T010 [P] [US1] Add AC-005 schedule-sum and final-balance acceptance test in tests/emi.test.js covering FR-010, FR-011, and FR-012 for representative valid loans\n - [ ] T011 [P] [US1] Add AC-006 half-up rounding acceptance test in tests/emi.test.js covering FR-009 and the exact tie/near-tie rules from research.md\n - [ ] T012 [P] [US1] Add AC-007 480-month performance acceptance test in tests/emi.test.js covering NFR-002 and FR-007 for the maximum schedule length\n - [ ] T013 [P] [US1] Add AC-008 successful JSON-only stdout acceptance test in tests/cli.test.js covering FR-005 and FR-013 for valid execution output\n \n ### Implementation for User Story 1\n \n - [ ] T014 [US1] Implement the validated principal/rate input parsing and finite decimal checks in src/validate.js for FR-001, FR-002, FR-003, and FR-004\n - [ ] T015 [US1] Implement exact monthly-rate and EMI calculation logic in src/emi.js for positive-rate loans using BigInt and half-up cents rounding from FR-006, FR-009, and FR-011\n - [ ] T016 [US1] Implement the monthly amortization schedule generation in src/emi.js so each period uses opening balance interest, principal allocation, and exact final adjustment from FR-007, FR-008, FR-010, and FR-012\n - [ ] T017 [US1] Serialize the calculation result in src/cli.js with exactly `emi`, `total_interest`, `total_payment`, and `schedule`, and exit code 0 as required by FR-005 and FR-013\n - [ ] T018 [US1] Verify positive-rate schedule invariants against `src/emi.js` and `tests/emi.test.js`: non-negative balances, exact zero final balance, and integer-cent totals from FR-010 to FR-012\n \n **Checkpoint**: At this point, User Story 1 should be fully functional and independently testable.\n \n ---\n \n ## Phase 4: User Story 2 - Calculate a zero-interest loan and settle the final balance (Priority: P1)\n \n **Goal**: Support zero-interest loans and ensure the final schedule payment settles the remaining balance exactly.\n \n **Independent Test**: Run `node src/cli.js 1000 0 3` and verify zero interest, a regular EMI of 333.33, and a final adjusted instalment that yields a final balance of 0.00.\n \n ### Tests for User Story 2 (must be written first)\n \n - [ ] T019 [P] [US2] Add AC-002 zero-interest acceptance test in tests/emi.test.js covering FR-006, FR-010, FR-011, and FR-012 for principal 1000 at 0% over 3 months\n - [ ] T020 [P] [US2] Add AC-005 final-balance acceptance test in tests/emi.test.js covering zero-rate and residual-payment settlement logic from FR-010 and FR-012\n - [ ] T021 [P] [US2] Add AC-008 error/success JSON contract test in tests/cli.test.js covering valid zero-rate success output from FR-005 and FR-013\n \n ### Implementation for User Story 2\n \n - [ ] T022 [US2] Implement the zero-rate calculation branch in src/emi.js to divide principal evenly over the tenure before half-up cents rounding from FR-006 and FR-009\n - [ ] T023 [US2] Implement final-period adjustment logic in src/emi.js so the last payment equals remaining balance plus interest, leaving the final balance exactly 0.00 from FR-010 and FR-011\n - [ ] T024 [US2] Check schedule invariants for zero-interest loans in src/emi.js: `interest` is zero, `total_interest` is zero, and `total_payment` equals principal after the final adjustment from FR-012\n - [ ] T025 [US2] Validate the CLI output for zero-rate success in src/cli.js against the contract in contracts/cli.md and FR-005 / FR-013\n \n **Checkpoint**: At this point, User Stories 1 and 2 should both work independently.\n \n ---\n \n ## Phase 5: User Story 3 - Receive actionable input errors (Priority: P1)\n \n **Goal**: Reject malformed and out-of-range inputs with a deterministic structured error and exit status 1.\n \n **Independent Test**: Invoke the CLI with each invalid value class and validate the JSON error shape, exit status, and absence of non-JSON stdout content.\n \n ### Tests for User Story 3 (must be written first)\n \n - [ ] T026 [P] [US3] Add AC-001 boundary acceptance test in tests/validate.test.js covering inclusive min/max values and valid 1- through 480-month tenure from FR-002 and edge cases\n - [ ] T027 [P] [US3] Add AC-004 invalid-input acceptance test in tests/validate.test.js covering missing/extra args, malformed values, and range violations from FR-003 and FR-004\n - [ ] T028 [P] [US3] Add AC-008 invalid stdout contract test in tests/cli.test.js covering structured error output with no extra stdout text from FR-004 and FR-013\n \n ### Implementation for User Story 3\n \n - [ ] T029 [US3] Implement argument-count and decimal-format validation in src/validate.js for principal, annual rate, and tenure from FR-001 and FR-003\n - [ ] T030 [US3] Implement inclusive range and fractional-tenure checks in src/validate.js for principal 1..100000000, rate 0..50, and tenure 1..480 from FR-002 and edge cases\n - [ ] T031 [US3] Emit the exact structured error shape in src/cli.js with `error.code` and `error.message` as non-empty strings and exit status 1 from FR-004 and FR-013\n - [ ] T032 [US3] Confirm boundary-valid values are accepted and produce a schedule of the requested length in `src/validate.js` + `tests/validate.test.js` per AC-001 \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_579sMqu2CJLhZJq3EMegYrlb",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md), lines 1 to 220",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\.specify\\\\memory\\\\constitution.md\",\n  \"view_range\": [\n    1,\n    220\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md\n@@ -1,220 +1,220 @@\n <!--\n Sync Impact Report\n Version change: unversioned scaffold -> 1.0.0\n Modified principles: unfilled Principle 1 -> Node.js 20 and CommonJS;\n   unfilled Principle 2 -> Financial Calculation Accuracy;\n   unfilled Principle 3 -> Validated Inputs and Explicit Errors;\n   unfilled Principle 4 -> Pure Business Logic and CLI Separation;\n   unfilled Principle 5 -> Measurable Quality and Simplicity.\n Added sections: Additional Constraints; Quality Gates.\n Removed sections: None.\n Follow-up TODOs: None.\n -->\n # Loan EMI & Amortization Calculator Constitution\n \n ## Core Principles\n \n ### I. Node.js 20 and CommonJS\n The application MUST run on Node.js 20 and use CommonJS modules. Production code\n MUST have no runtime dependencies. Any proposed runtime dependency requires a\n constitution amendment before it is added. This fixed baseline keeps deployment\n and execution predictable.\n \n ### II. Financial Calculation Accuracy\n All monetary values MUST be rounded half-up to exactly two decimal places at\n defined calculation and presentation boundaries. Tests MUST cover ordinary\n values, exact half-cent ties, and values immediately above and below ties.\n Financial outputs MUST be deterministic for the same valid inputs.\n \n ### III. Validated Inputs and Explicit Errors\n Every external input MUST be validated before it affects a calculation. Invalid\n input MUST produce a structured error with exactly the public fields `code` and\n `message`; the CLI MUST report the error and exit with status code 1. Validation\n MUST identify the invalid field or constraint without exposing secrets or\n producing a successful-looking result.\n \n ### IV. Pure Business Logic and CLI Separation\n Business logic MUST live in `src/` as pure functions: for the same arguments,\n functions return the same result and perform no input/output, filesystem,\n environment, or process side effects. CLI input/output and process exit handling\n MUST remain separate from those functions. This separation makes financial\n behavior independently testable.\n \n ### V. Measurable Quality and Simplicity\n Tests MUST use Node.js `node:test` and `node:assert/strict`. Every acceptance\n criterion MUST map to at least one test whose name includes that criterion's\n AC ID. ESLint with recommended and security rules MUST pass with zero errors.\n `npm audit` MUST report no high- or critical-severity vulnerabilities.\n Implementations MUST prefer the simplest maintainable design that satisfies\n these requirements; added complexity MUST have a documented need.\n \n ## Additional Constraints\n \n The project MUST NOT hard-code secrets, credentials, or machine-specific paths.\n Configuration that varies by environment MUST be provided at runtime or through\n environment-neutral project configuration. Monetary calculations MUST avoid\n intermediate rounding that changes the defined half-up result.\n \n ## Quality Gates\n \n Before a change is considered complete, run the relevant `node:test` tests,\n ESLint, and `npm audit` checks. A change that affects an acceptance criterion\n MUST include or update a test named with its AC ID. Reviewers MUST verify the\n structured invalid-input error and CLI exit status for changed validation paths,\n and MUST verify monetary rounding behavior for changed calculation paths.\n \n ## Governance\n \n This constitution governs implementation and review of the Loan EMI &\n Amortization Calculator. Amendments MUST be made in a reviewed change that\n states the rationale and impact on existing requirements. Any conflict between\n this constitution and lower-level project guidance MUST be resolved in favor of\n this constitution unless the constitution is amended.\n \n Versioning follows semantic versioning: MAJOR for incompatible changes to\n governance requirements, MINOR for new principles or materially expanded\n requirements, and PATCH for clarifications and non-semantic wording changes.\n Every amendment MUST update the version and last-amended date. Compliance MUST\n be reviewed for each change by checking the applicable tests, lint, dependency\n audit, and the requirements affected by the change.\n \n **Version**: 1.0.0 | **Ratified**: 2026-11-14 | **Last Amended**: 2026-11-14\n \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_LMAYtoZJ2t3YALXg51Y4gbwj",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "**Examining specifications**\n\nI realize I need to check if NFR-003 has been truncated since I can't see the entire detail. I should inspect the remaining lines in spec.md after line 80 to ensure I gather all the necessary non-functional requirements for an accurate count. I'll look at lines 80-150 in spec.md and also review tasks.md from lines 108-184, since potentially, the tasks might extend beyond line 184.",
+          "id": "e318a65f-e27b-4821-ac6b-535485562818",
+          "reasoningDurationMs": 921,
+          "generatedTitle": "Examining specifications"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), lines 80 to 150",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\spec.md\",\n  \"view_range\": [\n    80,\n    150\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n@@ -80,71 +80,71 @@\n \n ### Non-Functional Requirements\n \n - **NFR-001**: For identical valid inputs, the command MUST return identical JSON values and schedule entries on every run.\n - **NFR-002**: A valid calculation, including a 480-month schedule, MUST complete within one second on a typical supported development machine.\n - **NFR-003**: The command MUST distinguish success from invalid input through process exit status: 0 for a valid calculation and 1 for invalid input.\n - **NFR-004**: Monetary output MUST use two-decimal-place precision and MUST NOT leave a nonzero final balance or a negative balance after the final instalment.\n \n ### Key Entities\n \n - **Loan inputs**: The principal amount, annual percentage rate, and whole-month tenure used to calculate repayment.\n - **Instalment**: A monthly payment consisting of an amount applied to interest and an amount applied to principal, with the remaining balance after payment.\n - **Amortization schedule**: The ordered sequence of monthly instalments that accounts for the complete loan repayment.\n - **Calculation result**: The regular EMI, aggregate interest, aggregate payments, and amortization schedule for one set of loan inputs.\n - **Input error**: A machine-readable code and human-readable message describing invalid command input.\n \n ## Success Criteria *(mandatory)*\n \n ### Measurable Outcomes and Binary Acceptance Criteria\n \n - **AC-001**: Given valid inputs at each inclusive minimum and maximum, the command exits 0 and returns a schedule with exactly the requested number of entries; pass only if every boundary case is accepted.\n - **AC-002**: Given principal 1000, rate 0, and tenure 3, the result reports regular `emi` 333.33, `total_interest` 0.00, `total_payment` 1000.00, schedule payments 333.33, 333.33, and 333.34, and final balance 0.00; pass only if every value matches.\n - **AC-003**: Given principal 120000, rate 12, and tenure 12, the command exits 0 and returns exactly 12 ordered schedule entries, each with the five required fields; pass only if the schedule is complete and internally reconciles.\n - **AC-004**: Given each invalid class—missing input, extra input, malformed numeric input, out-of-range principal, out-of-range rate, out-of-range tenure, and fractional tenure—the command exits 1 and emits valid JSON with exactly the specified error fields; pass only if every class satisfies both conditions.\n - **AC-005**: For every valid loan in the supported ranges, the sum of schedule interest equals `total_interest`, the sum of schedule payments equals `total_payment`, and the final balance is exactly 0.00 with no negative schedule balance; pass only if all three invariants hold.\n - **AC-006**: For every monetary half-cent tie tested, rounding is half-up; values just below and above the tie round to the adjacent expected cent values; pass only if all three cases match.\n - **AC-007**: A valid 480-month calculation completes in under one second on a typical supported development machine; pass only if elapsed time is below the limit and a complete schedule is returned.\n - **AC-008**: For valid and invalid invocations, stdout contains only one valid JSON value and no non-JSON text; pass only if both response types parse as JSON with the required shape.\n \n ## Assumptions\n \n - The command receives exactly three positional arguments: principal, annual rate, and tenure; option flags are not part of this version.\n - Principal is a positive monetary amount with no more than two fractional decimal digits. The annual rate may be a finite decimal percentage; tenure must be a whole-number decimal integer.\n - The annual percentage rate is nominal and divided by 12 for each monthly period; payments are made monthly in arrears against a reducing balance.\n - Monetary input and intermediate calculation values are retained without premature rounding; amounts are rounded half-up to cents at the calculation boundaries defined in FR-009.\n - The summary `emi` is the regular instalment; if rounding requires a final adjustment, that adjusted payment is reported in the final schedule entry and included in `total_payment`.\n - Monetary values in JSON are numbers; JSON numeric formatting need not preserve trailing zero characters, while values represent amounts rounded to cents.\n - Error codes are stable identifiers for the error category and messages identify the invalid input or constraint; exact wording is not prescribed.\n - Performance is evaluated on a typical supported development machine without a fixed hardware specification.\n \n ## Unresolved Questions\n \n - None blocking specification. The argument convention, principal precision, nominal monthly rate treatment, and error-message flexibility are set as explicit defaults above and can be revised during clarification if needed.\n \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_NWetBeJJLIWSLXGf1Nehss5C",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md), lines 108 to 184",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\tasks.md\",\n  \"view_range\": [\n    108,\n    184\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md\n@@ -108,77 +108,77 @@\n \n **Checkpoint**: All user stories should now be independently functional.\n \n ---\n \n ## Phase 6: Polish & Cross-Cutting Concerns\n \n **Purpose**: Final validation, documentation, and quality gates\n \n - [ ] T033 [P] Run the relevant Node.js test suite against `tests/validate.test.js`, `tests/emi.test.js`, and `tests/cli.test.js` to confirm the AC-001 through AC-008 coverage is passing\n - [ ] T034 Run ESLint across the project with `npm run lint` and fix any violations flagged by the recommended and security rules\n - [ ] T035 Run `npm audit` and resolve any high- or critical-severity dependency issues before completion\n - [ ] T036 [P] Review the final CLI output, rounding logic, and schedule invariants against `contracts/cli.md`, `data-model.md`, and the constitution to confirm no accidental intermediate rounding or process leakage remains\n - [ ] T037 Refresh any directly related project docs or quickstart examples in `specs/001-loan-emi-calculator/quickstart.md` if implementation changes the required command or output examples\n \n ---\n \n ## Dependencies & Execution Order\n \n ### Phase Dependencies\n \n - **Setup (Phase 1)**: No dependencies - can start immediately\n - **Foundational (Phase 2)**: Depends on Setup completion; blocks all user story work\n - **User Stories (Phase 3-5)**: All depend on the Foundational phase completion\n   - User Stories can proceed in parallel if staffed, but each story must be independently testable\n - **Polish (Phase 6)**: Depends on all required user story tasks being complete\n \n ### User Story Dependencies\n \n - **User Story 1 (US1)**: No story dependency; core fixed-rate lender flow\n - **User Story 2 (US2)**: No story dependency; zero-rate and final adjustment path\n - **User Story 3 (US3)**: No story dependency; validation and error handling path\n \n ### Within Each User Story\n \n - Tests must be written and fail before implementation\n - Validation or model boundary tasks before business logic tasks\n - Calculation logic before CLI wiring\n - Story complete before moving to the next story or final polish\n \n ---\n \n ## Parallel Opportunities\n \n - Setup tasks T001-T003 can run in parallel if the implementation is split among contributors\n - Foundational work T004-T008 can be developed in parallel across the validation, calculation, and CLI seams\n - Story tests T009-T013, T019-T021, and T026-T028 can be created in parallel within their user story phases\n - Story implementation tasks marked [P] can overlap safely when they touch different files and do not depend on each other\n \n ---\n \n ## Implementation Strategy\n \n ### MVP First (User Story 1 Only)\n \n 1. Complete Setup and Foundational tasks\n 2. Implement User Story 1 tests and calculation path\n 3. Validate the positive-rate schedule and 480-month performance case\n 4. Stop and confirm the core CLI contract before adding zero-rate and validation-edge work\n \n ### Incremental Delivery\n \n 1. Complete US1 fixed-rate validation and calculation path\n 2. Add US2 zero-interest calculation and final-payment adjustment\n 3. Add US3 input validation and structured error handling\n 4. Run final lint/test/audit gates and close the feature\n \n ---\n \n ## Validation Checklist\n \n - [ ] All tasks follow the required checklist format: `- [ ] T### ...`\n - [ ] Each user story phase includes tests before implementation tasks\n - [ ] Every task includes a requirement or acceptance reference (for example `AC-003`, `FR-005`, `NFR-002`)\n - [ ] Every task includes an exact file path or file set in its description\n - [ ] Task numbering is sequential and non-duplicated\n \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_FD6VIsQLWmehNhXuQgTKMpaV",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "**Analyzing requirements and issues**\n\nI’m trying to evaluate the project's requirements. The \"Total Requirements\" might be 18, and \"Coverage %\" is probably 100.00 since all requirements are mapped. I'm thinking the \"Ambiguity Count\" could be low, ideally 0, and the \"Duplication Count\" should also be 0. I suspect there might be one critical issue to consider. The requirement specification seems consistent, but I’ve identified some potential concerns that need careful attention regarding tasks, project structure, and performance benchmarks.\n\n**Evaluating potential issues**\n\nI’m looking at a possible issue with \"T006 Define the pure calculation API\" in src/emi.js, specifically using BigInt math and rounding as per FR-006 to FR-012, but the plan states \"no runtime dependencies.\" I’m not sure if there’s a problem, but I might need to analyze it. There's an error handling spec requiring non-empty strings for error fields, yet the success object doesn't include an explicit error field. It seems like I might need to report findings, noting that there are no critical issues, possibly indicating \"No significant issues detected.\"\n\n**Considering report requirements**\n\nI'm trying to figure out how to handle the findings for the analysis report. They mention adding one row per finding, but if there are no findings, maybe I don't need to include any rows. Still, the structured report requires a table. It might be acceptable to have 0 rows with a note saying, \"No material issues found.\" However, I sense they would prefer to see some findings, even minor ones. Perhaps we can note that the spec lacks explicit handling for whitespace or JSON serialization details, which isn't critical but something to mention.\n\n**Identifying inconsistencies**\n\nI think it’s crucial to pinpoint some true inconsistencies in the project. For instance, there seems to be a discrepancy between user story 2's description and FR-011/FR-012 regarding the regular EMI of 333.33 for a zero interest rate and the final payment of 333.34. Tasks T019/T020 mention the AC-002 zero-interest acceptance test, so the issue might be that the final schedule payment equals the remaining balance plus interest. However, FR-011 states that the summary `emi` should report the regular rounded installment. If there are any adjustments, the `emi` field's entry might not reflect the actual payment, which could be problematic.\n\n**Analyzing loan calculation consistency**\n\nI’m considering the consistency of the loan calculation plan, which states to divide the annual nominal rate into 12 equal monthly payments for a zero interest rate. However, user story acceptance scenario 2 mentions a regular EMI of 333.33 and a final payment of 333.34, which aligns with even division. I suspect there could be documentation bugs and a need to address minor ambiguities in error handling specifics.\n\nFor the findings, I should note low-severity issues, including minor duplications in terminology and some missing mappings. Overall, everything appears consistent, leading me to conclude there are minimal issues to report. I will craft a structured summary for clarity.\n\n**Finalizing specification analysis**\n\nI need to summarize some ambiguity and underspecification issues. A medium-level ambiguity exists regarding the error contract, as it allows flexibility but lacks a defined error vocabulary. Additionally, there's an underspecification about the rounding boundary for zero rates in EMI splits. \n\nI think we can produce a clean findings table with a few rows that highlight duplications, ambiguities, and any required recommendations. I will also create a coverage mapping table detailing requirement keys alongside their associated tasks. Metrics will be included, indicating coverage and counts of ambiguities and duplications, while ensuring clarity throughout.\n\n**Considering user feedback**\n\nI think I should run the `/speckit-specify` tool to add canonical codes and clarify rounding rules. If a strict quality gate is needed before implementation, this will help refine ambiguities. I know I need to engage the user here, so I should use the `ask_user` tool to ask, “Would you like me to suggest concrete remediation edits for the top N issues?”\n\nI’ll arrange to prompt this after delivering the final report. It's essential to maintain clarity and follow instructions while ensuring the user feels involved in the decision-making process!\n\n**Planning user engagement**\n\nI’m thinking about how to deliver the final answer. I can say something like, “I have prepared the report below…” However, I may need to issue a tool call for user input, which might not work in a simultaneous way. I believe it's best to approach it sequentially by using the `ask_user` tool first in the commentary, so it aligns with the system’s instructions. \n\nThis will help me ensure that I’m effectively engaging the user while delivering the necessary report!",
+          "id": "01af44f1-7809-479f-9dde-325b417195c3",
+          "reasoningDurationMs": 22080,
+          "generatedTitle": "Analyzed requirements and evaluated potential issues"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "presentation": "hiddenAfterComplete",
+          "invocationMessage": "Ask User",
+          "pastTenseMessage": "Ask User",
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"message\": \"Would you like me to suggest concrete remediation edits for the top N issues?\",\n  \"requestedSchema\": {\n    \"properties\": {\n      \"top_n\": {\n        \"type\": \"integer\",\n        \"title\": \"Top N issues to review\",\n        \"description\": \"Choose how many top issues you want recommendations for.\",\n        \"default\": 2\n      }\n    }\n  }\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "User responded:\ntop_n: all",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_6rGbwYAYMcJ29ytztFo8Rbnm",
+          "toolId": "ask_user",
+          "summary": {
+            "kind": "unknown"
+          }
+        },
+        {
+          "kind": "questionCarousel",
+          "questions": [
+            {
+              "id": "top_n",
+              "type": "text",
+              "title": "Top N issues to review",
+              "detailedMessage": {
+                "value": "Choose how many top issues you want recommendations for.",
+                "isTrusted": false,
+                "supportThemeIcons": false,
+                "supportHtml": false,
+                "supportAlertSyntax": false
+              },
+              "required": false
+            }
+          ],
+          "allowSkip": true,
+          "resolveId": "d764b83b-27f9-4bfa-8a5b-72774727b039",
+          "data": {
+            "top_n": "all"
+          },
+          "isUsed": true,
+          "answeredExternally": false,
+          "autoReply": false,
+          "message": {
+            "value": "Would you like me to suggest concrete remediation edits for the top N issues?",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "answerPresentation": "conversation"
+        },
+        {
+          "value": "## Specification Analysis Report\n\n| ID | Category | Severity | Location(s) | Summary | Recommendation |\n|----|----------|----------|-------------|---------|----------------|\n| A1 | Duplication | LOW | [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), [tasks.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md) | The zero-interest/final-adjustment behavior is repeated in the user story, FRs, and story tasks with near-identical phrasing. This is correct but redundant and makes the canonical requirement harder to track. | Keep one canonical definition of zero-rate settlement and reference it from the story and tasks instead of repeating the same requirement in multiple places. |\n| A2 | Ambiguity | MEDIUM | [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), [tasks.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md) | The error contract requires `code` and `message`, but the spec does not define a stable, enumerated error-code vocabulary. Different implementations could produce different codes without violating the text. | Add a small explicit error-code list (for example: `invalid_input`, `invalid_principal`, `invalid_rate`, `invalid_tenure`) and reference that contract in the CLI contract and tests. |\n| A3 | Underspecification | LOW | [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), [plan.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md) | The spec says “round-half-up at the defined monetary boundaries,” but the exact cent-boundary rule is only explained in the implementation plan, not in the normative spec text itself. That is workable, but it creates a small implementation drift risk. | Add one short normative sentence in the spec stating the exact half-up cent rule used for EMI rounding and final-period adjustment. |\n\n### Coverage Summary Table\n\n| Requirement Key | Has Task? | Task IDs | Notes |\n|-----------------|-----------|----------|-------|\n| FR-001 | Yes | T001, T005, T014, T029 | Exact positional argument contract |\n| FR-002 | Yes | T005, T026, T030 | All inclusive value ranges |\n| FR-003 | Yes | T004, T005, T027, T029 | Validation before calculation |\n| FR-004 | Yes | T007, T028, T031 | Structured error shape and exit status |\n| FR-005 | Yes | T007, T013, T017, T021, T025 | Valid success output contract |\n| FR-006 | Yes | T006, T015, T022 | Monthly-rate and zero-rate calculation |\n| FR-007 | Yes | T006, T009, T012, T016, T018 | Schedule length and structure |\n| FR-008 | Yes | T006, T016, T018 | Opening-balance interest / principal logic |\n| FR-009 | Yes | T006, T011, T015, T022 | Half-up rounding and cent boundaries |\n| FR-010 | Yes | T010, T016, T018, T020, T023, T024 | Final-payment settlement |\n| FR-011 | Yes | T009, T010, T015, T019, T023 | EMI reporting behavior |\n| FR-012 | Yes | T010, T016, T018, T020, T024 | Totals and balance invariants |\n| FR-013 | Yes | T007, T013, T021, T025, T028, T031 | JSON-only stdout / status contract |\n| FR-014 | Yes | T001, T003, T036 | Out-of-scope features explicitly excluded |\n| NFR-001 | Yes | T006, T018, T036 | Deterministic outputs |\n| NFR-002 | Yes | T012, T033, T036 | 480-month performance target |\n| NFR-003 | Yes | T007, T031, T033 | Exit-status split for success vs invalid input |\n| NFR-004 | Yes | T010, T020, T024, T036 | Final balance / cent precision quality |\n\n**Constitution Alignment Issues:** None. The plan and tasks are aligned with the constitution in [constitution.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md): Node.js 20/CommonJS, validation-first design, pure business logic separation, and test/lint/audit quality gates are all reflected.\n\n**Unmapped Tasks:** None. Every task in [tasks.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md) references a requirement, acceptance criterion, or file boundary.\n\n**Metrics:**\n- Total Requirements: 18\n- Total Tasks: 37\n- Coverage %: 100%\n- Ambiguity Count: 1\n- Duplication Count: 1\n- Critical Issues Count: 0\n\n### Next Actions\n- No critical blockers were found, so implementation may proceed.\n- Before final sign-off, tighten the error-code contract and add one short sentence documenting the exact half-up cent boundary rule.\n- Recommended refinement commands:\n  - Run /speckit-specify to refine the error vocabulary and rounding language\n  - Run /speckit-plan only if the architecture changes after the clarification\n  - Proceed to /speckit-implement once the spec clarifies the two low/medium items above\n\n### Extension Hooks\nNo after_analyze hooks were configured because no [.specify/extensions.yml](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/extensions.yml) file exists in the feature workspace.\n\nWould you like me to suggest concrete remediation edits for the top N issues?",
+          "isTrusted": false,
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "agent": {
+        "id": "agent-host-copilotcli",
+        "name": "agent-host-copilotcli",
+        "fullName": "Copilot",
+        "description": "Copilot SDK agent running in the local agent host process",
+        "extensionId": {
+          "value": "vscode.agent-host",
+          "_lower": "vscode.agent-host"
+        },
+        "extensionPublisherId": "vscode",
+        "extensionDisplayName": "Agent Host",
+        "isDefault": false,
+        "isDynamic": true,
+        "isCore": true,
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          }
+        },
+        "slashCommands": [],
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask"
+        ],
+        "disambiguation": []
+      },
+      "timestamp": 1794598619239,
+      "modelId": "agent-host-copilotcli:auto",
+      "modelConfiguration": {
+        "tier": "balance",
+        "vscode.modelConfiguration.tier.source": "default"
+      },
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "responseId": "response_b4e2d553-d102-4c1b-935a-e7cb48dcd250",
+      "result": {
+        "timings": {
+          "firstProgress": 6827,
+          "totalElapsed": 212926
+        },
+        "details": "Auto (mai-code-1.1-flash) • 1.7 credits",
+        "metadata": {
+          "resolvedModel": "mai-code-1.1-flash"
+        }
+      },
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1794598832367
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "responseTimestamp": 1794598619239,
+      "timeSpentWaiting": 140527,
+      "promptTokens": 33462,
+      "completionTokens": 8970,
+      "lastCallCompletionTokens": 2538,
+      "promptTokenDetails": [
+        {
+          "category": "System",
+          "label": "System prompt",
+          "percentageOfPrompt": 23
+        },
+        {
+          "category": "User Context",
+          "label": "Skills",
+          "percentageOfPrompt": 8
+        },
+        {
+          "category": "User Context",
+          "label": "Tool Results",
+          "percentageOfPrompt": 27
+        },
+        {
+          "category": "System",
+          "label": "Tool Definitions",
+          "percentageOfPrompt": 25
+        },
+        {
+          "category": "User Context",
+          "label": "Messages",
+          "percentageOfPrompt": 17
+        }
+      ],
+      "copilotCredits": 1.697028,
+      "modelTotals": [
+        {
+          "model": "mai-code-1.1-flash",
+          "inputTokens": 184017,
+          "cachedTokens": 169984,
+          "outputTokens": 8970
+        }
+      ],
+      "sessionCopilotCredits": 1.697028,
+      "sessionCopilotCreditsStatus": "complete",
+      "elapsedMs": 72601
+    },
+    {
+      "requestId": "request_c3b55cc2-9614-4ec1-bc79-cbc96f596562",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 3
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 4
+            },
+            "text": "yes",
+            "kind": "text"
+          }
+        ],
+        "text": "yes"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "autoModeResolution",
+          "resolved": {
+            "id": "mai-code-1.1-flash",
+            "name": "mai-code-1.1-flash",
+            "reason": "Auto selected MAI-Code-1.1-Flash because it was the best choice out of the models available in your plan."
+          }
+        },
+        {
+          "value": "Absolutely — here are concrete remediation edits for the top 3 issues, without applying them yet.\n\nI have not changed any files; this is a proposed wording patch only.\n\n1) A1 — Consolidate duplicate zero-rate/final-adjustment language\n\nSuggested remediation:\n- Keep one canonical statement in [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md) and reference it from [tasks.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/tasks.md).\n- The duplicate language currently appears in story text, FRs, and task descriptions.\n\nSuggested replacement text for the relevant spec section:\n- In User Story 2, after the existing description, add:\n  “The final scheduled instalment may differ from the regular EMI only when rounding or residual cents require adjustment. In that case, the final payment equals the remaining opening balance plus that month’s interest, and the final balance is exactly 0.00.”\n\nAnd in the functional requirements:\n- Replace repeated “final adjusted instalment” wording with a single canonical requirement:\n  “FR-010: The final schedule instalment MUST be adjusted only when required to settle the remaining opening balance plus that period’s interest; the final principal MUST equal the remaining balance, and the final balance MUST be exactly 0.00.”\n\nSuggested task cleanup:\n- Reduce repeated task wording so tasks point to FR-010 instead of restating the same rule in multiple places.\n- Example change:\n  - T020: “Add AC-005 final-balance acceptance test … covering zero-rate and residual-payment settlement logic from FR-010 and FR-012”\n  - Keep this, but remove repeated explanatory sentences from earlier duplicate task text.\n\n2) A2 — Define a stable error-code vocabulary\n\nSuggested remediation:\n- Add a short “Error Contract” subsection to [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), near FR-004 and/or the assumptions section.\n\nSuggested text:\n- “Error codes are stable identifiers for the invalid input category. The minimum required set is:\n  - invalid_input\n  - invalid_principal\n  - invalid_rate\n  - invalid_tenure\n  - invalid_args\n  Implementations may add additional codes only if they remain stable and are documented in the CLI contract.”\n- “Each error object MUST contain exactly two public fields: code and message, both non-empty strings.”\n\nThen align the requirement wording:\n- Update FR-004 to explicitly say:\n  “The command MUST return one JSON object with exactly the top-level error field, whose value contains exactly the code and message fields. The code MUST be a stable error identifier and the message MUST identify the invalid input or constraint.”\n\nThis makes the contract testable and prevents implementations from inventing incompatible codes.\n\n3) A3 — Document the exact half-up cent rule in the spec itself\n\nSuggested remediation:\n- Add a normative statement to [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), ideally under FR-009.\n\nSuggested text:\n- “FR-009: Monetary values MUST be rounded to two decimal places using round-half-up at each defined calculation boundary. For any value x, round-half-up to cents means:\n  - compute the integer cents quotient and remainder;\n  - if 2 × remainder ≥ denominator, increment the cents value by 1;\n  - otherwise, keep the lower cent value.\n  This rule applies to the regular EMI, each period’s interest, and the final adjusted instalment.”\n\nThis makes the rule part of the spec instead of only the implementation plan in [plan.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/plan.md), which reduces drift risk and improves compliance with the constitution in [constitution.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/.specify/memory/constitution.md).\n\nIf you want, I can next turn these into a ready-to-apply patch format for:\n- a direct spec-only edit,\n- a spec + tasks edit,\n- or a minimal “proposal diff” you can review before accepting any actual file changes.",
+          "isTrusted": false,
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "agent": {
+        "id": "agent-host-copilotcli",
+        "name": "agent-host-copilotcli",
+        "fullName": "Copilot",
+        "description": "Copilot SDK agent running in the local agent host process",
+        "extensionId": {
+          "value": "vscode.agent-host",
+          "_lower": "vscode.agent-host"
+        },
+        "extensionPublisherId": "vscode",
+        "extensionDisplayName": "Agent Host",
+        "isDefault": false,
+        "isDynamic": true,
+        "isCore": true,
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          }
+        },
+        "slashCommands": [],
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask"
+        ],
+        "disambiguation": []
+      },
+      "timestamp": 1794598891122,
+      "modelId": "agent-host-copilotcli:auto",
+      "modelConfiguration": {
+        "tier": "balance",
+        "vscode.modelConfiguration.tier.source": "default"
+      },
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "responseId": "response_5fb41a8b-1072-4dfe-83cc-8c2a7aaecde9",
+      "result": {
+        "timings": {
+          "firstProgress": 7513,
+          "totalElapsed": 12803
+        },
+        "details": "Auto (mai-code-1.1-flash) • 0.5 credits",
+        "metadata": {
+          "resolvedModel": "mai-code-1.1-flash"
+        }
+      },
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1794598904052
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "responseTimestamp": 1794598891122,
+      "timeSpentWaiting": 0,
+      "promptTokens": 29336,
+      "completionTokens": 1353,
+      "lastCallCompletionTokens": 1353,
+      "copilotCredits": 0.46108,
+      "modelTotals": [
+        {
+          "model": "mai-code-1.1-flash",
+          "inputTokens": 29336,
+          "cachedTokens": 16000,
+          "outputTokens": 1353
+        }
+      ],
+      "sessionCopilotCredits": 1.697028,
+      "sessionCopilotCreditsStatus": "complete",
+      "elapsedMs": 12930
+    },
+    {
+      "requestId": "request_0b9d1ec4-67d5-47fa-8ec9-eb4910befffd",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 82
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 83
+            },
+            "text": "a minimal “proposal diff” you can review before accepting any actual file changes.",
+            "kind": "text"
+          }
+        ],
+        "text": "a minimal “proposal diff” you can review before accepting any actual file changes."
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "autoModeResolution"
+        },
+        {
+          "kind": "thinking",
+          "value": "**Creating a proposal diff**\n\nI need to provide a patch-like diff in markdown, but I shouldn't make any file changes yet. The user has asked for a minimal proposal diff to review before accepting actual changes. I'll create a textual diff suggestion, mentioning that nothing has been applied. Since it's a minimal diff, it will likely only be a small patch. I have enough context and will include diff snippets for the relevant files, indicating that these changes aren't applied yet.\n\n**Proposing a minimal patch**\n\nI could propose a patch for spec.md by adding an \"Error Contract\" subsection or modifying FR-004 to include a mention of stable codes. Additionally, I might add a sentence to FR-009 for the round-half-up definition. Since the user requested a minimal diff, I’m considering just fixing two low to medium issues in spec.md without changing tasks.md. I need to keep the changes brief, including the modifications to FR-004 and FR-009. This should create a clear yet concise proposal for the user!\n\n**Crafting a unified diff**\n\nI see that this addresses A2 and A3, and I can leave A1 as \"optional follow-up cleanup in tasks.md.\" If I want to keep the diff minimal, I could include a line in tasks.md to change \"T020...\" to refer only to FR-010 and FR-012. But I could also choose to skip that. I'm putting together a unified diff excerpt for spec.md to clearly show the suggested change for FR-004, aiming for a concise yet effective proposal!\n\n**Detailing the error and rounding requirements**\n\nThe `code` must be a stable error identifier relating to the invalid input category, and the `message` must indicate the specific invalid value or constraint. Both of these fields should be non-empty strings, and the process must exit with status 1. \n\nFor **FR-009**, I want to specify that the system must round monetary amounts to two decimal places using round-half-up. I’m focusing on how to clarify the rounding method so it’s easier to follow, while keeping the proposed changes clear!\n\n**Defining input errors and error contracts**\n\nThe system must calculate the regular EMI from unrounded values, round it to cents, and determine each period's interest before calculating the principal. \n\nFor the **Input error** section, I suggest changing it to specify that we need a stable machine-readable error code along with a human-readable message for invalid commands. I’m also adding an \"Error Contract\" section to ensure valid error responses have a clear structure with specific fields like `code` and `message`. \n\nI’ll keep the proposal focused on spec.md since the user requested a minimal diff and will phrase it to indicate this is a proposal only, not applied yet.",
+          "id": "9fbe3a69-70b9-40fa-b9a6-b3201cbe2408",
+          "reasoningDurationMs": 7351,
+          "generatedTitle": "Created proposal diff and defined error requirements"
+        },
+        {
+          "value": "Here is a minimal proposal diff for review only; I have not applied it.\n\n[spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)\n\n```diff\n--- a/specs/001-loan-emi-calculator/spec.md\n+++ b/specs/001-loan-emi-calculator/spec.md\n@@\n- **FR-004**: For invalid input, the command MUST write one JSON object to stdout with exactly the top-level `error` field and an error object with exactly the `code` and `message` fields; both error fields MUST be non-empty strings, and the process MUST exit with status 1.\n+ **FR-004**: For invalid input, the command MUST write one JSON object to stdout with exactly the top-level `error` field and an error object with exactly the `code` and `message` fields. The `code` MUST be a stable error identifier for the invalid input category, and `message` MUST identify the specific invalid value or constraint; both error fields MUST be non-empty strings, and the process MUST exit with status 1.\n\n@@\n- **FR-009**: The system MUST round monetary amounts to two decimal places using round-half-up at the defined monetary calculation boundaries. It MUST calculate the regular EMI from unrounded values, round it to cents, and calculate each period's interest to cents before deriving that period's principal.\n+ **FR-009**: The system MUST round monetary amounts to two decimal places using round-half-up at the defined monetary calculation boundaries. For any value, round-half-up means: compute the integer cents quotient and remainder; if 2 × remainder ≥ denominator, increment the cents value by 1; otherwise keep the lower cent value. It MUST calculate the regular EMI from unrounded values, round it to cents, and calculate each period's interest to cents before deriving that period's principal.\n\n@@\n- **Input error**: A machine-readable code and human-readable message describing invalid command input.\n+ **Input error**: A stable machine-readable error code and human-readable message describing the invalid command input or constraint.\n+\n+### Error Contract\n+\n+- Valid error responses MUST contain exactly one top-level `error` object.\n+- The `error` object MUST contain exactly the fields `code` and `message`.\n+- `code` MUST be a stable identifier such as `invalid_input`, `invalid_principal`, `invalid_rate`, or `invalid_tenure`.\n+- `message` MUST be non-empty and describe the invalid input or boundary violation.\n```\n\nThis is intentionally narrow:\n- clarifies the error-code contract (A2),\n- makes half-up rounding explicit in the spec itself (A3),\n- leaves the rest of the feature unchanged.\n\nIf this looks good, I can apply it in a follow-up step.",
+          "isTrusted": false,
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "agent": {
+        "id": "agent-host-copilotcli",
+        "name": "agent-host-copilotcli",
+        "fullName": "Copilot",
+        "description": "Copilot SDK agent running in the local agent host process",
+        "extensionId": {
+          "value": "vscode.agent-host",
+          "_lower": "vscode.agent-host"
+        },
+        "extensionPublisherId": "vscode",
+        "extensionDisplayName": "Agent Host",
+        "isDefault": false,
+        "isDynamic": true,
+        "isCore": true,
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          }
+        },
+        "slashCommands": [],
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask"
+        ],
+        "disambiguation": []
+      },
+      "timestamp": 1794598958234,
+      "modelId": "agent-host-copilotcli:auto",
+      "modelConfiguration": {
+        "tier": "balance",
+        "vscode.modelConfiguration.tier.source": "default"
+      },
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "responseId": "response_bc0d9e01-150e-459d-a029-d428818bece9",
+      "result": {
+        "timings": {
+          "firstProgress": 4478,
+          "totalElapsed": 12464
+        },
+        "details": "Auto (mai-code-1.1-flash) • 0.3 credits"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-1427b95e-1e2a-410c-ba99-c68a57967ade"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1794598970779
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "responseTimestamp": 1794598958234,
+      "timeSpentWaiting": 0,
+      "promptTokens": 30350,
+      "completionTokens": 1668,
+      "lastCallCompletionTokens": 1668,
+      "copilotCredits": 0.279544,
+      "modelTotals": [
+        {
+          "model": "mai-code-1.1-flash",
+          "inputTokens": 30350,
+          "cachedTokens": 29312,
+          "outputTokens": 1668
+        }
+      ],
+      "sessionCopilotCredits": 2.158108,
+      "sessionCopilotCreditsStatus": "complete",
+      "elapsedMs": 12545
+    },
+    {
+      "requestId": "request_7abbb1ec-1651-4c94-8259-72d4cc42023c",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 3
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 4
+            },
+            "text": "yes",
+            "kind": "text"
+          }
+        ],
+        "text": "yes"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "autoModeResolution"
+        },
+        {
+          "kind": "thinking",
+          "value": "**Ensuring exact context**\n\nI think I should focus on using a view to narrow down the relevant range, making sure to capture the exact string. I need to read the targeted section of spec.md around FR-004 and FR-009, along with any key entities, to ensure I have the complete context. It looks like I'm aiming for a range of about 90-120, but since previous content was partial, getting the exact text is so important. So, I'll view it specifically!",
+          "id": "188f5895-547e-4482-a562-cdd5749b4dde",
+          "reasoningDurationMs": 860,
+          "generatedTitle": "Ensuring exact context"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), lines 80 to 140",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\spec.md\",\n  \"view_range\": [\n    80,\n    140\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n@@ -80,61 +80,61 @@\n \n ### Non-Functional Requirements\n \n - **NFR-001**: For identical valid inputs, the command MUST return identical JSON values and schedule entries on every run.\n - **NFR-002**: A valid calculation, including a 480-month schedule, MUST complete within one second on a typical supported development machine.\n - **NFR-003**: The command MUST distinguish success from invalid input through process exit status: 0 for a valid calculation and 1 for invalid input.\n - **NFR-004**: Monetary output MUST use two-decimal-place precision and MUST NOT leave a nonzero final balance or a negative balance after the final instalment.\n \n ### Key Entities\n \n - **Loan inputs**: The principal amount, annual percentage rate, and whole-month tenure used to calculate repayment.\n - **Instalment**: A monthly payment consisting of an amount applied to interest and an amount applied to principal, with the remaining balance after payment.\n - **Amortization schedule**: The ordered sequence of monthly instalments that accounts for the complete loan repayment.\n - **Calculation result**: The regular EMI, aggregate interest, aggregate payments, and amortization schedule for one set of loan inputs.\n - **Input error**: A machine-readable code and human-readable message describing invalid command input.\n \n ## Success Criteria *(mandatory)*\n \n ### Measurable Outcomes and Binary Acceptance Criteria\n \n - **AC-001**: Given valid inputs at each inclusive minimum and maximum, the command exits 0 and returns a schedule with exactly the requested number of entries; pass only if every boundary case is accepted.\n - **AC-002**: Given principal 1000, rate 0, and tenure 3, the result reports regular `emi` 333.33, `total_interest` 0.00, `total_payment` 1000.00, schedule payments 333.33, 333.33, and 333.34, and final balance 0.00; pass only if every value matches.\n - **AC-003**: Given principal 120000, rate 12, and tenure 12, the command exits 0 and returns exactly 12 ordered schedule entries, each with the five required fields; pass only if the schedule is complete and internally reconciles.\n - **AC-004**: Given each invalid class—missing input, extra input, malformed numeric input, out-of-range principal, out-of-range rate, out-of-range tenure, and fractional tenure—the command exits 1 and emits valid JSON with exactly the specified error fields; pass only if every class satisfies both conditions.\n - **AC-005**: For every valid loan in the supported ranges, the sum of schedule interest equals `total_interest`, the sum of schedule payments equals `total_payment`, and the final balance is exactly 0.00 with no negative schedule balance; pass only if all three invariants hold.\n - **AC-006**: For every monetary half-cent tie tested, rounding is half-up; values just below and above the tie round to the adjacent expected cent values; pass only if all three cases match.\n - **AC-007**: A valid 480-month calculation completes in under one second on a typical supported development machine; pass only if elapsed time is below the limit and a complete schedule is returned.\n - **AC-008**: For valid and invalid invocations, stdout contains only one valid JSON value and no non-JSON text; pass only if both response types parse as JSON with the required shape.\n \n ## Assumptions\n \n - The command receives exactly three positional arguments: principal, annual rate, and tenure; option flags are not part of this version.\n - Principal is a positive monetary amount with no more than two fractional decimal digits. The annual rate may be a finite decimal percentage; tenure must be a whole-number decimal integer.\n - The annual percentage rate is nominal and divided by 12 for each monthly period; payments are made monthly in arrears against a reducing balance.\n - Monetary input and intermediate calculation values are retained without premature rounding; amounts are rounded half-up to cents at the calculation boundaries defined in FR-009.\n - The summary `emi` is the regular instalment; if rounding requires a final adjustment, that adjusted payment is reported in the final schedule entry and included in `total_payment`.\n - Monetary values in JSON are numbers; JSON numeric formatting need not preserve trailing zero characters, while values represent amounts rounded to cents.\n - Error codes are stable identifiers for the error category and messages identify the invalid input or constraint; exact wording is not prescribed.\n - Performance is evaluated on a typical supported development machine without a fixed hardware specification.\n \n ## Unresolved Questions\n \n - None blocking specification. The argument convention, principal precision, nominal monthly rate treatment, and error-message flexibility are set as explicit defaults above and can be revised during clarification if needed.\n \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_pv9aDuOvlKeNiL62YEGDLqej",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), lines 30 to 80",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\spec.md\",\n  \"view_range\": [\n    30,\n    80\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n@@ -30,51 +30,51 @@\n **Why this priority**: Zero interest is an explicitly required case, and exact settlement prevents a residual balance caused by rounding.\n \n **Independent Test**: Calculate principal 1000 at zero percent for 3 months; verify zero interest, a regular EMI of 333.33, and a final schedule instalment of 333.34 with balance 0.00.\n \n **Acceptance Scenarios**:\n \n 1. **Given** principal 1000, annual rate 0 percent, and tenure 3 months, **When** the borrower runs the calculator, **Then** total interest is 0.00, total payment is 1000.00, and the final balance is 0.00.\n 2. **Given** any valid loan whose rounded regular instalments leave a cents-level residual, **When** the final schedule entry is produced, **Then** only the final instalment is adjusted by the remaining amount due and its balance is exactly 0.00.\n \n ### User Story 3 - Receive actionable input errors (Priority: P1)\n \n A borrower who provides malformed or out-of-range values receives a structured error instead of a misleading calculation.\n \n **Why this priority**: Financial results must not be produced from invalid values; the caller must be able to detect failure reliably.\n \n **Independent Test**: Invoke the command with each invalid field and verify its exit status and JSON error shape.\n \n **Acceptance Scenarios**:\n \n 1. **Given** a principal, rate, or tenure outside its allowed range or format, **When** the borrower runs the calculator, **Then** the process exits with status 1 and stdout contains one JSON object with an `error` object containing non-empty `code` and `message` fields.\n 2. **Given** valid values at all inclusive range boundaries, **When** the borrower runs the calculator, **Then** the input is accepted and a schedule of the requested length is returned.\n \n ### Edge Cases\n \n - Principal is exactly 1 or 100,000,000; annual rate is exactly 0 or 50; tenure is exactly 1 or 480 months. Each inclusive boundary is accepted.\n - A value just outside any range, a nonnumeric value, missing or extra positional arguments, or a fractional tenure is rejected with a structured error and exit status 1.\n - Zero interest is calculated without dividing by the interest rate.\n - The final instalment may differ from the regular EMI due to rounding and must settle the remaining balance without a negative balance.\n - A one-month tenure produces one schedule entry, and its final balance is exactly 0.00.\n - Calculations at half-cent ties use round-half-up; values immediately above and below ties round consistently.\n - Output remains valid JSON when errors occur; diagnostic or explanatory text does not appear on stdout.\n \n ## Requirements *(mandatory)*\n \n ### Functional Requirements\n \n - **FR-001**: The command MUST accept exactly three positional inputs, in this order: principal, annual interest rate expressed as a percentage, and tenure in whole months.\n - **FR-002**: The system MUST accept a principal from 1 through 100,000,000 inclusive, an annual rate from 0 through 50 inclusive, and an integer tenure from 1 through 480 inclusive.\n - **FR-003**: The system MUST reject missing or extra inputs, malformed or non-finite numeric values, and values outside the specified ranges before calculating a result.\n - **FR-004**: For invalid input, the command MUST write one JSON object to stdout with exactly the top-level `error` field and an error object with exactly the `code` and `message` fields; both error fields MUST be non-empty strings, and the process MUST exit with status 1.\n - **FR-005**: For valid input, the command MUST write one JSON object to stdout with exactly the fields `emi`, `total_interest`, `total_payment`, and `schedule`, and MUST exit with status 0.\n - **FR-006**: The system MUST calculate a level-payment loan using the annual nominal rate divided into 12 equal monthly periods; at a zero annual rate it MUST divide principal evenly across the tenure before monetary rounding.\n - **FR-007**: The schedule MUST contain exactly one entry per month, in ascending month order from 1 through the requested tenure. Each entry MUST contain exactly the numeric fields `month`, `emi`, `interest`, `principal`, and `balance`.\n - **FR-008**: For each schedule entry, the system MUST calculate interest from the opening balance and monthly rate, allocate the remaining instalment to principal, and reduce the balance by the principal paid.\n - **FR-009**: The system MUST round monetary amounts to two decimal places using round-half-up at the defined monetary calculation boundaries. It MUST calculate the regular EMI from unrounded values, round it to cents, and calculate each period's interest to cents before deriving that period's principal.\n - **FR-010**: The final schedule instalment MUST be adjusted to pay the remaining opening balance and that period's interest; the final principal MUST equal the remaining balance and the final balance MUST be exactly 0.00.\n - **FR-011**: The top-level `emi` MUST report the regular rounded instalment; each schedule entry's `emi` MUST report the actual payment for that month, including any final-instalment adjustment.\n - **FR-012**: `total_interest` MUST equal the sum of the schedule's monthly interest values, and `total_payment` MUST equal the sum of the actual schedule instalments, including the adjusted final instalment.\n - **FR-013**: Successful and error responses MUST be machine-readable JSON on stdout with no other stdout content. All monetary values MUST be JSON numbers representing amounts rounded to cents.\n - **FR-014**: The system MUST NOT provide a graphical user interface, database persistence, currency conversion, prepayment support, or variable-rate calculations.\n \n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_wO129q4NlTo6eg5PlAGLEfon",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "thinking",
+          "value": "**Updating the spec document**\n\nI’m considering patching specific sections of the document and adding an \"Error Contract\" after the \"Key Entities\" section. I should keep edits minimal, but it might be a good idea to place the \"Error Contract\" section before the \"Success Criteria.\" I'll use the exact text from the proposal to make sure everything is accurate. It's essential to ensure that we don’t modify any tasks while making these updates. Let's get started on patching spec.md!",
+          "id": "9c925b4b-7dc3-447f-ac1f-d677a5af5c1f",
+          "reasoningDurationMs": 880,
+          "generatedTitle": "Updating the spec document"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "presentation": "hidden",
+          "invocationMessage": {
+            "value": "Edit [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Edit [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_nWu1DF8NquLA2OT8N9px6D34",
+          "toolId": "edit",
+          "summary": {
+            "kind": "edit",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "external": "file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "externalEdit",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "scheme": "file"
+          },
+          "editKind": "edit",
+          "beforeContentUri": {
+            "$mid": 1,
+            "external": "vscode-agent-host://local/d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md?_ah%3DeyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX25XdTFERjhOcXVMQTJPVDhOOXB4NkQzNFwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImJlZm9yZVwifSIsImNvbnRlbnRSZWYiOnRydWUsImZpbGVVcmkiOiJmaWxlOi8vL2QlM0Eva3BteXJlcG8vQUlTRExDLUFzc2lnbm1lbnQxL1BhcnQtMUEvc3BlY3MvMDAxLWxvYW4tZW1pLWNhbGN1bGF0b3Ivc3BlYy5tZCJ9",
+            "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "scheme": "vscode-agent-host",
+            "authority": "local",
+            "query": "_ah=eyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX25XdTFERjhOcXVMQTJPVDhOOXB4NkQzNFwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImJlZm9yZVwifSIsImNvbnRlbnRSZWYiOnRydWUsImZpbGVVcmkiOiJmaWxlOi8vL2QlM0Eva3BteXJlcG8vQUlTRExDLUFzc2lnbm1lbnQxL1BhcnQtMUEvc3BlY3MvMDAxLWxvYW4tZW1pLWNhbGN1bGF0b3Ivc3BlYy5tZCJ9"
+          },
+          "afterContentUri": {
+            "$mid": 1,
+            "external": "vscode-agent-host://local/d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md?_ah%3DeyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX25XdTFERjhOcXVMQTJPVDhOOXB4NkQzNFwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImFmdGVyXCJ9IiwiY29udGVudFJlZiI6dHJ1ZSwiZmlsZVVyaSI6ImZpbGU6Ly8vZCUzQS9rcG15cmVwby9BSVNETEMtQXNzaWdubWVudDEvUGFydC0xQS9zcGVjcy8wMDEtbG9hbi1lbWktY2FsY3VsYXRvci9zcGVjLm1kIn0",
+            "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "scheme": "vscode-agent-host",
+            "authority": "local",
+            "query": "_ah=eyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX25XdTFERjhOcXVMQTJPVDhOOXB4NkQzNFwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImFmdGVyXCJ9IiwiY29udGVudFJlZiI6dHJ1ZSwiZmlsZVVyaSI6ImZpbGU6Ly8vZCUzQS9rcG15cmVwby9BSVNETEMtQXNzaWdubWVudDEvUGFydC0xQS9zcGVjcy8wMDEtbG9hbi1lbWktY2FsY3VsYXRvci9zcGVjLm1kIn0"
+          },
+          "diff": {
+            "added": 2,
+            "removed": 2
+          },
+          "undoStopId": "call_nWu1DF8NquLA2OT8N9px6D34"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "presentation": "hidden",
+          "invocationMessage": {
+            "value": "Edit [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Edit [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "call_h59Zokqo7sv1Wm6RfzQvs6gB",
+          "toolId": "edit",
+          "summary": {
+            "kind": "edit",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "external": "file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "externalEdit",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "scheme": "file"
+          },
+          "editKind": "edit",
+          "beforeContentUri": {
+            "$mid": 1,
+            "external": "vscode-agent-host://local/d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md?_ah%3DeyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX2g1OVpva3FvN3N2MVdtNlJmelF2czZnQlwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImJlZm9yZVwifSIsImNvbnRlbnRSZWYiOnRydWUsImZpbGVVcmkiOiJmaWxlOi8vL2QlM0Eva3BteXJlcG8vQUlTRExDLUFzc2lnbm1lbnQxL1BhcnQtMUEvc3BlY3MvMDAxLWxvYW4tZW1pLWNhbGN1bGF0b3Ivc3BlYy5tZCJ9",
+            "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "scheme": "vscode-agent-host",
+            "authority": "local",
+            "query": "_ah=eyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX2g1OVpva3FvN3N2MVdtNlJmelF2czZnQlwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImJlZm9yZVwifSIsImNvbnRlbnRSZWYiOnRydWUsImZpbGVVcmkiOiJmaWxlOi8vL2QlM0Eva3BteXJlcG8vQUlTRExDLUFzc2lnbm1lbnQxL1BhcnQtMUEvc3BlY3MvMDAxLWxvYW4tZW1pLWNhbGN1bGF0b3Ivc3BlYy5tZCJ9"
+          },
+          "afterContentUri": {
+            "$mid": 1,
+            "external": "vscode-agent-host://local/d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md?_ah%3DeyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX2g1OVpva3FvN3N2MVdtNlJmelF2czZnQlwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImFmdGVyXCJ9IiwiY29udGVudFJlZiI6dHJ1ZSwiZmlsZVVyaSI6ImZpbGU6Ly8vZCUzQS9rcG15cmVwby9BSVNETEMtQXNzaWdubWVudDEvUGFydC0xQS9zcGVjcy8wMDEtbG9hbi1lbWktY2FsY3VsYXRvci9zcGVjLm1kIn0",
+            "path": "/d:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+            "scheme": "vscode-agent-host",
+            "authority": "local",
+            "query": "_ah=eyJzY2hlbWUiOiJzZXNzaW9uLWRiIiwicXVlcnkiOiJ7XCJzZXNzaW9uVXJpXCI6XCJhaHAtc2Vzc2lvbjovODRhMzYzNTktOGExOC00ZmNhLTg0NzYtYTQ2ODRkZWZlMmE3XCIsXCJ0b29sQ2FsbElkXCI6XCJjYWxsX2g1OVpva3FvN3N2MVdtNlJmelF2czZnQlwiLFwiZmlsZVBhdGhcIjpcIkQ6XFxcXGtwbXlyZXBvXFxcXEFJU0RMQy1Bc3NpZ25tZW50MVxcXFxQYXJ0LTFBXFxcXHNwZWNzXFxcXDAwMS1sb2FuLWVtaS1jYWxjdWxhdG9yXFxcXHNwZWMubWRcIixcInBhcnRcIjpcImFmdGVyXCJ9IiwiY29udGVudFJlZiI6dHJ1ZSwiZmlsZVVyaSI6ImZpbGU6Ly8vZCUzQS9rcG15cmVwby9BSVNETEMtQXNzaWdubWVudDEvUGFydC0xQS9zcGVjcy8wMDEtbG9hbi1lbWktY2FsY3VsYXRvci9zcGVjLm1kIn0"
+          },
+          "diff": {
+            "added": 8,
+            "removed": 1
+          },
+          "undoStopId": "call_h59Zokqo7sv1Wm6RfzQvs6gB"
+        },
+        {
+          "kind": "thinking",
+          "value": "**Validating changes**\n\nI need to think about whether I should validate the changes. Since this is just a documentation update, I suppose tests aren't necessary. However, it feels like it'd be a good idea to view the specific range that has changed to confirm everything looks right. Let’s read through that targeted range and ensure that all adjustments have been accurately captured. It’s important to be thorough, even with seemingly minor updates!",
+          "id": "74c5578f-2202-4ac0-8fe0-5ed6e5e77c4f",
+          "reasoningDurationMs": 857,
+          "generatedTitle": "Validating changes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///d%3A/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md), lines 58 to 120",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "resultDetails": {
+            "input": "{\n  \"path\": \"D:\\\\kpmyrepo\\\\AISDLC-Assignment1\\\\Part-1A\\\\specs\\\\001-loan-emi-calculator\\\\spec.md\",\n  \"view_range\": [\n    58,\n    120\n  ]\n}",
+            "inputLanguage": "json",
+            "output": [
+              {
+                "type": "embed",
+                "value": "\ndiff --git a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\nindex 0000000..0000000 100644\n--- a/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n+++ b/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md\n@@ -58,63 +58,63 @@\n - A one-month tenure produces one schedule entry, and its final balance is exactly 0.00.\n - Calculations at half-cent ties use round-half-up; values immediately above and below ties round consistently.\n - Output remains valid JSON when errors occur; diagnostic or explanatory text does not appear on stdout.\n \n ## Requirements *(mandatory)*\n \n ### Functional Requirements\n \n - **FR-001**: The command MUST accept exactly three positional inputs, in this order: principal, annual interest rate expressed as a percentage, and tenure in whole months.\n - **FR-002**: The system MUST accept a principal from 1 through 100,000,000 inclusive, an annual rate from 0 through 50 inclusive, and an integer tenure from 1 through 480 inclusive.\n - **FR-003**: The system MUST reject missing or extra inputs, malformed or non-finite numeric values, and values outside the specified ranges before calculating a result.\n - **FR-004**: For invalid input, the command MUST write one JSON object to stdout with exactly the top-level `error` field and an error object with exactly the `code` and `message` fields. The `code` MUST be a stable error identifier for the invalid input category, and `message` MUST identify the specific invalid value or constraint; both error fields MUST be non-empty strings, and the process MUST exit with status 1.\n - **FR-005**: For valid input, the command MUST write one JSON object to stdout with exactly the fields `emi`, `total_interest`, `total_payment`, and `schedule`, and MUST exit with status 0.\n - **FR-006**: The system MUST calculate a level-payment loan using the annual nominal rate divided into 12 equal monthly periods; at a zero annual rate it MUST divide principal evenly across the tenure before monetary rounding.\n - **FR-007**: The schedule MUST contain exactly one entry per month, in ascending month order from 1 through the requested tenure. Each entry MUST contain exactly the numeric fields `month`, `emi`, `interest`, `principal`, and `balance`.\n - **FR-008**: For each schedule entry, the system MUST calculate interest from the opening balance and monthly rate, allocate the remaining instalment to principal, and reduce the balance by the principal paid.\n - **FR-009**: The system MUST round monetary amounts to two decimal places using round-half-up at the defined monetary calculation boundaries. For any value, round-half-up means: compute the integer cents quotient and remainder; if 2 × remainder ≥ denominator, increment the cents value by 1; otherwise keep the lower cent value. It MUST calculate the regular EMI from unrounded values, round it to cents, and calculate each period's interest to cents before deriving that period's principal.\n - **FR-010**: The final schedule instalment MUST be adjusted to pay the remaining opening balance and that period's interest; the final principal MUST equal the remaining balance and the final balance MUST be exactly 0.00.\n - **FR-011**: The top-level `emi` MUST report the regular rounded instalment; each schedule entry's `emi` MUST report the actual payment for that month, including any final-instalment adjustment.\n - **FR-012**: `total_interest` MUST equal the sum of the schedule's monthly interest values, and `total_payment` MUST equal the sum of the actual schedule instalments, including the adjusted final instalment.\n - **FR-013**: Successful and error responses MUST be machine-readable JSON on stdout with no other stdout content. All monetary values MUST be JSON numbers representing amounts rounded to cents.\n - **FR-014**: The system MUST NOT provide a graphical user interface, database persistence, currency conversion, prepayment support, or variable-rate calculations.\n \n ### Non-Functional Requirements\n \n - **NFR-001**: For identical valid inputs, the command MUST return identical JSON values and schedule entries on every run.\n - **NFR-002**: A valid calculation, including a 480-month schedule, MUST complete within one second on a typical supported development machine.\n - **NFR-003**: The command MUST distinguish success from invalid input through process exit status: 0 for a valid calculation and 1 for invalid input.\n - **NFR-004**: Monetary output MUST use two-decimal-place precision and MUST NOT leave a nonzero final balance or a negative balance after the final instalment.\n \n ### Key Entities\n \n - **Loan inputs**: The principal amount, annual percentage rate, and whole-month tenure used to calculate repayment.\n - **Instalment**: A monthly payment consisting of an amount applied to interest and an amount applied to principal, with the remaining balance after payment.\n - **Amortization schedule**: The ordered sequence of monthly instalments that accounts for the complete loan repayment.\n - **Calculation result**: The regular EMI, aggregate interest, aggregate payments, and amortization schedule for one set of loan inputs.\n - **Input error**: A stable machine-readable error code and human-readable message describing the invalid command input or constraint.\n \n ### Error Contract\n \n - Valid error responses MUST contain exactly one top-level `error` object.\n - The `error` object MUST contain exactly the fields `code` and `message`.\n - `code` MUST be a stable identifier such as `invalid_input`, `invalid_principal`, `invalid_rate`, or `invalid_tenure`.\n - `message` MUST be non-empty and describe the invalid input or boundary violation.\n \n ## Success Criteria *(mandatory)*\n \n ### Measurable Outcomes and Binary Acceptance Criteria\n \n - **AC-001**: Given valid inputs at each inclusive minimum and maximum, the command exits 0 and returns a schedule with exactly the requested number of entries; pass only if every boundary case is accepted.\n - **AC-002**: Given principal 1000, rate 0, and tenure 3, the result reports regular `emi` 333.33, `total_interest` 0.00, `total_payment` 1000.00, schedule payments 333.33, 333.33, and 333.34, and final balance 0.00; pass only if every value matches.\n - **AC-003**: Given principal 120000, rate 12, and tenure 12, the command exits 0 and returns exactly 12 ordered schedule entries, each with the five required fields; pass only if the schedule is complete and internally reconciles.\n - **AC-004**: Given each invalid class—missing input, extra input, malformed numeric input, out-of-range principal, out-of-range rate, out-of-range tenure, and fractional tenure—the command exits 1 and emits valid JSON with exactly the specified error fields; pass only if every class satisfies both conditions.\n - **AC-005**: For every valid loan in the supported ranges, the sum of schedule interest equals `total_interest`, the sum of schedule payments equals `total_payment`, and the final balance is exactly 0.00 with no negative schedule balance; pass only if all three invariants hold.\n - **AC-006**: For every monetary half-cent tie tested, rounding is half-up; values just below and above the tie round to the adjacent expected cent values; pass only if all three cases match.\n - **AC-007**: A valid 480-month calculation completes in under one second on a typical supported development machine; pass only if elapsed time is below the limit and a complete schedule is returned.\n - **AC-008**: For valid and invalid invocations, stdout contains only one valid JSON value and no non-JSON text; pass only if both response types parse as JSON with the required shape.\n \n ## Assumptions\n \n - The command receives exactly three positional arguments: principal, annual rate, and tenure; option flags are not part of this version.\n - Principal is a positive monetary amount with no more than two fractional decimal digits. The annual rate may be a finite decimal percentage; tenure must be a whole-number decimal integer.\n - The annual percentage rate is nominal and divided by 12 for each monthly period; payments are made monthly in arrears against a reducing balance.\n",
+                "isText": true,
+                "mimeType": "text/plain"
+              }
+            ],
+            "isError": false
+          },
+          "toolCallId": "call_aUPImSjHQFsqQfbWMnL1qPP3",
+          "toolId": "view",
+          "summary": {
+            "kind": "read",
+            "resources": [
+              {
+                "uri": {
+                  "$mid": 1,
+                  "path": "/D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md",
+                  "scheme": "file"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "value": "Applied the proposed refinements to [spec.md](D:/kpmyrepo/AISDLC-Assignment1/Part-1A/specs/001-loan-emi-calculator/spec.md).\n\nUpdated:\n- FR-004 to define a stable error-code contract\n- FR-009 to explicitly state the round-half-up cent rule\n- the Key Entities section to reflect the clarified error semantics\n- a new Error Contract subsection so the CLI error shape is testable and consistent\n\nThis was a documentation-only change, so no build/test run was necessary.",
+          "isTrusted": false,
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "agent": {
+        "id": "agent-host-copilotcli",
+        "name": "agent-host-copilotcli",
+        "fullName": "Copilot",
+        "description": "Copilot SDK agent running in the local agent host process",
+        "extensionId": {
+          "value": "vscode.agent-host",
+          "_lower": "vscode.agent-host"
+        },
+        "extensionPublisherId": "vscode",
+        "extensionDisplayName": "Agent Host",
+        "isDefault": false,
+        "isDynamic": true,
+        "isCore": true,
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          }
+        },
+        "slashCommands": [],
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask"
+        ],
+        "disambiguation": []
+      },
+      "timestamp": 1794598992113,
+      "modelId": "agent-host-copilotcli:auto",
+      "modelConfiguration": {
+        "tier": "balance",
+        "vscode.modelConfiguration.tier.source": "default"
+      },
+      "modeInfo": {
+        "kind": "agent",
+        "isBuiltin": true,
+        "telemetryModeId": "agent",
+        "telemetryModeName": "agent",
+        "permissionLevel": "default"
+      },
+      "responseId": "response_d9031123-44ef-415a-a9f1-c8dc83aba402",
+      "result": {
+        "timings": {
+          "firstProgress": 4990,
+          "totalElapsed": 23626
+        },
+        "details": "Auto (mai-code-1.1-flash) • 0.7 credits"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1794599015841
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "responseTimestamp": 1794598992113,
+      "timeSpentWaiting": 0,
+      "promptTokens": 36664,
+      "completionTokens": 1917,
+      "lastCallCompletionTokens": 272,
+      "copilotCredits": 0.724908,
+      "modelTotals": [
+        {
+          "model": "mai-code-1.1-flash",
+          "inputTokens": 203073,
+          "cachedTokens": 198144,
+          "outputTokens": 1917
+        }
+      ],
+      "sessionCopilotCredits": 3.025632,
+      "sessionCopilotCreditsStatus": "complete",
+      "elapsedMs": 23728
+    }
+  ]
+}
