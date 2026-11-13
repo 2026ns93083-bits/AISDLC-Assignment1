@@ -1,0 +1,145 @@
+D:\kpmyrepo\AISDLC-Assignment1\Part-1A> mkdir .harness, evidence\initial-generation, evidence\final-generation, evidence\harness-results
+
+
+    Directory: D:\kpmyrepo\AISDLC-Assignment1\Part-1A
+
+
+Mode                 LastWriteTime         Length Name                                              
+----                 -------------         ------ ----                                              
+d-----        14-11-2026     01:30                .harness                                          
+
+
+    Directory: D:\kpmyrepo\AISDLC-Assignment1\Part-1A\evidence
+
+
+Mode                 LastWriteTime         Length Name                                              
+----                 -------------         ------ ----                                              
+d-----        14-11-2026     01:30                initial-generation                                
+d-----        14-11-2026     01:30                final-generation                                  
+d-----        14-11-2026     01:30                harness-results                                   
+
+
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git add .
+warning: in the working copy of 'Part-1A/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Part-1A/package.json', LF will be replaced by CRLF the next time Git touches it
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git commit -m "Part 1A: harness (lint, security, deps, tests)"
+[main cd74835] Part 1A: harness (lint, security, deps, tests)
+ 5 files changed, 1109 insertions(+)
+ create mode 100644 Part-1A/.harness/eslint.security.config.js
+ create mode 100644 Part-1A/.harness/run-harness.js
+ create mode 100644 Part-1A/eslint.config.js
+ create mode 100644 Part-1A/package-lock.json
+ create mode 100644 Part-1A/package.json
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git tag part1a-harness-ready
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git push                                                  
+Enumerating objects: 11, done.        
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 11.29 KiB | 2.26 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/2026ns93083-bits/AISDLC-Assignment1.git
+   c9ee4d3..cd74835  main -> main
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   specs/001-loan-emi-calculator/tasks.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        src/
+        tests/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git diff specs/001-loan-emi-calculator/tasks.md
+diff --git a/Part-1A/specs/001-loan-emi-calculator/tasks.md b/Part-1A/specs/001-loan-emi-calculator/tasks.md
+index a58e3bb..414515b 100644
+--- a/Part-1A/specs/001-loan-emi-calculator/tasks.md
++++ b/Part-1A/specs/001-loan-emi-calculator/tasks.md
+@@ -28,11 +28,11 @@
+ 
+ **Purpose**: Shared validation and calculation boundaries that all user stories rely on
+ 
+-- [ ] T004 Create the validation, calculation, and CLI module skeletons in src/validate.js, src/emi.js, and src/cli.js with the specified boundaries from FR-001 to FR-014
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A>                                                           
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git --no-pager diff --stat specs/001-loan-emi-calculator/tasks.md
+ Part-1A/specs/001-loan-emi-calculator/tasks.md | 32 +++++++++++++-------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git status --short
+ M specs/001-loan-emi-calculator/tasks.md
+?? src/
+?? tests/
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> Select-String -Path tests\*.test.js -Pattern "10661.85|1200|9461.85|110538.15|333.33|333.34"
+
+tests\cli.test.js:14:  const result = runCli(['120000', '12', '12']);
+tests\cli.test.js:45:  assert.equal(output.emi, 333.33);
+tests\emi.test.js:15:  assert.equal(result.emi, 333.33);
+tests\emi.test.js:19:    { month: 1, emi: 333.33, interest: 0, principal: 333.33, balance: 666.67 },
+tests\emi.test.js:20:    { month: 2, emi: 333.33, interest: 0, principal: 333.33, balance: 333.34 },
+tests\emi.test.js:21:    { month: 3, emi: 333.34, interest: 0, principal: 333.34, balance: 0 }
+tests\emi.test.js:25:test('AC-003: positive-rate 120000/12/12 returns a complete reconciled 
+schedule', () => {
+tests\emi.test.js:26:  const result = calculateEmi(120000, 12, 12);
+tests\emi.test.js:28:  assert.equal(result.emi, 10661.85);
+tests\emi.test.js:32:    emi: 10661.85,
+tests\emi.test.js:33:    interest: 1200,
+tests\emi.test.js:34:    principal: 9461.85,
+tests\emi.test.js:35:    balance: 110538.15
+tests\emi.test.js:53:    [120000, 12, 12],
+tests\emi.test.js:86:  assert.equal(result.schedule.at(-1).emi, 333.34);
+tests\emi.test.js:87:  assert.equal(result.schedule.at(-1).principal, 333.34);
+
+
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> Select-String -Path tests\*.test.js -Pattern "AC-00[1-8]" | ForEach-Object { $_.Line.Trim() }
+test('AC-008: valid CLI execution emits only one JSON success response', () => {
+test('AC-008: invalid CLI execution emits only one JSON error response', () => {
+test('AC-008: valid zero-interest invocation emits JSON success output', () => {
+test('AC-002: zero-interest 1000/0/3 returns the specified payments and totals', () => {
+test('AC-003: positive-rate 120000/12/12 returns a complete reconciled schedule', () => {
+test('AC-005: representative loans reconcile totals and end without negative balances', () => {
+test('AC-006: roundHalfUp handles ties and values on either side of ties', () => {
+test('AC-007: 480-month calculation completes in under one second', () => {
+test('AC-005: zero-interest final payment settles the remaining balance exactly', () => {
+test('AC-001: inclusive boundary loans are accepted with requested schedule lengths', () => {
+test('AC-004: missing positional argument returns INVALID_ARGUMENT_COUNT', () => {
+test('AC-004: extra positional argument returns INVALID_ARGUMENT_COUNT', () => {
+test('AC-004: malformed principal returns INVALID_PRINCIPAL', () => {
+test('AC-004: malformed rate returns INVALID_RATE', () => {
+test('AC-004: malformed tenure returns INVALID_TENURE', () => {
+test('AC-004: out-of-range principal returns INVALID_PRINCIPAL', () => {
+test('AC-004: out-of-range rate returns INVALID_RATE', () => {
+test('AC-004: out-of-range tenure returns INVALID_TENURE', () => {
+test('AC-004: fractional tenure returns INVALID_TENURE', () => {
+test('AC-004: principal with more than two fractional digits returns INVALID_PRINCIPAL', () => {
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> Select-String -Path tests\*.test.js -Pattern "code"
+
+tests\cli.test.js:34:  assert.deepEqual(Object.keys(output.error).sort(), ['code', 'message']);
+tests\cli.test.js:35:  assert.equal(output.error.code, 'INVALID_TENURE');
+tests\validate.test.js:30:  assert.equal(JSON.parse(result.stdout).error.code, 
+'INVALID_ARGUMENT_COUNT');
+tests\validate.test.js:36:  assert.equal(JSON.parse(result.stdout).error.code, 
+'INVALID_ARGUMENT_COUNT');
+tests\validate.test.js:42:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_PRINCIPAL');
+tests\validate.test.js:48:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_RATE');
+tests\validate.test.js:54:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_TENURE');
+tests\validate.test.js:60:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_PRINCIPAL');
+tests\validate.test.js:66:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_RATE');
+tests\validate.test.js:72:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_TENURE');
+tests\validate.test.js:78:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_TENURE');
+tests\validate.test.js:84:  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_PRINCIPAL');
+
+
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 

@@ -1,0 +1,39 @@
+{
+  "label": "failure1",
+  "timestamp": "2026-11-13T21:23:39.467Z",
+  "passed": false,
+  "results": [
+    {
+      "gate": "LINT",
+      "command": "npx eslint src tests",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "gate": "SECURITY",
+      "command": "npx eslint -c .harness/eslint.security.config.js src",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "\nD:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\src\\emi.js\n  5:28  warning  Unsafe Regular Expression  security/detect-unsafe-regex\n\nD:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\src\\validate.js\n  3:25  warning  Unsafe Regular Expression  security/detect-unsafe-regex\n\n✖ 2 problems (0 errors, 2 warnings)\n\n",
+      "stderr": ""
+    },
+    {
+      "gate": "DEPS",
+      "command": "npm audit --audit-level=high",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "# npm audit report\n\nminimatch  7.0.0 - 11.0.0\nSeverity: moderate\nminimatch has potential denial of service via globparts amplification - https://github.com/advisories/GHSA-g3hv-75wg-m249\nfix available via `npm audit fix --force`\nWill install eslint@9.39.5, which is a breaking change\nnode_modules/minimatch\n  @eslint/config-array  0.23.0 - 0.23.5\n  Depends on vulnerable versions of minimatch\n  node_modules/@eslint/config-array\n  eslint  >=10.0.0-alpha.0\n  Depends on vulnerable versions of minimatch\n  node_modules/eslint\n    @eslint/js  >=10.0.1\n    Depends on vulnerable versions of eslint\n    node_modules/@eslint/js\n\n4 moderate severity vulnerabilities\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n",
+      "stderr": ""
+    },
+    {
+      "gate": "TESTS",
+      "command": "node --test",
+      "passed": false,
+      "exitCode": 1,
+      "stdout": "✔ AC-008: valid CLI execution emits only one JSON success response (288.9084ms)\n✔ AC-008: invalid CLI execution emits only one JSON error response (270.4895ms)\n✔ AC-008: valid zero-interest invocation emits JSON success output (266.3984ms)\n✔ AC-002: zero-interest 1000/0/3 returns the specified payments and totals (2.7424ms)\n✔ AC-003: positive-rate 120000/12/12 returns a complete reconciled schedule (1.5971ms)\n✔ AC-005: representative loans reconcile totals and end without negative balances (1.2834ms)\n✔ AC-006: roundHalfUp handles ties and values on either side of ties (0.3003ms)\n✔ AC-007: 480-month calculation completes in under one second (1.4975ms)\n✔ AC-005: zero-interest final payment settles the remaining balance exactly (0.2911ms)\n✔ AC-001: inclusive boundary loans are accepted with requested schedule lengths (568.5944ms)\n✔ AC-004: missing positional argument returns INVALID_ARGUMENT_COUNT (288.0112ms)\n✔ AC-004: extra positional argument returns INVALID_ARGUMENT_COUNT (249.1027ms)\n✔ AC-004: malformed principal returns INVALID_PRINCIPAL (251.6781ms)\n✔ AC-004: malformed rate returns INVALID_RATE (256.1255ms)\n✔ AC-004: malformed tenure returns INVALID_TENURE (255.9352ms)\n✔ AC-004: out-of-range principal returns INVALID_PRINCIPAL (256.7349ms)\n✔ AC-004: out-of-range rate returns INVALID_RATE (259.6136ms)\n✔ AC-004: out-of-range tenure returns INVALID_TENURE (246.1663ms)\n✔ AC-004: fractional tenure returns INVALID_TENURE (278.0224ms)\n✔ AC-004: principal with more than two fractional digits returns INVALID_PRINCIPAL (379.029ms)\n✖ AC-004: rate just above 50 returns INVALID_RATE (368.9336ms)\n✖ AC-004: tenure just above 480 returns INVALID_TENURE (400.4751ms)\n✖ AC-004: tenure with a tiny fractional part returns INVALID_TENURE (436.7217ms)\nℹ tests 23\nℹ suites 0\nℹ pass 20\nℹ fail 3\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5303.0358\n\n✖ failing tests:\n\ntest at tests\\validate.test.js:92:1\n✖ AC-004: rate just above 50 returns INVALID_RATE (368.9336ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  0 !== 1\n  \n      at TestContext.<anonymous> (D:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\tests\\validate.test.js:94:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1402:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)\n      at Test.postRun (node:internal/test_runner/test:1542:19)\n      at Test.run (node:internal/test_runner/test:1467:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 1,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\validate.test.js:98:1\n✖ AC-004: tenure just above 480 returns INVALID_TENURE (400.4751ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  0 !== 1\n  \n      at TestContext.<anonymous> (D:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\tests\\validate.test.js:100:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1402:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)\n      at Test.postRun (node:internal/test_runner/test:1542:19)\n      at Test.run (node:internal/test_runner/test:1467:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 1,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\validate.test.js:104:1\n✖ AC-004: tenure with a tiny fractional part returns INVALID_TENURE (436.7217ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  0 !== 1\n  \n      at TestContext.<anonymous> (D:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\tests\\validate.test.js:106:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1402:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)\n      at Test.postRun (node:internal/test_runner/test:1542:19)\n      at Test.run (node:internal/test_runner/test:1467:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 1,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+      "stderr": ""
+    }
+  ]
+}

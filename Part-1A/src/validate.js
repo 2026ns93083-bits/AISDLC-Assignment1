@@ -6,13 +6,36 @@ function validationError(code, message) {
   return { error: { code, message } };
 }
 
-function parseFiniteDecimal(value) {
+function parseDecimal(value) {
   if (typeof value !== 'string' || !DECIMAL_PATTERN.test(value)) {
     return null;
   }
 
-  const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : null;
+  const unsignedValue = value.replace(/^[+-]/, '');
+  const [integerText = '0', fractional = ''] = unsignedValue.split('.');
+  return {
+    negative: value.startsWith('-'),
+    integer: BigInt(integerText || '0'),
+    fractional
+  };
+}
+
+function compareDecimalToInteger(value, limit) {
+  if (
+    value.negative
+    && (value.integer !== 0n || /[1-9]/.test(value.fractional))
+  ) {
+    return -1;
+  }
+
+  const limitBigInt = BigInt(limit);
+  let comparison = value.integer < limitBigInt ? -1 : value.integer > limitBigInt ? 1 : 0;
+
+  if (comparison === 0 && /[1-9]/.test(value.fractional)) {
+    comparison = 1;
+  }
+
+  return comparison;
 }
 
 function validateInput(args) {
@@ -24,7 +47,7 @@ function validateInput(args) {
   }
 
   const [principalText, rateText, tenureText] = args;
-  const principal = parseFiniteDecimal(principalText);
+  const principal = parseDecimal(principalText);
   if (principal === null) {
     return validationError('INVALID_PRINCIPAL', 'Principal must be a finite decimal value.');
   }
@@ -36,30 +59,39 @@ function validateInput(args) {
       'Principal must have no more than two fractional digits.'
     );
   }
-  if (principal < 1 || principal > 100000000) {
+  if (
+    compareDecimalToInteger(principal, 1) < 0
+    || compareDecimalToInteger(principal, 100000000) > 0
+  ) {
     return validationError(
       'INVALID_PRINCIPAL',
       'Principal must be between 1 and 100000000 inclusive.'
     );
   }
 
-  const annualRate = parseFiniteDecimal(rateText);
+  const annualRate = parseDecimal(rateText);
   if (annualRate === null) {
     return validationError('INVALID_RATE', 'Annual rate must be a finite decimal value.');
   }
-  if (annualRate < 0 || annualRate > 50) {
+  if (compareDecimalToInteger(annualRate, 0) < 0 || compareDecimalToInteger(annualRate, 50) > 0) {
     return validationError('INVALID_RATE', 'Annual rate must be between 0 and 50 inclusive.');
   }
 
-  const tenure = parseFiniteDecimal(tenureText);
-  if (tenure === null || !Number.isInteger(tenure) || tenure < 1 || tenure > 480) {
+  const tenure = parseDecimal(tenureText);
+  if (
+    tenure === null
+    || /[1-9]/.test(tenure.fractional)
+    || compareDecimalToInteger(tenure, 1) < 0
+    || compareDecimalToInteger(tenure, 480) > 0
+  ) {
     return validationError(
       'INVALID_TENURE',
       'Tenure must be a whole number of months between 1 and 480 inclusive.'
     );
   }
 
-  return { principal: principalText, annualRate: rateText, tenure };
+  const normalizedTenure = Number(tenure.integer) * (tenure.negative ? -1 : 1);
+  return { principal: principalText, annualRate: rateText, tenure: normalizedTenure };
 }
 
 module.exports = { validateInput };

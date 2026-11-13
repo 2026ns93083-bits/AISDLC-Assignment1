@@ -1,0 +1,44 @@
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> npm run harness -- initial
+
+> part-1a@1.0.0 harness
+> node .harness/run-harness.js initial
+
+PASS  LINT
+PASS  SECURITY
+PASS  DEPS
+PASS  TESTS
+HARNESS: PASS
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git add -A
+>> git commit -m "Part 1A: add boundary tests derived from FR-002/FR-003 after manual probe"
+>> git tag part1a-tests-extended
+warning: in the working copy of 'Part-1A/evidence/harness-results/initial-2026-11-13T21-17-53-265Z.json', LF will be replaced by CRLF the next time Git touches it
+[main aa45a3c] Part 1A: add boundary tests derived from FR-002/FR-003 after manual probe
+ 3 files changed, 73 insertions(+)
+ create mode 100644 Part-1A/evidence/Terminal-logs/Part2-Implement-Test.txt
+ create mode 100644 Part-1A/evidence/harness-results/initial-2026-11-13T21-17-53-265Z.json
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> npm run harness -- failure1
+
+> part-1a@1.0.0 harness
+> node .harness/run-harness.js failure1
+
+PASS  LINT
+PASS  SECURITY
+PASS  DEPS
+FAIL  TESTS
+HARNESS: FAIL
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
+D:\kpmyrepo\AISDLC-Assignment1\Part-1A> git --no-pager diff --stat part1a-tests-extended -- tests .harness eslint.config.js package.json specs src\emi.js src\cli.js   
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A>    npm run harness -- repair1
+
+> part-1a@1.0.0 harness
+> node .harness/run-harness.js repair1
+
+PASS  LINT
+PASS  SECURITY
+PASS  DEPS
+PASS  TESTS
+HARNESS: PASS
+PS D:\kpmyrepo\AISDLC-Assignment1\Part-1A> 
