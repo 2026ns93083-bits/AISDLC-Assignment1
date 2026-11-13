@@ -1,7 +1,19 @@
 'use strict';
 
+const { calculateEmi } = require('./emi.js');
+const { validateInput } = require('./validate.js');
+
 function runCli() {
-  throw new Error('not implemented');
+  const input = validateInput(process.argv.slice(2));
+  if (input.error) {
+    process.stdout.write(`${JSON.stringify(input)}\n`);
+    process.exitCode = 1;
+    return;
+  }
+
+  const result = calculateEmi(input.principal, input.annualRate, input.tenure);
+  process.stdout.write(`${JSON.stringify(result)}\n`);
+  process.exitCode = 0;
 }
 
 if (require.main === module) {

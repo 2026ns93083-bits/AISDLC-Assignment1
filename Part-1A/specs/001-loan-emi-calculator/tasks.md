@@ -54,11 +54,11 @@
 
 ### Implementation for User Story 1
 
-- [ ] T014 [US1] Implement the validated principal/rate input parsing and finite decimal checks in src/validate.js for FR-001, FR-002, FR-003, and FR-004
-- [ ] T015 [US1] Implement exact monthly-rate and EMI calculation logic in src/emi.js for positive-rate loans using BigInt and half-up cents rounding from FR-006, FR-009, and FR-011
-- [ ] T016 [US1] Implement the monthly amortization schedule generation in src/emi.js so each period uses opening balance interest, principal allocation, and exact final adjustment from FR-007, FR-008, FR-010, and FR-012
-- [ ] T017 [US1] Serialize the calculation result in src/cli.js with exactly `emi`, `total_interest`, `total_payment`, and `schedule`, and exit code 0 as required by FR-005 and FR-013
-- [ ] T018 [US1] Verify positive-rate schedule invariants against `src/emi.js` and `tests/emi.test.js`: non-negative balances, exact zero final balance, and integer-cent totals from FR-010 to FR-012
+- [X] T014 [US1] Implement the validated principal/rate input parsing and finite decimal checks in src/validate.js for FR-001, FR-002, FR-003, and FR-004
+- [X] T015 [US1] Implement exact monthly-rate and EMI calculation logic in src/emi.js for positive-rate loans using BigInt and half-up cents rounding from FR-006, FR-009, and FR-011
+- [X] T016 [US1] Implement the monthly amortization schedule generation in src/emi.js so each period uses opening balance interest, principal allocation, and exact final adjustment from FR-007, FR-008, FR-010, and FR-012
+- [X] T017 [US1] Serialize the calculation result in src/cli.js with exactly `emi`, `total_interest`, `total_payment`, and `schedule`, and exit code 0 as required by FR-005 and FR-013
+- [X] T018 [US1] Verify positive-rate schedule invariants against `src/emi.js` and `tests/emi.test.js`: non-negative balances, exact zero final balance, and integer-cent totals from FR-010 to FR-012
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and independently testable.
 
@@ -78,10 +78,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T022 [US2] Implement the zero-rate calculation branch in src/emi.js to divide principal evenly over the tenure before half-up cents rounding from FR-006 and FR-009
-- [ ] T023 [US2] Implement final-period adjustment logic in src/emi.js so the last payment equals remaining balance plus interest, leaving the final balance exactly 0.00 from FR-010 and FR-011
-- [ ] T024 [US2] Check schedule invariants for zero-interest loans in src/emi.js: `interest` is zero, `total_interest` is zero, and `total_payment` equals principal after the final adjustment from FR-012
-- [ ] T025 [US2] Validate the CLI output for zero-rate success in src/cli.js against the contract in contracts/cli.md and FR-005 / FR-013
+- [X] T022 [US2] Implement the zero-rate calculation branch in src/emi.js to divide principal evenly over the tenure before half-up cents rounding from FR-006 and FR-009
+- [X] T023 [US2] Implement final-period adjustment logic in src/emi.js so the last payment equals remaining balance plus interest, leaving the final balance exactly 0.00 from FR-010 and FR-011
+- [X] T024 [US2] Check schedule invariants for zero-interest loans in src/emi.js: `interest` is zero, `total_interest` is zero, and `total_payment` equals principal after the final adjustment from FR-012
+- [X] T025 [US2] Validate the CLI output for zero-rate success in src/cli.js against the contract in contracts/cli.md and FR-005 / FR-013
 
 **Checkpoint**: At this point, User Stories 1 and 2 should both work independently.
 
@@ -101,10 +101,10 @@
 
 ### Implementation for User Story 3
 
-- [ ] T029 [US3] Implement argument-count and decimal-format validation in src/validate.js for principal, annual rate, and tenure, mapping malformed fields and missing/extra arguments to their AC-004 codes from FR-001, FR-003, and FR-004
-- [ ] T030 [US3] Implement inclusive range, principal fractional-digit, and fractional-tenure checks in src/validate.js for principal 1..100000000 with at most two fractional digits, rate 0..50, and tenure 1..480 from FR-002, FR-003, and edge cases
-- [ ] T031 [US3] Emit the exact structured error shape in src/cli.js with the AC-004 code matching the invalid class, non-empty `error.message`, and exit status 1 from FR-004 and FR-013
-- [ ] T032 [US3] Confirm boundary-valid values are accepted and produce a schedule of the requested length in `src/validate.js` + `tests/validate.test.js` per AC-001 and FR-002
+- [X] T029 [US3] Implement argument-count and decimal-format validation in src/validate.js for principal, annual rate, and tenure, mapping malformed fields and missing/extra arguments to their AC-004 codes from FR-001, FR-003, and FR-004
+- [X] T030 [US3] Implement inclusive range, principal fractional-digit, and fractional-tenure checks in src/validate.js for principal 1..100000000 with at most two fractional digits, rate 0..50, and tenure 1..480 from FR-002, FR-003, and edge cases
+- [X] T031 [US3] Emit the exact structured error shape in src/cli.js with the AC-004 code matching the invalid class, non-empty `error.message`, and exit status 1 from FR-004 and FR-013
+- [X] T032 [US3] Confirm boundary-valid values are accepted and produce a schedule of the requested length in `src/validate.js` + `tests/validate.test.js` per AC-001 and FR-002
 
 **Checkpoint**: All user stories should now be independently functional.
 
@@ -114,10 +114,10 @@
 
 **Purpose**: Final validation, documentation, and quality gates
 
-- [ ] T033 [P] Run the relevant Node.js test suite against `tests/validate.test.js`, `tests/emi.test.js`, and `tests/cli.test.js` to confirm the AC-001 through AC-008 coverage is passing
-- [ ] T034 Run ESLint across the project with `npm run lint` and fix any violations flagged by the recommended and security rules
-- [ ] T035 Run `npm audit` and resolve any high- or critical-severity dependency issues before completion
-- [ ] T036 [P] Review the final CLI output, rounding logic, and schedule invariants against `contracts/cli.md`, `data-model.md`, and the constitution to confirm no accidental intermediate rounding or process leakage remains
+- [X] T033 [P] Run the relevant Node.js test suite against `tests/validate.test.js`, `tests/emi.test.js`, and `tests/cli.test.js` to confirm the AC-001 through AC-008 coverage is passing
+- [X] T034 Run ESLint across the project with `npm run lint` and fix any violations flagged by the recommended and security rules
+- [X] T035 Run `npm audit` and resolve any high- or critical-severity dependency issues before completion
+- [X] T036 [P] Review the final CLI output, rounding logic, and schedule invariants against `contracts/cli.md`, `data-model.md`, and the constitution to confirm no accidental intermediate rounding or process leakage remains
 - [ ] T037 Refresh any directly related project docs or quickstart examples in `specs/001-loan-emi-calculator/quickstart.md` if implementation changes the required command or output examples
 - [ ] T038 Confirm the CLI and calculation boundary do not expose any UI, database, conversion, prepayment, or variable-rate behavior, and record the exclusion check in the final validation checklist for FR-014
 - [ ] T039 Add deterministic repeatability validation in `tests/cli.test.js` or `tests/emi.test.js` asserting identical valid-input output on repeated invocations for NFR-001
