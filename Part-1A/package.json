@@ -1,0 +1,21 @@
+{
+  "name": "part-1a",
+  "version": "1.0.0",
+  "description": "Loan EMI & Amortization Calculator",
+  "main": "src/cli.js",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint src tests",
+    "harness": "node .harness/run-harness.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-security": "^4.2.1",
+    "globals": "^17.14.0"
+  }
+}
