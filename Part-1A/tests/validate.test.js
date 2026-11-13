@@ -83,3 +83,26 @@ test('AC-004: principal with more than two fractional digits returns INVALID_PRI
   assert.equal(result.status, 1);
   assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_PRINCIPAL');
 });
+
+// --- Added after manual probing of the first generated implementation ---
+// Derived from FR-002 / FR-003 / AC-004: values just outside an inclusive
+// limit must be rejected even when they are not exactly representable as
+// JavaScript numbers.
+
+test('AC-004: rate just above 50 returns INVALID_RATE', () => {
+  const result = runCli(['1000', '50.0000000000000001', '12']);
+  assert.equal(result.status, 1);
+  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_RATE');
+});
+
+test('AC-004: tenure just above 480 returns INVALID_TENURE', () => {
+  const result = runCli(['1000', '0', '480.0000000000000001']);
+  assert.equal(result.status, 1);
+  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_TENURE');
+});
+
+test('AC-004: tenure with a tiny fractional part returns INVALID_TENURE', () => {
+  const result = runCli(['1000', '0', '1.0000000000000001']);
+  assert.equal(result.status, 1);
+  assert.equal(JSON.parse(result.stdout).error.code, 'INVALID_TENURE');
+});

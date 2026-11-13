@@ -1,0 +1,39 @@
+{
+  "label": "initial",
+  "timestamp": "2026-11-13T21:17:53.265Z",
+  "passed": true,
+  "results": [
+    {
+      "gate": "LINT",
+      "command": "npx eslint src tests",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "gate": "SECURITY",
+      "command": "npx eslint -c .harness/eslint.security.config.js src",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "\nD:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\src\\emi.js\n  5:28  warning  Unsafe Regular Expression  security/detect-unsafe-regex\n\nD:\\kpmyrepo\\AISDLC-Assignment1\\Part-1A\\src\\validate.js\n  3:25  warning  Unsafe Regular Expression  security/detect-unsafe-regex\n\n✖ 2 problems (0 errors, 2 warnings)\n\n",
+      "stderr": ""
+    },
+    {
+      "gate": "DEPS",
+      "command": "npm audit --audit-level=high",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "# npm audit report\n\nminimatch  7.0.0 - 11.0.0\nSeverity: moderate\nminimatch has potential denial of service via globparts amplification - https://github.com/advisories/GHSA-g3hv-75wg-m249\nfix available via `npm audit fix --force`\nWill install eslint@9.39.5, which is a breaking change\nnode_modules/minimatch\n  @eslint/config-array  0.23.0 - 0.23.5\n  Depends on vulnerable versions of minimatch\n  node_modules/@eslint/config-array\n  eslint  >=10.0.0-alpha.0\n  Depends on vulnerable versions of minimatch\n  node_modules/eslint\n    @eslint/js  >=10.0.1\n    Depends on vulnerable versions of eslint\n    node_modules/@eslint/js\n\n4 moderate severity vulnerabilities\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n",
+      "stderr": ""
+    },
+    {
+      "gate": "TESTS",
+      "command": "node --test",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "✔ AC-008: valid CLI execution emits only one JSON success response (349.8215ms)\n✔ AC-008: invalid CLI execution emits only one JSON error response (313.349ms)\n✔ AC-008: valid zero-interest invocation emits JSON success output (345.8645ms)\n✔ AC-002: zero-interest 1000/0/3 returns the specified payments and totals (1.9631ms)\n✔ AC-003: positive-rate 120000/12/12 returns a complete reconciled schedule (1.8827ms)\n✔ AC-005: representative loans reconcile totals and end without negative balances (1.3586ms)\n✔ AC-006: roundHalfUp handles ties and values on either side of ties (0.277ms)\n✔ AC-007: 480-month calculation completes in under one second (1.1804ms)\n✔ AC-005: zero-interest final payment settles the remaining balance exactly (0.2035ms)\n✔ AC-001: inclusive boundary loans are accepted with requested schedule lengths (705.6653ms)\n✔ AC-004: missing positional argument returns INVALID_ARGUMENT_COUNT (309.5768ms)\n✔ AC-004: extra positional argument returns INVALID_ARGUMENT_COUNT (337.9429ms)\n✔ AC-004: malformed principal returns INVALID_PRINCIPAL (268.5923ms)\n✔ AC-004: malformed rate returns INVALID_RATE (354.316ms)\n✔ AC-004: malformed tenure returns INVALID_TENURE (318.7566ms)\n✔ AC-004: out-of-range principal returns INVALID_PRINCIPAL (419.9815ms)\n✔ AC-004: out-of-range rate returns INVALID_RATE (397.2079ms)\n✔ AC-004: out-of-range tenure returns INVALID_TENURE (386.3204ms)\n✔ AC-004: fractional tenure returns INVALID_TENURE (359.7639ms)\n✔ AC-004: principal with more than two fractional digits returns INVALID_PRINCIPAL (514.5242ms)\nℹ tests 20\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5266.7337\n",
+      "stderr": ""
+    }
+  ]
+}
