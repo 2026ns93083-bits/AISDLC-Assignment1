@@ -95,7 +95,7 @@ test('triage system prompt states the untrusted-data and P1-P4 privacy contract'
   const prompt = fs.readFileSync(
     path.join(projectRoot, 'prompts', 'triage.system.md'),
     'utf8',
-  ).toLower();
+  ).toLowerCase().replace(/\s+/g, ' ');
 
   assert.match(prompt, /untrusted data/);
   assert.match(prompt, /never.*(reveal|disclose).*?(system|hidden).*instructions/);
@@ -103,10 +103,10 @@ test('triage system prompt states the untrusted-data and P1-P4 privacy contract'
   assert.match(prompt, /email addresses/);
   assert.match(prompt, /phone numbers/);
   assert.match(prompt, /card numbers/);
-  assert.match(prompt, /P1/);
-  assert.match(prompt, /P2/);
-  assert.match(prompt, /P3/);
-  assert.match(prompt, /P4/);
+  assert.match(prompt, /p1/);
+  assert.match(prompt, /p2/);
+  assert.match(prompt, /p3/);
+  assert.match(prompt, /p4/);
 });
 
 test('empty, vague, missing-identifier, and malformed inputs require clarification', async () => {

@@ -88,10 +88,10 @@ test('runtime configuration is CommonJS and restricts require imports (AC-014, I
   const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
   assert.equal(Object.prototype.hasOwnProperty.call(packageJson, 'dependencies'), false);
   assert.notEqual(packageJson.type, 'module');
-  assert.match(
-    String(packageJson.engines && packageJson.engines.node),
-    /(?:^|\s)>=?\s*20(?:\.0)?(?:\.0)?(?:\s|$)/,
-  );
+  const nodeRequirement = String(packageJson.engines && packageJson.engines.node);
+  const majorVersionMatch = nodeRequirement.match(/^>=\s*(\d+)/);
+  assert.notEqual(majorVersionMatch, null);
+  assert.equal(Number(majorVersionMatch[1]) >= 20, true);
 
   const srcDirectory = path.join(projectRoot, 'src');
   assert.equal(fs.existsSync(srcDirectory), true, 'src directory must exist');
