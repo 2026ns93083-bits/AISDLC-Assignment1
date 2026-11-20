@@ -35,6 +35,80 @@ test('ordinary and clarification results satisfy the exact output contract', asy
   assert.deepEqual(parseAndValidate(JSON.stringify(clarification)), clarification);
 });
 
+test('triage injects the email as user content and the project prompt as system prompt', async () => {
+  const { triage, ApplicationError } = require('../src/triage');
+  const { ServiceError } = require('../src/llm');
+  const projectRoot = path.resolve(__dirname, '..');
+  const expectedSystemPrompt = fs.readFileSync(
+    path.join(projectRoot, 'prompts', 'triage.system.md'),
+    'utf8',
+  );
+  const emailText = 'Please investigate the duplicate charge.';
+  let calls = 0;
+  let receivedEmail = '';
+  let receivedOptions = null;
+
+  const result = await triage(emailText, {
+    generateContent: async (email, options) => {
+      calls += 1;
+      receivedEmail = email;
+      receivedOptions = options;
+      return JSON.stringify(validOrdinary);
+    },
+  });
+
+  assert.deepEqual(result, validOrdinary);
+  assert.equal(calls, 1);
+  assert.equal(receivedEmail, emailText);
+  assert.equal(typeof receivedOptions.systemPrompt, 'string');
+  assert.equal(receivedOptions.systemPrompt, expectedSystemPrompt);
+
+  const originalCwd = process.cwd();
+  try {
+    process.chdir(os.tmpdir());
+    const unchanged = await triage(emailText, {
+      generateContent: async () => JSON.stringify(validOrdinary),
+    });
+    assert.deepEqual(unchanged, validOrdinary);
+  } finally {
+    process.chdir(originalCwd);
+  }
+
+  const serviceFailure = new ServiceError(503, 1);
+  await assert.rejects(
+    () => triage(emailText, {
+      generateContent: async () => { throw serviceFailure; },
+    }),
+    (error) => error === serviceFailure,
+  );
+
+  await assert.rejects(
+    () => triage(emailText, {
+      generateContent: async () => '{not-json',
+    }),
+    ApplicationError,
+  );
+});
+
+test('triage system prompt states the untrusted-data and P1-P4 privacy contract', () => {
+  const projectRoot = path.resolve(__dirname, '..');
+  const prompt = fs.readFileSync(
+    path.join(projectRoot, 'prompts', 'triage.system.md'),
+    'utf8',
+  ).toLower();
+
+  assert.match(prompt, /untrusted data/);
+  assert.match(prompt, /never.*(reveal|disclose).*?(system|hidden).*instructions/);
+  assert.match(prompt, /ignore.*instructions.*email|instructions.*inside.*email/);
+  assert.match(prompt, /email addresses/);
+  assert.match(prompt, /phone numbers/);
+  assert.match(prompt, /card numbers/);
+  assert.match(prompt, /P1/);
+  assert.match(prompt, /P2/);
+  assert.match(prompt, /P3/);
+  assert.match(prompt, /P4/);
+});
+
 test('empty, vague, missing-identifier, and malformed inputs require clarification', async () => {
   const { parseAndValidate } = require('../src/triage');
 
@@ -65,7 +139,7 @@ test('clarification_question is a non-empty string exactly when clarification is
   assert.throws(() => parseAndValidate(JSON.stringify(emptyQuestion)), ApplicationError);
 });
 
-test('privacy and adversarial results remain schema-valid without personal-data echo', async () => {
+test('privacy-preserving and adversarial-content summaries remain schema-valid', async () => {
   const { parseAndValidate } = require('../src/triage');
 
   const privacy = clone(validOrdinary);
@@ -108,6 +182,23 @@ test('malformed JSON and exact schema violations are ApplicationError failures',
       (error) => error instanceof ApplicationError && error.name === 'ApplicationError',
     );
   }
+});
+
+test('a 200-character summary is valid and array or null JSON is invalid', () => {
+  const { parseAndValidate, ApplicationError } = require('../src/triage');
+
+  const exactly200 = clone(validOrdinary);
+  exactly200.summary = 'x'.repeat(200);
+  assert.equal(parseAndValidate(JSON.stringify(exactly200)).summary.length, 200);
+
+  assert.throws(
+    () => parseAndValidate(JSON.stringify([validOrdinary])),
+    ApplicationError,
+  );
+  assert.throws(
+    () => parseAndValidate('null'),
+    ApplicationError,
+  );
 });
 
 test('ApplicationError and ServiceError remain distinct', async () => {
@@ -194,10 +285,13 @@ test('CLI routes typed failures to distinct sanitized nonzero categories', async
   const { runCli } = require('../src/cli');
   const { ServiceError } = require('../src/llm');
   const { ApplicationError } = require('../src/triage');
+  const applicationError = new ApplicationError('private customer email test-key provider-secret');
+  const serviceError = new ServiceError(503, 3);
+  serviceError.message = 'private customer email test-key provider-secret';
 
   for (const fixture of [
-    { error: new ApplicationError('secret-free application detail'), category: 'application' },
-    { error: new ServiceError(503, 3), category: 'service' },
+    { error: applicationError, category: 'application' },
+    { error: serviceError, category: 'service' },
   ]) {
     let stdout = '';
     let stderr = '';
@@ -213,5 +307,46 @@ test('CLI routes typed failures to distinct sanitized nonzero categories', async
     assert.match(stderr.toLowerCase(), new RegExp(fixture.category));
     assert.doesNotMatch(stderr, /private customer email|test-key|provider-secret/);
   }
+});
+
+test('CLI unreadable file path is an input failure and does not call triage', async () => {
+  const { runCli } = require('../src/cli');
+  let stderr = '';
+  let invoked = false;
+  const missingPath = path.join(os.tmpdir(), `missing-triage-${process.pid}.txt`);
+  const exitCode = await runCli({
+    argv: [missingPath],
+    stdin: '',
+    stdout: { write: () => {} },
+    stderr: { write: (text) => { stderr += text; } },
+    triageImpl: async () => {
+      invoked = true;
+      return validOrdinary;
+    },
+  });
+
+  assert.equal(exitCode, 1);
+  assert.equal(invoked, false);
+  assert.match(stderr.toLowerCase(), /usage|input/);
+});
+
+test('CLI routes ConfigurationError to the configuration category', async () => {
+  const { runCli } = require('../src/cli');
+  const { ConfigurationError } = require('../src/llm');
+  let stdout = '';
+  let stderr = '';
+  const exitCode = await runCli({
+    argv: [],
+    stdin: 'customer email',
+    stdout: { write: (text) => { stdout += text; } },
+    stderr: { write: (text) => { stderr += text; } },
+    triageImpl: async () => {
+      throw new ConfigurationError('GEMINI_API_KEY is missing');
+    },
+  });
+
+  assert.equal(exitCode, 1);
+  assert.equal(stdout, '');
+  assert.match(stderr.toLowerCase(), /configuration/);
 });
 
