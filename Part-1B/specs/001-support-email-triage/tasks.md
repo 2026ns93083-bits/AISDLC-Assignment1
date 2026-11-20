@@ -32,9 +32,9 @@
 
 **Purpose**: Create the smallest shared runtime foundation required by all stories.
 
-- [ ] T008 Create the `src/` and `prompts/` module layout in `src/llm.js`, `src/triage.js`, `src/cli.js`, and `prompts/triage.system.md` without Node.js dependencies outside built-ins; cover FR-001 and NFR-001.
-- [ ] T009 [P] Implement CommonJS module exports and built-in-only imports in `src/llm.js`, `src/triage.js`, and `src/cli.js`; satisfy NFR-001, AC-014, INV-RUNTIME-01, AC-RUNTIME-01, and constitution test identifier `runtime_node20_commonjs_builtin_only`.
-- [ ] T010 [P] Create the file-based system prompt in `prompts/triage.system.md` that treats email bodies as untrusted data, prohibits hidden-instruction disclosure, and forbids listed personal-data echo; cover FR-006, AC-007, AC-008, INV-PRIV-01, G-1, G-2, and constitution test identifier `privacy_no_personal_data_echo`.
+- [x] T008 Create the `src/` and `prompts/` module layout in `src/llm.js`, `src/triage.js`, `src/cli.js`, and `prompts/triage.system.md` without Node.js dependencies outside built-ins; cover FR-001 and NFR-001.
+- [x] T009 [P] Implement CommonJS module exports and built-in-only imports in `src/llm.js`, `src/triage.js`, and `src/cli.js`; satisfy NFR-001, AC-014, INV-RUNTIME-01, AC-RUNTIME-01, and constitution test identifier `runtime_node20_commonjs_builtin_only`.
+- [x] T010 [P] Create the file-based system prompt in `prompts/triage.system.md` that treats email bodies as untrusted data, prohibits hidden-instruction disclosure, and forbids listed personal-data echo; cover FR-006, AC-007, AC-008, INV-PRIV-01, G-1, G-2, and constitution test identifier `privacy_no_personal_data_echo`.
 
 **Checkpoint**: The module layout and prompt foundation are ready.
 
@@ -46,13 +46,13 @@
 
 **Independent Test**: Inject deterministic model JSON through the triage boundary and verify billing, technical, account, feature-request, complaint, and positive feedback results against allowed categories, priorities, sentiments, summaries, and actions.
 
-- [ ] T011 [US1] Implement environment-only Gemini configuration in `src/llm.js` using only `GEMINI_API_KEY` and `LLM_MODEL`, with explicit missing-value configuration failures and no secret logging; cover FR-009, NFR-002, AC-014, INV-CONFIG-01, AC-CONFIG-01, and constitution test identifier `configuration_environment_only_and_secret_safe`.
-- [ ] T012 [US1] Implement the Gemini `generateContent` REST transport in `src/llm.js` with JSON response mode, temperature `0.1`, the API key in `x-goog-api-key`, and no key in the URL; cover FR-001, FR-008, NFR-001, NFR-002, AC-014, INV-RUNTIME-01, INV-CONFIG-01, and constitution test identifiers `runtime_node20_commonjs_builtin_only` and `configuration_environment_only_and_secret_safe`.
-- [ ] T013 [US1] Implement 30-second per-attempt timeout and typed `ServiceError` retry handling for 429/503/timeout only in `src/llm.js`; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
-- [ ] T014 [US1] Implement injected `fetch` and `sleep` dependencies in `src/llm.js` and enforce three attempts with waits of 2 seconds and 5 seconds; cover FR-009, AC-012, INV-FAIL-01, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
-- [ ] T015 [US1] Implement prompt loading, one-LLM-call triage orchestration, and a pure parse/validation export in `src/triage.js`; cover FR-001, FR-007, FR-008, AC-001, AC-003, INV-1, INV-3, INV-JSON-01, and constitution test identifier `output_json_schema_contract`.
-- [ ] T016 [US1] Implement exact eight-field validation, allowed enum checks, type checks, and summary length enforcement in `src/triage.js`; cover FR-002, FR-003, FR-008, AC-001, AC-003, AC-009, INV-1, INV-3, INV-JSON-01, AC-JSON-01, and constitution test identifier `output_json_schema_contract`.
-- [ ] T017 [US1] Implement CLI file/stdin selection and exact-one-object stdout behavior in `src/cli.js`; cover FR-001, FR-008, AC-001, AC-010, INV-1, INV-JSON-01.
+- [x] T011 [US1] Implement environment-only Gemini configuration in `src/llm.js` using only `GEMINI_API_KEY` and `LLM_MODEL`, with explicit missing-value configuration failures and no secret logging; cover FR-009, NFR-002, AC-014, INV-CONFIG-01, AC-CONFIG-01, and constitution test identifier `configuration_environment_only_and_secret_safe`.
+- [x] T012 [US1] Implement the Gemini `generateContent` REST transport in `src/llm.js` with JSON response mode, temperature `0.1`, the API key in `x-goog-api-key`, and no key in the URL; cover FR-001, FR-008, NFR-001, NFR-002, AC-014, INV-RUNTIME-01, INV-CONFIG-01, and constitution test identifiers `runtime_node20_commonjs_builtin_only` and `configuration_environment_only_and_secret_safe`.
+- [x] T013 [US1] Implement 30-second per-attempt timeout and typed `ServiceError` retry handling for 429/503/timeout only in `src/llm.js`; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T014 [US1] Implement injected `fetch` and `sleep` dependencies in `src/llm.js` and enforce three attempts with waits of 2 seconds and 5 seconds; cover FR-009, AC-012, INV-FAIL-01, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T015 [US1] Implement prompt loading, one-LLM-call triage orchestration, and a pure parse/validation export in `src/triage.js`; cover FR-001, FR-007, FR-008, AC-001, AC-003, INV-1, INV-3, INV-JSON-01, and constitution test identifier `output_json_schema_contract`.
+- [x] T016 [US1] Implement exact eight-field validation, allowed enum checks, type checks, and summary length enforcement in `src/triage.js`; cover FR-002, FR-003, FR-008, AC-001, AC-003, AC-009, INV-1, INV-3, INV-JSON-01, AC-JSON-01, and constitution test identifier `output_json_schema_contract`.
+- [x] T017 [US1] Implement CLI file/stdin selection and exact-one-object stdout behavior in `src/cli.js`; cover FR-001, FR-008, AC-001, AC-010, INV-1, INV-JSON-01.
 
 **Checkpoint**: User Story 1 is independently testable and produces the MVP triage JSON.
 
@@ -64,9 +64,9 @@
 
 **Independent Test**: Submit whitespace-only, vague, refund-without-order-number, and cancellation-without-account-identifier inputs and verify the clarification field invariant.
 
-- [ ] T018 [US2] Update the prompt in `prompts/triage.system.md` with the rubric's empty/vague/no-identifier behavior and the `other`/P3/neutral fallback for no identifiable issue; cover FR-003, FR-004, AC-004, AC-005, INV-4, INV-6, INV-CLAR-01, AC-CLAR-01, and constitution test identifier `triage_missing_mandatory_information`.
-- [ ] T019 [US2] Implement clarification consistency validation in `src/triage.js` so `needs_clarification` and `clarification_question` satisfy if-and-only-if rules; cover FR-004, FR-008, AC-002, AC-004, AC-005, INV-2, INV-4, INV-6, INV-CLAR-01, INV-JSON-01, and constitution test identifier `triage_missing_mandatory_information`.
-- [ ] T020 [US2] Implement `ApplicationError` for invalid JSON and schema violations in `src/triage.js` without invoking transport retries; cover FR-008, FR-009, AC-012, INV-JSON-01, INV-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T018 [US2] Update the prompt in `prompts/triage.system.md` with the rubric's empty/vague/no-identifier behavior and the `other`/P3/neutral fallback for no identifiable issue; cover FR-003, FR-004, AC-004, AC-005, INV-4, INV-6, INV-CLAR-01, AC-CLAR-01, and constitution test identifier `triage_missing_mandatory_information`.
+- [x] T019 [US2] Implement clarification consistency validation in `src/triage.js` so `needs_clarification` and `clarification_question` satisfy if-and-only-if rules; cover FR-004, FR-008, AC-002, AC-004, AC-005, INV-2, INV-4, INV-6, INV-CLAR-01, INV-JSON-01, and constitution test identifier `triage_missing_mandatory_information`.
+- [x] T020 [US2] Implement `ApplicationError` for invalid JSON and schema violations in `src/triage.js` without invoking transport retries; cover FR-008, FR-009, AC-012, INV-JSON-01, INV-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
 
 **Checkpoint**: User Story 2 is independently testable and clarification responses remain schema-valid.
 
