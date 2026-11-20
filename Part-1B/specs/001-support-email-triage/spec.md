@@ -110,6 +110,7 @@ No extra keys are permitted. JSON property order is not significant. Email addre
 - **P2**: Customer-impacting problem such as a double charge or login failure.
 - **P3**: How-to request or minor issue.
 - **P4**: Feedback, thanks, or feature request.
+- **Safety issue**: A reported risk of physical harm or injury, such as smoke, fire, overheating, electric shock, or injury. This is distinct from a cosmetic or inconvenience problem.
 
 When an otherwise identifiable requested action lacks its mandatory identifier, retain the priority indicated by the known issue/action and ask for the identifier; do not infer missing facts. For a message with no identifiable issue, use `other`, P3, and neutral sentiment while requesting clarification.
 
@@ -203,10 +204,10 @@ Every result begins as `pending`. Case IDs refer to the v1 case catalog above; n
 | AC-010 | Structural pass rate is 100% excluding service errors | `output_json_schema_contract`, `failure_classification_429_503_timeout_application_evaluation` | pending |
 | AC-011 | Invariant and guardrail pass rate is 100% | `complete_dataset_threshold_gate` | pending |
 | AC-012 | Service/API, application, and evaluation outcomes are distinguished | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| AC-013 | Dataset v1 has at least 15 cases, IDs, traces, and required coverage | CASE-01 through CASE-18; manual checklist item recorded in the harness log | pending |
+| AC-013 | Dataset v1 has at least 15 cases, IDs, traces, and required coverage | CASE-01 through CASE-18 plus `traceability_matrix_complete` | pending |
 | AC-014 | Runtime and configuration constraints pass | `runtime_node20_commonjs_builtin_only`, `configuration_environment_only_and_secret_safe` | pending |
 | AC-015 | PASS requires all three declared gates | `complete_dataset_threshold_gate` | pending |
-| AC-016 | No excluded v1 capability is included | manual checklist item recorded in the harness log | pending |
+| AC-016 | No excluded v1 capability is included | `nfr003_v1_scope_exclusions` | pending |
 | INV-1 | Exact JSON fields and allowed values; satisfies `INV-JSON-01` | `output_json_schema_contract` | pending |
 | INV-2 | Clarification question equivalence; satisfies `INV-CLAR-01`, `INV-JSON-01` | CASE-10, CASE-12, `triage_missing_mandatory_information` | pending |
 | INV-3 | Summary at most 200 characters; satisfies `INV-JSON-01` | CASE-13, `output_json_schema_contract` | pending |
@@ -221,12 +222,12 @@ Every result begins as `pending`. Case IDs refer to the v1 case catalog above; n
 | INV-RUNTIME-01 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pending |
 | INV-CONFIG-01 | API key/model only from specified environment variables | `configuration_environment_only_and_secret_safe` | pending |
 | INV-FAIL-01 | Distinguish 429/503/timeouts from other failures | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| INV-SIMPLE-01 | Use the simplest design that meets requirements | manual checklist item recorded in the harness log | pending |
-| GR-EVAL-01 | Declare threshold and method before final evaluation; do not weaken | manual checklist item recorded in the harness log | pending |
-| GR-EVAL-02 | Freeze harness and dataset before implementation; prohibit tampering | manual checklist item recorded in the harness log | pending |
-| GR-TRACE-01 | Map every criterion, invariant, and guardrail and record its result | manual checklist item recorded in the harness log | pending |
-| GR-COVER-01 | Cover required technical tests and record required reviews | required executable tests listed above; manual checklist item recorded in the harness log | pending |
-| GR-EVAL-03 | Record threshold, method, and v1; use complete frozen dataset | manual checklist item recorded in the harness log | pending |
+| INV-SIMPLE-01 | Use the simplest design that meets requirements | `minimal_design_requirement_review` | pending |
+| GR-EVAL-01 | Declare threshold and method before final evaluation; do not weaken | `evaluation_threshold_declared_and_unchanged` | pending |
+| GR-EVAL-02 | Freeze harness and dataset before implementation; prohibit tampering | `evaluation_integrity_no_case_or_guardrail_tampering` | pending |
+| GR-TRACE-01 | Map every criterion, invariant, and guardrail and record its result | `traceability_matrix_complete` | pending |
+| GR-COVER-01 | Cover required technical tests and record required reviews | required executable tests listed above, plus `constitution_compliance_review`, `constitution_version_and_change_report`, `minimal_design_requirement_review`, `traceability_matrix_complete` | pending |
+| GR-EVAL-03 | Record threshold, method, and v1; use complete frozen dataset | `evaluation_threshold_declared_and_unchanged` and `evaluation_integrity_no_case_or_guardrail_tampering` | pending |
 | AC-RUNTIME-01 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pending |
 | AC-CONFIG-01 | API key/model configuration uses only specified environment variables | `configuration_environment_only_and_secret_safe` | pending |
 | AC-JSON-01 | Successful output schema compliance is 100% | `output_json_schema_contract` | pending |
@@ -235,9 +236,9 @@ Every result begins as `pending`. Case IDs refer to the v1 case catalog above; n
 | AC-FAIL-01 | Injected 429, 503, and timeout are service failures | `failure_classification_429_503_timeout_application_evaluation` | pending |
 | AC-FAIL-02 | Service, application, and evaluation failures are distinguishable | `failure_classification_429_503_timeout_application_evaluation` | pending |
 | AC-PASS-01 | Final PASS requires all mapped criteria at declared threshold | `complete_dataset_threshold_gate` | pending |
-| GR-GOV-01 | Review privacy, output, evaluation-integrity, and traceability impact | manual checklist item recorded in the harness log | pending |
-| GR-GOV-03 | Review constitution changes and version/change report | manual checklist item recorded in the harness log | pending |
-| GR-GOV-02 | Review traceability and final evaluation controls | manual checklist item recorded in the harness log | pending |
+| GR-GOV-01 | Review privacy, output, evaluation-integrity, and traceability impact | `constitution_compliance_review` | pending |
+| GR-GOV-03 | Review constitution changes and version/change report | `constitution_version_and_change_report` | pending |
+| GR-GOV-02 | Review traceability and final evaluation controls | `constitution_compliance_review` | pending |
 
 ### Evaluation Control
 

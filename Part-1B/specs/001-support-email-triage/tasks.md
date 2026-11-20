@@ -8,19 +8,21 @@
 
 - Author and review `evals/dataset.json` containing CASE-01 through CASE-18 and `.harness/` before implementation.
 - Freeze `evals/dataset.json` and `.harness/` at the Git tag `part1b-harness-ready`.
+- Do not start T001 until `git tag --list part1b-harness-ready` returns the tag (frozen at commit c125ac6). If the tag is missing, stop and report. The agent must not create, modify or delete .harness/ or evals/dataset.json at any point (GR-EVAL-02).
 - Record the required manual checklist items in the harness log, including evaluation integrity and NFR-003 scope exclusions.
+- `complete_dataset_threshold_gate` is implemented by the frozen `.harness/run-eval.js` and verified by `.harness/selftest.js`; the final gate run is executed by the student and saved under `evidence/eval-results/`; the student validates the dataset catalog with `node .harness/run-eval.js --check-dataset` and records the result in the harness log.
 
 ## Phase 1: Test-First Implementation Tests
 
 **Purpose**: Define executable behavior before source implementation.
 
-- [ ] T001 [P] Add ordinary and clarification result contract tests in `tests/triage.test.js`; cover FR-008, AC-001, AC-002, AC-003, INV-1, INV-2, INV-3, G-1, and constitution test identifiers `output_json_schema_contract` and `triage_missing_mandatory_information`.
-- [ ] T002 [P] Add clarification and missing-identifier tests in `tests/triage.test.js`; cover FR-004, AC-004, AC-005, INV-4, INV-6, INV-CLAR-01, and constitution test identifiers `triage_missing_mandatory_information` and `output_json_schema_contract`.
-- [ ] T003 [P] Add privacy and adversarial prompt tests in `tests/triage.test.js`; cover FR-006, AC-007, AC-008, INV-JSON-01, INV-PRIV-01, G-1, G-2, and constitution test identifiers `privacy_no_personal_data_echo` and `output_json_schema_contract`.
+- [ ] T001 Add ordinary and clarification result contract tests in `tests/triage.test.js`; cover FR-008, AC-001, AC-002, AC-003, INV-1, INV-2, INV-3, G-1, and constitution test identifiers `output_json_schema_contract` and `triage_missing_mandatory_information`.
+- [ ] T002 Add clarification and missing-identifier tests in `tests/triage.test.js`; cover FR-004, AC-004, AC-005, INV-4, INV-6, INV-CLAR-01, and constitution test identifiers `triage_missing_mandatory_information` and `output_json_schema_contract`.
+- [ ] T003 Add privacy and adversarial prompt tests in `tests/triage.test.js`; cover FR-006, AC-007, AC-008, INV-JSON-01, INV-PRIV-01, G-1, G-2, and constitution test identifiers `privacy_no_personal_data_echo` and `output_json_schema_contract`.
 - [ ] T004 [P] Add environment-only configuration and secret-safety tests in `tests/config.test.js`; cover FR-009, NFR-001, NFR-002, AC-014, INV-RUNTIME-01, INV-CONFIG-01, AC-RUNTIME-01, AC-CONFIG-01, and constitution test identifiers `runtime_node20_commonjs_builtin_only` and `configuration_environment_only_and_secret_safe`.
 - [ ] T005 [P] Add injected transport and retry tests in `tests/llm.test.js`; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
-- [ ] T006 [P] Add malformed JSON and schema application-failure tests in `tests/triage.test.js`; cover FR-008, FR-009, AC-001, AC-012, INV-1, INV-JSON-01, INV-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
-- [ ] T007 [P] Add CLI file/stdin, stdout/stderr, exit-code, and extra-argument tests in `tests/triage.test.js`; cover FR-001, FR-009, AC-010, AC-012, INV-RUNTIME-01, INV-FAIL-01, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [ ] T006 Add malformed JSON and schema application-failure tests in `tests/triage.test.js`; cover FR-008, FR-009, AC-001, AC-012, INV-1, INV-JSON-01, INV-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [ ] T007 Add CLI file/stdin, stdout/stderr, exit-code, and extra-argument tests in `tests/triage.test.js`; cover FR-001, FR-009, AC-010, AC-012, INV-RUNTIME-01, INV-FAIL-01, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
 
 **Checkpoint**: Test definitions exist and fail until the corresponding implementation is complete.
 
@@ -30,7 +32,7 @@
 
 **Purpose**: Create the smallest shared runtime foundation required by all stories.
 
-- [ ] T008 Create the `src/` and `prompts/` module layout in `src/llm.js`, `src/triage.js`, `src/cli.js`, and `prompts/triage.system.md` without Node.js dependencies outside built-ins.
+- [ ] T008 Create the `src/` and `prompts/` module layout in `src/llm.js`, `src/triage.js`, `src/cli.js`, and `prompts/triage.system.md` without Node.js dependencies outside built-ins; cover FR-001 and NFR-001.
 - [ ] T009 [P] Implement CommonJS module exports and built-in-only imports in `src/llm.js`, `src/triage.js`, and `src/cli.js`; satisfy NFR-001, AC-014, INV-RUNTIME-01, AC-RUNTIME-01, and constitution test identifier `runtime_node20_commonjs_builtin_only`.
 - [ ] T010 [P] Create the file-based system prompt in `prompts/triage.system.md` that treats email bodies as untrusted data, prohibits hidden-instruction disclosure, and forbids listed personal-data echo; cover FR-006, AC-007, AC-008, INV-PRIV-01, G-1, G-2, and constitution test identifier `privacy_no_personal_data_echo`.
 
@@ -101,7 +103,7 @@
 
 ## Dependencies & Execution Order
 
-- **Test-First Phase (Phase 1)**: No implementation dependency; must be authored before source work.
+- **Test-First Phase (Phase 1)**: Blocked until the Student-owned `part1b-harness-ready` implementation gate is verified; it must be completed before source work.
 - **Foundational Phase (Phase 2)**: Depends on test definitions and blocks all user-story source work.
 - **User Story 1 (Phase 3)**: Depends on Phase 2 and can serve as the MVP.
 - **User Story 2 (Phase 4)**: Depends on Phase 2; can proceed independently of User Story 1 after the shared triage boundary exists.
@@ -110,11 +112,11 @@
 
 ## Parallel Opportunities
 
-- T001-T007 test files can be authored together because they cover separate deterministic concerns.
+- T001-T003 run sequentially because they edit `tests/triage.test.js`; T006 and T007 also run sequentially for the same file. T004 and T005 may proceed independently in their separate test files.
 - T009-T010 foundational module and prompt work can proceed in parallel after T008.
 - T011-T012 and T015-T017 can proceed independently once the llm and triage boundaries are established.
 - T018-T020 clarification work is independent of User Story 3 implementation.
-- T021-T023 prompt updates can proceed in parallel, but T024-T025 then consume the finalized prompt and module boundaries.
+- T021-T023 prompt updates run sequentially because they edit `prompts/triage.system.md`; T024-T025 then consume the finalized prompt and module boundaries.
 - T026-T028 final test refinements can proceed in parallel; T029 is the final test run.
 
 ## Implementation Strategy
