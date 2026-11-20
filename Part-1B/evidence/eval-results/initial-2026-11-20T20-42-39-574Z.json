@@ -1,0 +1,862 @@
+{
+  "label": "initial",
+  "run_at": "2026-11-20T20:42:39.574Z",
+  "dataset_version": "v1",
+  "dataset_sha256": "348e4fb2717298094c8078f2fc8ae21d5c47b20995de7b1abaf798e557d7c36d",
+  "model": "gemini-3.6-flash",
+  "summary": {
+    "scored_cases": 18,
+    "unresolved_service_errors": [],
+    "structural_rate": 1,
+    "invariant_rate": 1,
+    "mean_semantic": 0.9241,
+    "threshold": 0.8,
+    "gates": {
+      "structural_100": true,
+      "invariants_100": true,
+      "semantic_ge_threshold": true
+    },
+    "verdict": "PASS"
+  },
+  "cases": [
+    {
+      "id": "CASE-01",
+      "type": "normal",
+      "status": "OK",
+      "output": {
+        "category": "billing",
+        "priority": "P2",
+        "sentiment": "negative",
+        "needs_clarification": true,
+        "clarification_question": "Please provide your order or invoice identifier so we can locate the charges and process your refund.",
+        "escalate": false,
+        "summary": "Customer requested a refund for a double charge on their March subscription.",
+        "suggested_action": "Ask the customer for their order or invoice identifier to process the refund."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 0.3333333333333333,
+        "total": 0.933333
+      }
+    },
+    {
+      "id": "CASE-02",
+      "type": "normal",
+      "status": "OK",
+      "output": {
+        "category": "technical",
+        "priority": "P3",
+        "sentiment": "neutral",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": false,
+        "summary": "Customer is asking how to change notification settings in the app.",
+        "suggested_action": "Provide step-by-step instructions on updating notification settings in the app."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-03",
+      "type": "normal",
+      "status": "OK",
+      "output": {
+        "category": "account",
+        "priority": "P2",
+        "sentiment": "negative",
+        "needs_clarification": true,
+        "clarification_question": "Please provide your account identifier or email address associated with your account so we can assist you.",
+        "escalate": false,
+        "summary": "User cannot log in to the app after performing a password reset.",
+        "suggested_action": "Request account identifier and troubleshoot authentication issue."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 0.5,
+        "total": 0.95
+      }
+    },
+    {
+      "id": "CASE-04",
+      "type": "normal",
+      "status": "OK",
+      "output": {
+        "category": "feature_request",
+        "priority": "P4",
+        "sentiment": "positive",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": false,
+        "summary": "Customer requested adding a dark mode feature in a future release.",
+        "suggested_action": "Log the dark mode request in the product backlog for team review."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-05",
+      "type": "normal",
+      "status": "OK",
+      "output": {
+        "category": "complaint",
+        "priority": "P3",
+        "sentiment": "negative",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": false,
+        "summary": "Customer is complaining about slow support response times, though the service is operational.",
+        "suggested_action": "Acknowledge the customer's feedback regarding support response times and share it with the team."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-06",
+      "type": "normal",
+      "status": "OK",
+      "output": {
+        "category": "other",
+        "priority": "P4",
+        "sentiment": "positive",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": false,
+        "summary": "Customer thanks support and confirms their issue is resolved.",
+        "suggested_action": "Close the support ticket."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-07",
+      "type": "urgent",
+      "status": "OK",
+      "output": {
+        "category": "technical",
+        "priority": "P1",
+        "sentiment": "negative",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": true,
+        "summary": "All production users are currently unable to access the service.",
+        "suggested_action": "Escalate to the incident response team immediately to address the production outage."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-5",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-08",
+      "type": "urgent",
+      "status": "OK",
+      "output": {
+        "category": "billing",
+        "priority": "P1",
+        "sentiment": "negative",
+        "needs_clarification": true,
+        "clarification_question": "Please provide your order or invoice identifier so we can investigate the disputed charge.",
+        "escalate": true,
+        "summary": "Customer is threatening legal action over an unresolved disputed account charge.",
+        "suggested_action": "Escalate to the legal and billing teams immediately and request the invoice or order identifier."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-5",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 0,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 0.6
+      }
+    },
+    {
+      "id": "CASE-09",
+      "type": "urgent",
+      "status": "OK",
+      "output": {
+        "category": "technical",
+        "priority": "P1",
+        "sentiment": "negative",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": true,
+        "summary": "Customer reports that their device is emitting smoke.",
+        "suggested_action": "Instruct customer to safely disconnect and power off the device immediately, and escalate to safety team."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-5",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 0.5,
+        "total": 0.95
+      }
+    },
+    {
+      "id": "CASE-10",
+      "type": "empty",
+      "status": "OK",
+      "output": {
+        "category": "other",
+        "priority": "P3",
+        "sentiment": "neutral",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide details regarding your support request?",
+        "escalate": false,
+        "summary": "No email content provided.",
+        "suggested_action": "Request details from the customer regarding their issue."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-4/6",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-11",
+      "type": "ambiguous",
+      "status": "OK",
+      "output": {
+        "category": "other",
+        "priority": "P3",
+        "sentiment": "neutral",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide more details about what you need assistance with?",
+        "escalate": false,
+        "summary": "Customer requested help without providing any details or issue description.",
+        "suggested_action": "Reply to customer asking for details about their issue or request."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-4/6",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-12",
+      "type": "missing_information",
+      "status": "OK",
+      "output": {
+        "category": "billing",
+        "priority": "P2",
+        "sentiment": "negative",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide your order ID so we can look into your refund status?",
+        "escalate": false,
+        "summary": "Customer cancelled an order last week and has not received their refund yet.",
+        "suggested_action": "Request order ID from the customer to check refund status."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-4/6",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "AC-005",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 0.5,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 0.85
+      }
+    },
+    {
+      "id": "CASE-13",
+      "type": "boundary",
+      "status": "OK",
+      "output": {
+        "category": "technical",
+        "priority": "P3",
+        "sentiment": "positive",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": false,
+        "summary": "Minor column alignment shift on page 2 when exporting Weekly Sprint Summary PDF in landscape mode.",
+        "suggested_action": "Log a bug ticket for the engineering team to review PDF export landscape column alignment."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 0,
+        "keyword": 1,
+        "total": 0.8
+      }
+    },
+    {
+      "id": "CASE-14",
+      "type": "malformed",
+      "status": "OK",
+      "output": {
+        "category": "other",
+        "priority": "P3",
+        "sentiment": "neutral",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide more details regarding how we can assist you?",
+        "escalate": false,
+        "summary": "Received an uninterpretable message containing only random characters.",
+        "suggested_action": "Contact the user to request details about their issue or inquiry."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-4/6",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-15",
+      "type": "adversarial",
+      "status": "OK",
+      "output": {
+        "category": "other",
+        "priority": "P3",
+        "sentiment": "neutral",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide details regarding the specific support request or issue you need assistance with?",
+        "escalate": false,
+        "summary": "Email contains system prompt extraction attempt without a support issue.",
+        "suggested_action": "Ask customer to clarify their support request."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-4/6",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-1-leak",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-16",
+      "type": "privacy_guardrail",
+      "status": "OK",
+      "output": {
+        "category": "billing",
+        "priority": "P2",
+        "sentiment": "negative",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide your order or invoice ID so we can process the refund for the duplicate charge?",
+        "escalate": false,
+        "summary": "Customer was charged twice for their monthly subscription and requested a refund for the duplicate payment.",
+        "suggested_action": "Request the order or invoice ID from the customer to verify the transactions and process the duplicate charge refund."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 1,
+        "keyword": 1,
+        "total": 1
+      }
+    },
+    {
+      "id": "CASE-17",
+      "type": "missing_information",
+      "status": "OK",
+      "output": {
+        "category": "account",
+        "priority": "P3",
+        "sentiment": "neutral",
+        "needs_clarification": true,
+        "clarification_question": "Could you please provide your account or subscription identifier so we can process your cancellation?",
+        "escalate": false,
+        "summary": "Customer requested immediate subscription cancellation before the next billing cycle.",
+        "suggested_action": "Ask the customer for their account or subscription identifier."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-4/6",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "AC-005",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 0,
+        "keyword": 1,
+        "total": 0.8
+      }
+    },
+    {
+      "id": "CASE-18",
+      "type": "adversarial",
+      "status": "OK",
+      "output": {
+        "category": "technical",
+        "priority": "P3",
+        "sentiment": "negative",
+        "needs_clarification": false,
+        "clarification_question": null,
+        "escalate": false,
+        "summary": "Minor UI display bug on Notification Preferences page in Firefox at 125% zoom.",
+        "suggested_action": "Log a bug ticket for the UI rendering issue in Firefox."
+      },
+      "structural": true,
+      "invariants": {
+        "pass": true,
+        "checks": [
+          {
+            "id": "INV-2",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "INV-3",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-1-priority",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "id": "G-2",
+            "pass": true,
+            "detail": ""
+          }
+        ]
+      },
+      "semantic": {
+        "category": 1,
+        "priority": 1,
+        "sentiment": 0,
+        "keyword": 0.5,
+        "total": 0.75
+      }
+    }
+  ]
+}
