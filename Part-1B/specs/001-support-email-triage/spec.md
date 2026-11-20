@@ -59,7 +59,7 @@ A support agent can identify production outages and safety or legal risks for es
 
 ### Edge Cases
 
-- Empty, whitespace-only, vague, and malformed/non-informative text requires clarification rather than an invented issue.
+- Text is malformed/non-informative if no identifiable issue or mandatory action can be inferred. Such text follows the clarification fallback: `needs_clarification = true`, with category `other`, priority `P3`, and neutral sentiment. This also applies to empty, whitespace-only, and vague text.
 - A missing mandatory identifier requires clarification only when that identifier is needed for the requested action; otherwise classify the described issue normally.
 - A long email may be summarized, but the output summary must never exceed 200 characters.
 - Multiple urgent signals still produce one result; any full production outage, legal threat, or safety issue requires escalation and P1 or P2.
@@ -190,7 +190,7 @@ Every result begins as `pending`. Case IDs refer to the v1 case catalog above; n
 | FR-009 | Separate service, application, and evaluation failures | `failure_classification_429_503_timeout_application_evaluation` | pending |
 | NFR-001 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pending |
 | NFR-002 | Environment-only API key and model configuration | `configuration_environment_only_and_secret_safe` | pending |
-| NFR-003 | Excluded v1 scope remains excluded | manual checklist item recorded in the harness log | pending |
+| NFR-003 | Excluded v1 scope remains excluded (no UI, database, reply sending, or unsupported multilingual behaviour) | manual checklist item `nfr003_v1_scope_exclusions` recorded in the harness log | pending |
 | AC-001 | Exact JSON structure and allowed values | `output_json_schema_contract` | pending |
 | AC-002 | Clarification question iff clarification is true | CASE-10, CASE-12, `output_json_schema_contract` | pending |
 | AC-003 | Summary length at most 200 characters | CASE-13 | pending |

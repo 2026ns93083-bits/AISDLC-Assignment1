@@ -4,6 +4,12 @@
 
 **Scope**: Create or modify implementation tasks only under `src/`, `prompts/`, and `tests/`. Do not create or modify `evals/dataset.json` or anything under `.harness/`.
 
+## Student-owned prerequisites (not agent tasks)
+
+- Author and review `evals/dataset.json` containing CASE-01 through CASE-18 and `.harness/` before implementation.
+- Freeze `evals/dataset.json` and `.harness/` at the Git tag `part1b-harness-ready`.
+- Record the required manual checklist items in the harness log, including evaluation integrity and NFR-003 scope exclusions.
+
 ## Phase 1: Test-First Implementation Tests
 
 **Purpose**: Define executable behavior before source implementation.
