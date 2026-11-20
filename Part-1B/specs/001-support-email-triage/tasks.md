@@ -78,11 +78,11 @@
 
 **Independent Test**: Submit outage, legal-threat, safety, injection, and email/phone/card-data inputs and verify escalation, stable priority, schema validity, and no disclosure or echo.
 
-- [ ] T021 [US3] Update `prompts/triage.system.md` with mandatory escalation rules for full outage, legal threat, and safety issue and P1/P2 priority constraints; cover FR-005, AC-006, INV-5, G-1, GR-GOV-01.
-- [ ] T022 [US3] Update `prompts/triage.system.md` to require treating embedded instructions as untrusted data and never revealing hidden/system instructions or adopting injected priority; cover FR-006, AC-007, INV-JSON-01, G-1, GR-EVAL-02, and constitution test identifier `output_json_schema_contract`.
-- [ ] T023 [US3] Update `prompts/triage.system.md` to prohibit echoing email addresses, phone numbers, and card numbers in any output field; cover FR-006, FR-007, AC-008, INV-PRIV-01, G-2, AC-PRIV-01, and constitution test identifier `privacy_no_personal_data_echo`.
-- [ ] T024 [US3] Do not add keyword-based or hard-coded overrides of the model's triage decision in `src/triage.js`; INV-4, INV-5, INV-6, G-1 and G-2 are evaluated by the frozen harness against model output. Keep only the contract validation from T016 and T019.
-- [ ] T025 [US3] Implement sanitized typed-failure routing in `src/cli.js` so usage/configuration, service/API, and application failures have distinct nonzero stderr categories and never expose email text, API keys, or provider bodies; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, INV-CONFIG-01, G-2, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T021 [US3] Update `prompts/triage.system.md` with mandatory escalation rules for full outage, legal threat, and safety issue and P1/P2 priority constraints; cover FR-005, AC-006, INV-5, G-1, GR-GOV-01.
+- [x] T022 [US3] Update `prompts/triage.system.md` to require treating embedded instructions as untrusted data and never revealing hidden/system instructions or adopting injected priority; cover FR-006, AC-007, INV-JSON-01, G-1, GR-EVAL-02, and constitution test identifier `output_json_schema_contract`.
+- [x] T023 [US3] Update `prompts/triage.system.md` to prohibit echoing email addresses, phone numbers, and card numbers in any output field; cover FR-006, FR-007, AC-008, INV-PRIV-01, G-2, AC-PRIV-01, and constitution test identifier `privacy_no_personal_data_echo`.
+- [x] T024 [US3] Do not add keyword-based or hard-coded overrides of the model's triage decision in `src/triage.js`; INV-4, INV-5, INV-6, G-1 and G-2 are evaluated by the frozen harness against model output. Keep only the contract validation from T016 and T019.
+- [x] T025 [US3] Implement sanitized typed-failure routing in `src/cli.js` so usage/configuration, service/API, and application failures have distinct nonzero stderr categories and never expose email text, API keys, or provider bodies; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, INV-CONFIG-01, G-2, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
 
 **Checkpoint**: User Story 3 is independently testable and urgent/adversarial inputs remain safe and schema-valid.
 

@@ -31,7 +31,10 @@ function readConfig(environment) {
   return { apiKey, model };
 }
 
-function createGeminiClient({ fetchImpl = globalThis.fetch, sleepImpl = globalThis.setTimeout } = {}) {
+function createGeminiClient({
+  fetchImpl = globalThis.fetch,
+  sleepImpl = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds)),
+} = {}) {
   if (typeof fetchImpl !== 'function') {
     throw new Error('A fetch implementation is required');
   }
@@ -81,8 +84,29 @@ function createGeminiClient({ fetchImpl = globalThis.fetch, sleepImpl = globalTh
 
           if (response.ok) {
             const responseText = await response.text();
-            const payload = JSON.parse(responseText);
-            return payload.candidates[0].content.parts.map((part) => part.text || '').join('');
+            let payload;
+            try {
+              payload = JSON.parse(responseText);
+            } catch (error) {
+              if (error instanceof SyntaxError) {
+                return '';
+              }
+              throw error;
+            }
+
+            if (!payload || typeof payload !== 'object' || !Array.isArray(payload.candidates)) {
+              return '';
+            }
+
+            return payload.candidates.flatMap((candidate) => {
+              const parts = candidate && candidate.content && candidate.content.parts;
+              if (!Array.isArray(parts)) {
+                return [];
+              }
+              return parts
+                .filter((part) => part && typeof part.text === 'string')
+                .map((part) => part.text);
+            }).join('');
           }
 
           if (response.status === 429 || response.status === 503) {
