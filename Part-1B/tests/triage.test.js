@@ -109,6 +109,45 @@ test('triage system prompt states the untrusted-data and P1-P4 privacy contract'
   assert.match(prompt, /p4/);
 });
 
+test('urgent escalation results are schema-valid and the prompt states the escalation rule', () => {
+  const { parseAndValidate } = require('../src/triage');
+  const projectRoot = path.resolve(__dirname, '..');
+  const prompt = fs.readFileSync(
+    path.join(projectRoot, 'prompts', 'triage.system.md'),
+    'utf8',
+  ).toLowerCase().replace(/\s+/g, ' ');
+
+  for (const fixture of [
+    { ...validOrdinary, category: 'technical', priority: 'P1', escalate: true, summary: 'The service is fully unavailable.' },
+    { ...validOrdinary, category: 'other', priority: 'P2', escalate: true, summary: 'The customer reports a legal threat.' },
+    { ...validOrdinary, category: 'other', priority: 'P1', escalate: true, summary: 'The customer reports a safety issue.' },
+  ]) {
+    assert.deepEqual(parseAndValidate(JSON.stringify(fixture)), fixture);
+  }
+
+  assert.match(prompt, /escalate/);
+  assert.match(prompt, /outage/);
+  assert.match(prompt, /legal/);
+  assert.match(prompt, /safety/);
+  assert.match(prompt, /p1 or p2/);
+});
+
+test('prompt states the missing-identifier, no-issue and injection rules', () => {
+  const projectRoot = path.resolve(__dirname, '..');
+  const prompt = fs.readFileSync(
+    path.join(projectRoot, 'prompts', 'triage.system.md'),
+    'utf8',
+  ).toLowerCase().replace(/\s+/g, ' ');
+
+  assert.match(prompt, /keep the category and priority/);
+  assert.match(prompt, /identifier/);
+  assert.match(prompt, /never invent|do not guess/);
+  assert.match(prompt, /no identifiable issue/);
+  assert.match(prompt, /neutral/);
+  assert.match(prompt, /needs_clarification/);
+  assert.match(prompt, /instruction[s]? inside the email[^.]*never change/);
+});
+
 test('empty, vague, missing-identifier, and malformed inputs require clarification', async () => {
   const { parseAndValidate } = require('../src/triage');
 
