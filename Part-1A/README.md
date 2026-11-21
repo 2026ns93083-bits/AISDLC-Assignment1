@@ -59,4 +59,4 @@ Spec Kit flow: constitution, specify, clarify, plan, tasks, analyze (2 rounds), 
 
 Harness loop: `initial` PASS, then after the boundary tests were added `failure1` (TESTS failed), then `repair1` PASS. The repair changed only `src/validate.js`.
 
-See `harness-log.md` (if present) and the reflection report for the detailed account of AI assistance.
+See `evidence/harness-log.md` for the full account: generation, each harness run, the failure and repair, and the final human decision.

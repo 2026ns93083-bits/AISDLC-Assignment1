@@ -71,7 +71,8 @@ The harness uses a frozen dataset of 18 cases (`evals/dataset.json`, `traces_to`
 | `evidence/analyze-1.md` … `analyze-3.md` | Three `/speckit.analyze` reports |
 | `evidence/eval-results/` | Evaluation result files |
 | `evidence/initial-generation/`, `evidence/final-generation/` | Source as first generated, and as finally evaluated (identical: no repair was needed) |
-| `harness-log.md` | Harness engineering log |
+| `evidence/harness-log.md` | Harness engineering log |
+| `evidence/eval-results.json` | Copy of the PASS evaluation result |
 
 ## Git evidence
 | Tag | Meaning |
@@ -79,7 +80,7 @@ The harness uses a frozen dataset of 18 cases (`evals/dataset.json`, `traces_to`
 | `part1b-harness-ready` | Dataset and harness frozen before implementation |
 | `part1b-tests-written`, `-reviewed`, `-final`, `-final-2` | Tests first, reviewed, fixed, and extended for a coverage gap |
 | `part1b-initial` | Initial generation ready for evaluation |
-| `part1b-harness-ready-2` | Run A evidence (429 quota run) and candidate harness fixes saved as `evidence/eval-results/h2-*`; see `harness-log.md` section 7 |
+| `part1b-harness-ready-2` | Run A evidence (429 quota run) and candidate harness fixes saved as `evidence/eval-results/h2-*`; see `evidence/harness-log.md` section 7 |
 | `part1b-final` | Final evaluated state (PASS) |
 
 ## Known limitations (honest notes)

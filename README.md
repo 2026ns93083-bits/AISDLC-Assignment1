@@ -24,7 +24,6 @@ AISDLC-Assignment1/
 │   └── evidence/
 └── Part-1B/
     ├── README.md                    usage, evaluation, tags, limitations
-    ├── harness-log.md               harness engineering log
     ├── .github/ .specify/           Spec Kit setup; constitution in .specify/memory/constitution.md
     ├── specs/001-support-email-triage/  spec, plan, research, data model, contracts, quickstart, tasks
     ├── src/                         cli.js, llm.js, triage.js (agent-generated)
@@ -78,7 +77,7 @@ The model is not deterministic, so results can differ between runs and models. S
 ## How the harness stays independent
 
 - Part 1A: the harness is a set of deterministic gates (lint, security lint, dependency audit, tests). The acceptance tests were written from the spec's acceptance criteria and reviewed before any implementation (tag `part1a-tests-reviewed`).
-- Part 1B: the evaluation dataset and harness were written and frozen at tag `part1b-harness-ready` before the implementation existed, and the constitution forbids the coding agent from changing them. Any later change to the harness is disclosed in `Part-1B/harness-log.md`; no gate, threshold or dataset case was changed.
+- Part 1B: the evaluation dataset and harness were written and frozen at tag `part1b-harness-ready` before the implementation existed, and the constitution forbids the coding agent from changing them. Any later change to the harness is disclosed in `Part-1B/evidence/harness-log.md`; no gate, threshold or dataset case was changed.
 
 ## Evidence
 
@@ -92,7 +91,8 @@ Each part keeps its evidence under `evidence/`:
 | `Terminal-logs/` (Part 1A) | Terminal output captured during implementation and harness runs |
 | `analyze-1.md` to `analyze-3.md` (Part 1B) | The three `/speckit.analyze` reports |
 | `eval-results/` (Part 1B) | Live evaluation results (one run with every call blocked by a 429 quota error, then the PASS run) |
-| `harness-log.md` (Part 1B) | Narrative of the harness work: freeze, runs, checks and decisions |
+| `harness-log.md` (both parts) | Harness log: generation, harness runs, failure and repair (Part 1A), freeze, evaluation, checks and final human decision |
+| `eval-results.json` (Part 1B) | Copy of the PASS evaluation result (`eval-results/initial-2026-11-20T20-42-39-574Z.json`) |
 
 Git tags mark the milestones.
 - Part 1A: `part1a-harness-ready`, `part1a-tests-reviewed`, `part1a-initial`, `part1a-tests-extended`, `part1a-final`.
