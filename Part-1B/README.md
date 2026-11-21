@@ -45,11 +45,10 @@ npm test        # node --test : 27 tests (config, LLM client retry/classificatio
 
 ## Evaluation harness (live model, uses API quota)
 ```text
-node .harness/selftest.js                        # 8 self-tests of the harness itself, no network
-node .harness/dataset-check.js                   # validates evals/dataset.json
+node .harness/selftest.js                        # 8 self-tests of the harness itself (includes the dataset well-formedness check), no network
 node --env-file=.env .harness/run-eval.js initial
 ```
-Free-tier limits are low (about 5 requests per minute, 20 per day per model), so the runner paces calls 13 s apart (about 4 minutes for 18 cases).
+Free-tier limits are low (about 5 requests per minute, 20 per day per model), so the runner paces its calls (`CALL_DELAY_MS` in `run-eval.js`).
 
 The harness uses a frozen dataset of 18 cases (`evals/dataset.json`, `traces_to` links to the spec acceptance criteria).
 - **Structural gate:** 100% of replies match the 8-field contract
@@ -80,7 +79,7 @@ The harness uses a frozen dataset of 18 cases (`evals/dataset.json`, `traces_to`
 | `part1b-harness-ready` | Dataset and harness frozen before implementation |
 | `part1b-tests-written`, `-reviewed`, `-final`, `-final-2` | Tests first, reviewed, fixed, and extended for a coverage gap |
 | `part1b-initial` | Initial generation ready for evaluation |
-| `part1b-harness-ready-2` | Harness fixes after freeze (INCOMPLETE logic, 13 s pacing); no gate or threshold changed |
+| `part1b-harness-ready-2` | Run A evidence (429 quota run) and candidate harness fixes saved as `evidence/eval-results/h2-*`; see `harness-log.md` section 7 |
 | `part1b-final` | Final evaluated state (PASS) |
 
 ## Known limitations (honest notes)

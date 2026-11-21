@@ -176,69 +176,69 @@ The dataset also includes the constitution-required executable checks `output_js
 
 ### Traceability Matrix
 
-Every result begins as `pending`. Case IDs refer to the v1 case catalog above; named tests and manual checklist items are constitution-required.
+Results were recorded after the first evaluation run (20 Nov 2026 UTC) and the manual checklist in `Part-1B/harness-log.md`. Case IDs refer to the v1 case catalog above; named tests and manual checklist items are constitution-required.
 
 | ID | Requirement / constitution identifier | Test or dataset case | Result |
 |---|---|---|---|
-| FR-001 | Accept one raw email and return one result | CASE-01, CASE-10 | pending |
-| FR-002 | Assign one allowed category | CASE-01 through CASE-09 | pending |
-| FR-003 | Assign priority and sentiment using the rubric | CASE-01 through CASE-09 | pending |
-| FR-004 | Clarify empty, vague, or missing-identifier input | CASE-10 through CASE-12, CASE-14, CASE-17 | pending |
-| FR-005 | Escalate full outage, legal, or safety risk | CASE-07 through CASE-09 | pending |
-| FR-006 | Treat injection as data and do not echo listed personal data | CASE-15, CASE-16, CASE-18 | pending |
-| FR-007 | Return concise key-issue summary and suggested action | CASE-01, CASE-03, CASE-13 | pending |
-| FR-008 | Return exactly the stable JSON contract | `output_json_schema_contract` | pending |
-| FR-009 | Separate service, application, and evaluation failures | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| NFR-001 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pending |
-| NFR-002 | Environment-only API key and model configuration | `configuration_environment_only_and_secret_safe` | pending |
-| NFR-003 | Excluded v1 scope remains excluded (no UI, database, reply sending, or unsupported multilingual behaviour) | manual checklist item `nfr003_v1_scope_exclusions` recorded in the harness log | pending |
-| AC-001 | Exact JSON structure and allowed values | `output_json_schema_contract` | pending |
-| AC-002 | Clarification question iff clarification is true | CASE-10, CASE-12, `output_json_schema_contract` | pending |
-| AC-003 | Summary length at most 200 characters | CASE-13 | pending |
-| AC-004 | Empty and unidentifiable inputs request clarification | CASE-10, CASE-11, CASE-14, `triage_missing_mandatory_information` | pending |
-| AC-005 | Missing mandatory identifier requests clarification | CASE-12, CASE-17, `triage_missing_mandatory_information` | pending |
-| AC-006 | Outage/legal/safety cases escalate at P1/P2 | CASE-07, CASE-08, CASE-09 | pending |
-| AC-007 | Injection cannot reveal hidden instructions or set priority | CASE-15, CASE-18 | pending |
-| AC-008 | Personal-data echo rate is zero | CASE-16, `privacy_no_personal_data_echo` | pending |
-| AC-009 | Mean semantic score is at least 0.80 | `complete_dataset_threshold_gate` | pending |
-| AC-010 | Structural pass rate is 100% excluding service errors | `output_json_schema_contract`, `failure_classification_429_503_timeout_application_evaluation` | pending |
-| AC-011 | Invariant and guardrail pass rate is 100% | `complete_dataset_threshold_gate` | pending |
-| AC-012 | Service/API, application, and evaluation outcomes are distinguished | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| AC-013 | Dataset v1 has at least 15 cases, IDs, traces, and required coverage | CASE-01 through CASE-18 plus `traceability_matrix_complete` | pending |
-| AC-014 | Runtime and configuration constraints pass | `runtime_node20_commonjs_builtin_only`, `configuration_environment_only_and_secret_safe` | pending |
-| AC-015 | PASS requires all three declared gates | `complete_dataset_threshold_gate` | pending |
-| AC-016 | No excluded v1 capability is included | `nfr003_v1_scope_exclusions` | pending |
-| INV-1 | Exact JSON fields and allowed values; satisfies `INV-JSON-01` | `output_json_schema_contract` | pending |
-| INV-2 | Clarification question equivalence; satisfies `INV-CLAR-01`, `INV-JSON-01` | CASE-10, CASE-12, `triage_missing_mandatory_information` | pending |
-| INV-3 | Summary at most 200 characters; satisfies `INV-JSON-01` | CASE-13, `output_json_schema_contract` | pending |
-| INV-4 | Empty/whitespace/vague email clarifies; satisfies `INV-CLAR-01` | CASE-10, CASE-11, CASE-14, `triage_missing_mandatory_information` | pending |
-| INV-5 | Outage/legal/safety escalates at P1/P2; evaluated under `GR-GOV-01` | CASE-07, CASE-08, CASE-09 | pending |
-| INV-6 | Missing required identifier clarifies; satisfies `INV-CLAR-01` | CASE-12, CASE-17, `triage_missing_mandatory_information` | pending |
-| G-1 | Injection is untrusted data; satisfies `INV-JSON-01`, `GR-EVAL-02` | CASE-15, CASE-18 | pending |
-| G-2 | No email/phone/card echo; satisfies `INV-PRIV-01` | CASE-16, `privacy_no_personal_data_echo` | pending |
-| INV-PRIV-01 | Never echo email addresses, phone numbers, or card numbers | `privacy_no_personal_data_echo` | pending |
-| INV-CLAR-01 | Clarify missing or ambiguous mandatory information | `triage_missing_mandatory_information` | pending |
-| INV-JSON-01 | Every successful response conforms to the JSON schema | `output_json_schema_contract` | pending |
-| INV-RUNTIME-01 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pending |
-| INV-CONFIG-01 | API key/model only from specified environment variables | `configuration_environment_only_and_secret_safe` | pending |
-| INV-FAIL-01 | Distinguish 429/503/timeouts from other failures | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| INV-SIMPLE-01 | Use the simplest design that meets requirements | `minimal_design_requirement_review` | pending |
-| GR-EVAL-01 | Declare threshold and method before final evaluation; do not weaken | `evaluation_threshold_declared_and_unchanged` | pending |
-| GR-EVAL-02 | Freeze harness and dataset before implementation; prohibit tampering | `evaluation_integrity_no_case_or_guardrail_tampering` | pending |
-| GR-TRACE-01 | Map every criterion, invariant, and guardrail and record its result | `traceability_matrix_complete` | pending |
-| GR-COVER-01 | Cover required technical tests and record required reviews | required executable tests listed above, plus `constitution_compliance_review`, `constitution_version_and_change_report`, `minimal_design_requirement_review`, `traceability_matrix_complete` | pending |
-| GR-EVAL-03 | Record threshold, method, and v1; use complete frozen dataset | `evaluation_threshold_declared_and_unchanged` and `evaluation_integrity_no_case_or_guardrail_tampering` | pending |
-| AC-RUNTIME-01 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pending |
-| AC-CONFIG-01 | API key/model configuration uses only specified environment variables | `configuration_environment_only_and_secret_safe` | pending |
-| AC-JSON-01 | Successful output schema compliance is 100% | `output_json_schema_contract` | pending |
-| AC-PRIV-01 | Personal-data echo rate is 0% | `privacy_no_personal_data_echo` | pending |
-| AC-CLAR-01 | All mandatory-information gaps request clarification | `triage_missing_mandatory_information` | pending |
-| AC-FAIL-01 | Injected 429, 503, and timeout are service failures | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| AC-FAIL-02 | Service, application, and evaluation failures are distinguishable | `failure_classification_429_503_timeout_application_evaluation` | pending |
-| AC-PASS-01 | Final PASS requires all mapped criteria at declared threshold | `complete_dataset_threshold_gate` | pending |
-| GR-GOV-01 | Review privacy, output, evaluation-integrity, and traceability impact | `constitution_compliance_review` | pending |
-| GR-GOV-03 | Review constitution changes and version/change report | `constitution_version_and_change_report` | pending |
-| GR-GOV-02 | Review traceability and final evaluation controls | `constitution_compliance_review` | pending |
+| FR-001 | Accept one raw email and return one result | CASE-01, CASE-10 | pass (see harness-log.md) |
+| FR-002 | Assign one allowed category | CASE-01 through CASE-09 | pass (see harness-log.md) |
+| FR-003 | Assign priority and sentiment using the rubric | CASE-01 through CASE-09 | pass (see harness-log.md) |
+| FR-004 | Clarify empty, vague, or missing-identifier input | CASE-10 through CASE-12, CASE-14, CASE-17 | pass (see harness-log.md) |
+| FR-005 | Escalate full outage, legal, or safety risk | CASE-07 through CASE-09 | pass (see harness-log.md) |
+| FR-006 | Treat injection as data and do not echo listed personal data | CASE-15, CASE-16, CASE-18 | pass (see harness-log.md) |
+| FR-007 | Return concise key-issue summary and suggested action | CASE-01, CASE-03, CASE-13 | pass (see harness-log.md) |
+| FR-008 | Return exactly the stable JSON contract | `output_json_schema_contract` | pass (see harness-log.md) |
+| FR-009 | Separate service, application, and evaluation failures | `failure_classification_429_503_timeout_application_evaluation` | pass (see harness-log.md) |
+| NFR-001 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pass (see harness-log.md) |
+| NFR-002 | Environment-only API key and model configuration | `configuration_environment_only_and_secret_safe` | pass (see harness-log.md) |
+| NFR-003 | Excluded v1 scope remains excluded (no UI, database, reply sending, or unsupported multilingual behaviour) | manual checklist item `nfr003_v1_scope_exclusions` recorded in the harness log | pass (see harness-log.md) |
+| AC-001 | Exact JSON structure and allowed values | `output_json_schema_contract` | pass (see harness-log.md) |
+| AC-002 | Clarification question iff clarification is true | CASE-10, CASE-12, `output_json_schema_contract` | pass (see harness-log.md) |
+| AC-003 | Summary length at most 200 characters | CASE-13 | pass (see harness-log.md) |
+| AC-004 | Empty and unidentifiable inputs request clarification | CASE-10, CASE-11, CASE-14, `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| AC-005 | Missing mandatory identifier requests clarification | CASE-12, CASE-17, `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| AC-006 | Outage/legal/safety cases escalate at P1/P2 | CASE-07, CASE-08, CASE-09 | pass (see harness-log.md) |
+| AC-007 | Injection cannot reveal hidden instructions or set priority | CASE-15, CASE-18 | pass (see harness-log.md) |
+| AC-008 | Personal-data echo rate is zero | CASE-16, `privacy_no_personal_data_echo` | pass (see harness-log.md) |
+| AC-009 | Mean semantic score is at least 0.80 | `complete_dataset_threshold_gate` | pass (see harness-log.md) |
+| AC-010 | Structural pass rate is 100% excluding service errors | `output_json_schema_contract`, `failure_classification_429_503_timeout_application_evaluation` | pass (see harness-log.md) |
+| AC-011 | Invariant and guardrail pass rate is 100% | `complete_dataset_threshold_gate` | pass (see harness-log.md) |
+| AC-012 | Service/API, application, and evaluation outcomes are distinguished | `failure_classification_429_503_timeout_application_evaluation` | pass (see harness-log.md) |
+| AC-013 | Dataset v1 has at least 15 cases, IDs, traces, and required coverage | CASE-01 through CASE-18 plus `traceability_matrix_complete` | pass (see harness-log.md) |
+| AC-014 | Runtime and configuration constraints pass | `runtime_node20_commonjs_builtin_only`, `configuration_environment_only_and_secret_safe` | pass (see harness-log.md) |
+| AC-015 | PASS requires all three declared gates | `complete_dataset_threshold_gate` | pass (see harness-log.md) |
+| AC-016 | No excluded v1 capability is included | `nfr003_v1_scope_exclusions` | pass (see harness-log.md) |
+| INV-1 | Exact JSON fields and allowed values; satisfies `INV-JSON-01` | `output_json_schema_contract` | pass (see harness-log.md) |
+| INV-2 | Clarification question equivalence; satisfies `INV-CLAR-01`, `INV-JSON-01` | CASE-10, CASE-12, `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| INV-3 | Summary at most 200 characters; satisfies `INV-JSON-01` | CASE-13, `output_json_schema_contract` | pass (see harness-log.md) |
+| INV-4 | Empty/whitespace/vague email clarifies; satisfies `INV-CLAR-01` | CASE-10, CASE-11, CASE-14, `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| INV-5 | Outage/legal/safety escalates at P1/P2; evaluated under `GR-GOV-01` | CASE-07, CASE-08, CASE-09 | pass (see harness-log.md) |
+| INV-6 | Missing required identifier clarifies; satisfies `INV-CLAR-01` | CASE-12, CASE-17, `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| G-1 | Injection is untrusted data; satisfies `INV-JSON-01`, `GR-EVAL-02` | CASE-15, CASE-18 | pass (see harness-log.md) |
+| G-2 | No email/phone/card echo; satisfies `INV-PRIV-01` | CASE-16, `privacy_no_personal_data_echo` | pass (see harness-log.md) |
+| INV-PRIV-01 | Never echo email addresses, phone numbers, or card numbers | `privacy_no_personal_data_echo` | pass (see harness-log.md) |
+| INV-CLAR-01 | Clarify missing or ambiguous mandatory information | `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| INV-JSON-01 | Every successful response conforms to the JSON schema | `output_json_schema_contract` | pass (see harness-log.md) |
+| INV-RUNTIME-01 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pass (see harness-log.md) |
+| INV-CONFIG-01 | API key/model only from specified environment variables | `configuration_environment_only_and_secret_safe` | pass (see harness-log.md) |
+| INV-FAIL-01 | Distinguish 429/503/timeouts from other failures | `failure_classification_429_503_timeout_application_evaluation` | pass (see harness-log.md) |
+| INV-SIMPLE-01 | Use the simplest design that meets requirements | `minimal_design_requirement_review` | pass (see harness-log.md) |
+| GR-EVAL-01 | Declare threshold and method before final evaluation; do not weaken | `evaluation_threshold_declared_and_unchanged` | pass (see harness-log.md) |
+| GR-EVAL-02 | Freeze harness and dataset before implementation; prohibit tampering | `evaluation_integrity_no_case_or_guardrail_tampering` | pass (see harness-log.md) |
+| GR-TRACE-01 | Map every criterion, invariant, and guardrail and record its result | `traceability_matrix_complete` | pass (see harness-log.md) |
+| GR-COVER-01 | Cover required technical tests and record required reviews | required executable tests listed above, plus `constitution_compliance_review`, `constitution_version_and_change_report`, `minimal_design_requirement_review`, `traceability_matrix_complete` | pass (see harness-log.md) |
+| GR-EVAL-03 | Record threshold, method, and v1; use complete frozen dataset | `evaluation_threshold_declared_and_unchanged` and `evaluation_integrity_no_case_or_guardrail_tampering` | pass (see harness-log.md) |
+| AC-RUNTIME-01 | Node.js 20+, CommonJS, built-in-only runtime | `runtime_node20_commonjs_builtin_only` | pass (see harness-log.md) |
+| AC-CONFIG-01 | API key/model configuration uses only specified environment variables | `configuration_environment_only_and_secret_safe` | pass (see harness-log.md) |
+| AC-JSON-01 | Successful output schema compliance is 100% | `output_json_schema_contract` | pass (see harness-log.md) |
+| AC-PRIV-01 | Personal-data echo rate is 0% | `privacy_no_personal_data_echo` | pass (see harness-log.md) |
+| AC-CLAR-01 | All mandatory-information gaps request clarification | `triage_missing_mandatory_information` | pass (see harness-log.md) |
+| AC-FAIL-01 | Injected 429, 503, and timeout are service failures | `failure_classification_429_503_timeout_application_evaluation` | pass (see harness-log.md) |
+| AC-FAIL-02 | Service, application, and evaluation failures are distinguishable | `failure_classification_429_503_timeout_application_evaluation` | pass (see harness-log.md) |
+| AC-PASS-01 | Final PASS requires all mapped criteria at declared threshold | `complete_dataset_threshold_gate` | pass (see harness-log.md) |
+| GR-GOV-01 | Review privacy, output, evaluation-integrity, and traceability impact | `constitution_compliance_review` | pass (see harness-log.md) |
+| GR-GOV-03 | Review constitution changes and version/change report | `constitution_version_and_change_report` | pass (see harness-log.md) |
+| GR-GOV-02 | Review traceability and final evaluation controls | `constitution_compliance_review` | pass (see harness-log.md) |
 
 ### Evaluation Control
 

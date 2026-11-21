@@ -18,9 +18,9 @@
 
 **Purpose**: Project initialization and shared toolchain
 
-- [ ] T001 Create the Node.js 20 CommonJS project structure in package.json, src/, and tests/ per plan.md and project structure decisions
-- [ ] T002 [P] Initialize package.json scripts for `npm test`, `npm run lint`, and `npm audit` with Node.js 20/CommonJS configuration in package.json
-- [ ] T003 [P] Configure ESLint with recommended and security rules in eslint.config.js and install the required development dependencies
+- [x] T001 Create the Node.js 20 CommonJS project structure in package.json, src/, and tests/ per plan.md and project structure decisions
+- [x] T002 [P] Initialize package.json scripts for `npm test`, `npm run lint`, and `npm audit` with Node.js 20/CommonJS configuration in package.json
+- [x] T003 [P] Configure ESLint with recommended and security rules in eslint.config.js and install the required development dependencies
 
 ---
 
@@ -119,7 +119,7 @@
 - [X] T035 Run `npm audit` and resolve any high- or critical-severity dependency issues before completion
 - [X] T036 [P] Review the final CLI output, rounding logic, and schedule invariants against `contracts/cli.md`, `data-model.md`, and the constitution to confirm no accidental intermediate rounding or process leakage remains
 - [ ] T037 Refresh any directly related project docs or quickstart examples in `specs/001-loan-emi-calculator/quickstart.md` if implementation changes the required command or output examples
-- [ ] T038 Confirm the CLI and calculation boundary do not expose any UI, database, conversion, prepayment, or variable-rate behavior, and record the exclusion check in the final validation checklist for FR-014
+- [x] T038 Confirm the CLI and calculation boundary do not expose any UI, database, conversion, prepayment, or variable-rate behavior, and record the exclusion check in the final validation checklist for FR-014
 - [ ] T039 Add deterministic repeatability validation in `tests/cli.test.js` or `tests/emi.test.js` asserting identical valid-input output on repeated invocations for NFR-001
 
 ---

@@ -60,8 +60,7 @@ Expected for `120000 12 12`: `emi` 10661.85, 12 schedule entries, final balance 
 ```powershell
 cd Part-1B
 npm test                                  # 27 offline tests
-node .harness/selftest.js                 # 8 self-tests of the harness
-node .harness/dataset-check.js            # validates evals/dataset.json
+node .harness/selftest.js                 # 8 self-tests of the harness, including the dataset check
 ```
 
 Live runs need your own key. Copy `.env.example` to `.env` and fill in two lines of the form `NAME=value` (no quotes): `GEMINI_API_KEY` and `LLM_MODEL` (used: `gemini-3.6-flash`). The real `.env` is git-ignored and is never committed.
@@ -69,7 +68,7 @@ Live runs need your own key. Copy `.env.example` to `.env` and fill in two lines
 ```powershell
 Copy-Item .env.example .env               # then edit .env
 node --env-file=.env src/cli.js email.txt             # triage one email, prints one JSON object
-node --env-file=.env .harness/run-eval.js initial     # 18 cases, about 4 minutes (13 s pacing for the free-tier rate limit)
+node --env-file=.env .harness/run-eval.js initial     # 18 live calls, paced by CALL_DELAY_MS to respect free-tier limits
 ```
 
 The model is not deterministic, so results can differ between runs and models. Service errors (429, 503, timeout) are excluded and re-run, and unresolved ones give an `INCOMPLETE` verdict, never `PASS`. Every run is saved under `evidence/eval-results/`.
@@ -79,7 +78,7 @@ The model is not deterministic, so results can differ between runs and models. S
 ## How the harness stays independent
 
 - Part 1A: the harness is a set of deterministic gates (lint, security lint, dependency audit, tests). The acceptance tests were written from the spec's acceptance criteria and reviewed before any implementation (tag `part1a-tests-reviewed`).
-- Part 1B: the evaluation dataset and harness were written and frozen at tag `part1b-harness-ready` before the implementation existed, and the constitution forbids the coding agent from changing them. Later harness changes (`INCOMPLETE` logic and call pacing, tag `part1b-harness-ready-2`) are disclosed in `Part-1B/harness-log.md`; no gate or threshold was changed.
+- Part 1B: the evaluation dataset and harness were written and frozen at tag `part1b-harness-ready` before the implementation existed, and the constitution forbids the coding agent from changing them. Any later change to the harness is disclosed in `Part-1B/harness-log.md`; no gate, threshold or dataset case was changed.
 
 ## Evidence
 

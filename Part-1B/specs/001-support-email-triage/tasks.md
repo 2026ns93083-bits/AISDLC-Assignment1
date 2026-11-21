@@ -16,13 +16,13 @@
 
 **Purpose**: Define executable behavior before source implementation.
 
-- [ ] T001 Add ordinary and clarification result contract tests in `tests/triage.test.js`; cover FR-008, AC-001, AC-002, AC-003, INV-1, INV-2, INV-3, G-1, and constitution test identifiers `output_json_schema_contract` and `triage_missing_mandatory_information`.
-- [ ] T002 Add clarification and missing-identifier tests in `tests/triage.test.js`; cover FR-004, AC-004, AC-005, INV-4, INV-6, INV-CLAR-01, and constitution test identifiers `triage_missing_mandatory_information` and `output_json_schema_contract`.
-- [ ] T003 Add privacy and adversarial prompt tests in `tests/triage.test.js`; cover FR-006, AC-007, AC-008, INV-JSON-01, INV-PRIV-01, G-1, G-2, and constitution test identifiers `privacy_no_personal_data_echo` and `output_json_schema_contract`.
-- [ ] T004 [P] Add environment-only configuration and secret-safety tests in `tests/config.test.js`; cover FR-009, NFR-001, NFR-002, AC-014, INV-RUNTIME-01, INV-CONFIG-01, AC-RUNTIME-01, AC-CONFIG-01, and constitution test identifiers `runtime_node20_commonjs_builtin_only` and `configuration_environment_only_and_secret_safe`.
-- [ ] T005 [P] Add injected transport and retry tests in `tests/llm.test.js`; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
-- [ ] T006 Add malformed JSON and schema application-failure tests in `tests/triage.test.js`; cover FR-008, FR-009, AC-001, AC-012, INV-1, INV-JSON-01, INV-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
-- [ ] T007 Add CLI file/stdin, stdout/stderr, exit-code, and extra-argument tests in `tests/triage.test.js`; cover FR-001, FR-009, AC-010, AC-012, INV-RUNTIME-01, INV-FAIL-01, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T001 Add ordinary and clarification result contract tests in `tests/triage.test.js`; cover FR-008, AC-001, AC-002, AC-003, INV-1, INV-2, INV-3, G-1, and constitution test identifiers `output_json_schema_contract` and `triage_missing_mandatory_information`.
+- [x] T002 Add clarification and missing-identifier tests in `tests/triage.test.js`; cover FR-004, AC-004, AC-005, INV-4, INV-6, INV-CLAR-01, and constitution test identifiers `triage_missing_mandatory_information` and `output_json_schema_contract`.
+- [x] T003 Add privacy and adversarial prompt tests in `tests/triage.test.js`; cover FR-006, AC-007, AC-008, INV-JSON-01, INV-PRIV-01, G-1, G-2, and constitution test identifiers `privacy_no_personal_data_echo` and `output_json_schema_contract`.
+- [x] T004 [P] Add environment-only configuration and secret-safety tests in `tests/config.test.js`; cover FR-009, NFR-001, NFR-002, AC-014, INV-RUNTIME-01, INV-CONFIG-01, AC-RUNTIME-01, AC-CONFIG-01, and constitution test identifiers `runtime_node20_commonjs_builtin_only` and `configuration_environment_only_and_secret_safe`.
+- [x] T005 [P] Add injected transport and retry tests in `tests/llm.test.js`; cover FR-009, AC-012, INV-FAIL-01, AC-FAIL-01, AC-FAIL-02, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T006 Add malformed JSON and schema application-failure tests in `tests/triage.test.js`; cover FR-008, FR-009, AC-001, AC-012, INV-1, INV-JSON-01, INV-FAIL-01, AC-FAIL-02, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
+- [x] T007 Add CLI file/stdin, stdout/stderr, exit-code, and extra-argument tests in `tests/triage.test.js`; cover FR-001, FR-009, AC-010, AC-012, INV-RUNTIME-01, INV-FAIL-01, G-1, and constitution test identifier `failure_classification_429_503_timeout_application_evaluation`.
 
 **Checkpoint**: Test definitions exist and fail until the corresponding implementation is complete.
 
