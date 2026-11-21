@@ -21,7 +21,7 @@ Chronological Log Entries
 
 
 
-14 Nov 2026 – 03:01 AM IST (aa45a3c → e4b866e): When manual CLI probing exposed that 50.0000000000000001, 480.0000000000000001, and 1.0000000000000001 bypassed validation, I verified spec.md and confirmed the specification was already exact—the bug came from IEEE-754 floating-point precision loss in Number() inside src/validate.js. Because the spec required no change, I only added three spec-derived boundary tests to tests/validate.test.js (aa45a3c) and restricted the agent's repair exclusively to src/validate.js (e4b866e).
+14 Nov 2026 – 02:53–03:04 AM IST (aa45a3c → e4b866e): When manual CLI probing exposed that 50.0000000000000001, 480.0000000000000001, and 1.0000000000000001 bypassed validation, I verified spec.md and confirmed the specification was already exact—the bug came from IEEE-754 floating-point precision loss in Number() inside src/validate.js. Because the spec required no change, I only added three spec-derived boundary tests to tests/validate.test.js (aa45a3c) and restricted the agent's repair exclusively to src/validate.js (e4b866e).
 
 
 
